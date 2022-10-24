@@ -1,5 +1,7 @@
 package fr.univartois.butinfo.fractals.sequences;
 
+import fr.univartois.butinfo.fractals.complex.IComplex;
+
 /**
  * L'interface INextTerm définit le contrat à respecter par la strategy de la
  * méthode calculateNextTerm() permettant de calculer le prochain terme d'une
@@ -14,6 +16,6 @@ public interface INextTerm {
 	/**
 	 * Permet de calculer le prochain terme d'une suite.
 	 */
-	void calculateNextTerm();
+	IComplex calculateNextTerm();
 
 }
