@@ -60,3 +60,146 @@ du choix des patrons de conception et des structures de données utilisées. Vou
 également en quoi les différentes ressources de votre formation vous ont aidés à réaliser ce
 projet, et les difficultés que vous avez rencontrées pendant son développement. Ce rapport
 devra également être ajouté à la racine de votre dépôt GitLab.
+
+## Diagramme UML
+
+@startuml
+
+package fr.univartois.butinfo.fractals {
+    class Fractals
+}
+
+class Fractals {
+    - help : boolean
+    - width : int
+    - height : int
+    - foxusX : double
+    - foxusY : double
+    - fractaleName : String
+    - nbIterations : int
+    - paletteName : String
+    - outputFile : String
+    - classParser : ClasseParser<Fractals>
+    - Fractals()
+
+    + parseCliArguments(String[]) 
+    + usage() : void 
+    + buildFractals() : void 
+    + main(String[])
+}
+package fr.univartois.butinfo.fractals.complex {
+    class Complex
+    interface IComplex
+}
+
+class Complex implements IComplex {
+    - re : double
+    - im : double 
+
+    + Complexe(double,double)
+    + getImaginaryPart() : double
+    + abs() : double
+    + negate() : IComplex
+    + conjugate() : IComplex
+    + add(IComplex) : IComplex
+    + subtract(IComplex) : IComplex
+    + multiply(double) : IComplex
+    + multiply(IComplex) : IComplex
+    + divide(IComplex) : IComplex
+    + equals(Object) : boolean
+    + hasCode() : int 
+    + toString() : String
+}
+
+interface IComplex {
+    + getRealPart() : double
+    + getImaginaryPart() : double 
+    + abs() : double
+    + negate() : IComplex
+    + conjugate() : IComplex
+    + add(IComplex) : IComplex
+    + subtract(IComplex) : IComplex
+    + multiply(double) : IComplex
+    + multiply(IComplex) : IComplex
+    + divide(IComplex) : IComplex
+}
+
+package fr.univartois.butinfo.fractals.color {
+    class PaletteColor
+    interface IPaletteColor
+}
+
+class PaletteColor implements IPaletteColor {
+    + pixel : Pixel
+    + color : Color
+    + paletteColor : IPaletteColor
+
+    + PaletteColor(Pixel)
+    + setPaletteColor(IPaletteColor) : void
+    + paletteColor(Color) : void 
+    + getColor() : Color
+    + setColor(Color color) : void
+}
+interface IPaletteColor {
+    +  paletteColor(Color) : void 
+}
+
+package fr.univartois.butinfo.fractals.image {
+    class Pixel
+    interface IFractalImage
+}
+class Pixel {
+    - image : IFractalImage
+    - row : int
+    - column : int
+
+    + Pixel(IFractalImage,row,column)
+    + getRow() : int
+    + getColumn() : int
+    + getImage() : IFractalImage
+    + setColor(Color) : void
+}
+
+interface IFractalImage{
+    + getHeight() : int
+    + getWidt() : int
+    + getPixel(row,column) : int
+    + saveAs(String) : void
+    + setColor(Color,row;column) : void
+}
+Pixel o-- "1" IFractalImage
+
+package fr.univartois.butinfo.fractals.sequences{
+    interface INextTerm
+    class Sequence
+    class SequenceIterator
+    
+}
+
+class Sequence  implements Iterable {
+    + nextTerm : INextTerm
+    + firstElement : IComplex
+    + presentTerm : IComplex
+
+    + Sequence(INextTerm,IComplex)
+    + getPresentTerm() : IComplex
+    + setPresnetTerm(IComplex) : void
+    + toString() : String
+    + iterator() : Iterator<IComplex>
+    + getNextTerm() : INextTerm
+}
+interface INextTerm {
+     + calculateNextTerm(IComplex) : IComplex
+}
+class SequenceIterator implements Iterator {
+    + sequence : Sequence
+   
+    + SequenceIterator(Sequence)
+    + hasNext() : boolean
+    + next() : IComplex
+}
+SequenceIterator o-- "1" Sequence
+SequenceIterator o-- "1" IComplex
+Sequence o-- "1" IComplex
+
+@enduml
