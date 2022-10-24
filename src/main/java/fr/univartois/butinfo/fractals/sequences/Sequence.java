@@ -55,6 +55,7 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param presentTerm Le nouveau terme courant.
 	 */
 	public void setPresentTerm(IComplex presentTerm) {
+		nextTerm.setPresentTerm(presentTerm);
 		this.presentTerm = presentTerm;
 	}
 
@@ -96,6 +97,7 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param firstTerm Le nouveau premier terme.
 	 */
 	public void setFirstTerm(IComplex firstTerm) {
+		nextTerm.setFirstTerm(firstTerm);
 		this.firstTerm = firstTerm;
 		this.presentTerm = this.firstTerm;
 	}
