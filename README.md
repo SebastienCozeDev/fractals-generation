@@ -63,6 +63,7 @@ devra également être ajouté à la racine de votre dépôt GitLab.
 
 ## Diagramme UML
 
+```plantuml
 @startuml
 
 package fr.univartois.butinfo.fractals {
@@ -203,3 +204,4 @@ SequenceIterator o-- "1" IComplex
 Sequence o-- "1" IComplex
 
 @enduml
+```
