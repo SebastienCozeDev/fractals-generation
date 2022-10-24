@@ -16,6 +16,6 @@ public interface INextTerm {
 	/**
 	 * Permet de calculer le prochain terme d'une suite.
 	 */
-	IComplex calculateNextTerm();
+	IComplex calculateNextTerm(IComplex lastTerm);
 
 }
