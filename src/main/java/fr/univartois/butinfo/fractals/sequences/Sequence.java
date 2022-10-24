@@ -13,7 +13,7 @@ import fr.univartois.butinfo.fractals.complex.IComplex;
  *
  * @version 0.1.0
  */
-public class Sequence<T> implements Iterator<T> {
+public class Sequence implements Iterable<IComplex> {
 
 	/**
 	 * La stratégie pour obtenir le prochain terme.
@@ -35,25 +35,31 @@ public class Sequence<T> implements Iterator<T> {
 		this.firstElement = firstElement;
 		presentTerm = firstElement;
 	}
-
-	@Override
-	public boolean hasNext() {
-		double realPart = presentTerm.getRealPart();
-		double imaginaryPart = presentTerm.getImaginaryPart();
-		return (Math.sqrt(Math.pow(realPart, 2)) + (Math.pow(imaginaryPart, 2)) >= 2) || (nextTerm.calculateNextTerm(presentTerm) != null);
-	}
-
-	@Override
-	public T next() {
-		if (hasNext()) {
-			presentTerm = nextTerm.calculateNextTerm(presentTerm);
-			return (T) presentTerm;	
-		}
-		return null;
+	
+	public IComplex getPresentTerm() {
+		return presentTerm;
 	}
 	
+	public void setPresentTerm(IComplex presentTerm) {
+		this.presentTerm = presentTerm;
+	}
+	
+	@Override
 	public String toString() {
-		
+		String str = "";
+		for (IComplex complex : this) {
+			str += complex.toString();
+		}
+		return str;
+	}
+
+	@Override
+	public Iterator<IComplex> iterator() {
+		return new SequenceIterator(this);
+	}
+
+	public INextTerm getNextTerm() {
+		return nextTerm;
 	}
 
 }
