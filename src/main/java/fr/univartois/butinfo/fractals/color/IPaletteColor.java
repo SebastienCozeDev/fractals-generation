@@ -9,11 +9,10 @@ import java.awt.Color;
  *
  * @version 0.1.0
  */
-public interface IColor {
-	
+public interface IPaletteColor {
+ 
 	/**
-	 * 
-	 * @param color
+	 * Methode pour avoir la couleur
 	 */
-	void Color(Color color);
+	void paletteColor(Color color);
 }
