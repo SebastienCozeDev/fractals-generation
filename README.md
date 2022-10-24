@@ -60,3 +60,35 @@ du choix des patrons de conception et des structures de données utilisées. Vou
 également en quoi les différentes ressources de votre formation vous ont aidés à réaliser ce
 projet, et les difficultés que vous avez rencontrées pendant son développement. Ce rapport
 devra également être ajouté à la racine de votre dépôt GitLab.
+
+## Rapport
+
+Chaque sous-partie est ordonné par jours.
+
+### Description du travail réalisé.
+
+*Lundi 24 octobre 2022.*
+
+- Sébastien a réalisé la partie sur la généralités des listes.
+- Théo a réalisé la partie du choix des couleurs et a mis à jour le diagramme UML.
+- Shahin a implémenter les opérations pour les nombres complexes.
+
+### Justification de nos choix.
+
+*Lundi 24 octobre 2022.*
+
+- Sébastien a choisi de prendre, pour la représentation d'une suite, une stratégie *strategy* car elle permet de rendre interchangeables des algorithmes ayant des rôles similaires. Effectivement, les suites sont toutes pareils, sauf au niveau du calcul du prochain terme.
+- Théo a choisi de prendre une stratégie *strategy* pour gérer le choix des palettes. Il a choisi de faire un composite pour traiter les élément de la classe `java.awt.color`.
+
+### Comment la formation nous a aidé ?
+
+*Lundi 24 octobre 2022.*
+
+Sébastien et Théo ont su faire le choix du patron de conception grâce à la ressource de qualité de développement.
+
+### Difficultés rencontrées
+
+*Lundi 24 octobre 2022.*
+
+- Sébastien a eu des difficultés à trouver le patron de conception. En effet, il pensait, au début, qu'il fallait faire un constructeur abstrait. Il a aussi eu des difficultés pour la création de l'Itérateur *Iterator*.
+- Théo a eu des difficultés à trouver les patron de conception. Effectivement, il ne pensait pas du tout à faire une stratégie *strategy* mais à faire un singleton ou un proxy.
