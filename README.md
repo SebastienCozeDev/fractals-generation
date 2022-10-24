@@ -48,3 +48,15 @@ java -jar build/libs/sae-2022-2023.jar --help
 
 Les options acceptées par ce JAR sont les mêmes que celles décrites dans la
 section précédente.
+
+## To do 
+- Le code source de votre bibliothèque sur GitLab, dont vous déposerez le lien sur Moodle.
+- Le diagramme de classes de votre application, à la racine de votre dépôt GitLab, idéalement en
+intégrant dans le README de votre projet un diagramme PlantUML.
+- Différents scripts permettant d’exécuter votre application, que vous ajouterez dans un répertoire
+scripts à la racine de votre dépôt GitLab (voir la section dédiée plus loin).
+- Un rapport (au format Markdown) décrivant le travail réalisé par chacun, ainsi que la justification
+du choix des patrons de conception et des structures de données utilisées. Vous y indiquerez
+également en quoi les différentes ressources de votre formation vous ont aidés à réaliser ce
+projet, et les difficultés que vous avez rencontrées pendant son développement. Ce rapport
+devra également être ajouté à la racine de votre dépôt GitLab.
