@@ -1,5 +1,12 @@
 package fr.univartois.butinfo.fractals.figure;
 
+/**
+ * Le decorateur pour ajouter une rotation.
+ *
+ * @author Theo Journee
+ *
+ * @version 0.1.0
+ */
 public class FigureRotationDecorator implements IFigure {
 
 	/**
