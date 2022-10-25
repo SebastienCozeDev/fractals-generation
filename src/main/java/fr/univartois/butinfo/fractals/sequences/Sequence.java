@@ -34,7 +34,6 @@ public class Sequence implements Iterable<IComplex> {
 	 * Crée une nouvelle instance de Sequence.
 	 * 
 	 * @param nextTerme    La stratégie pour obtenir le prochain terme.
-	 * @param firstElement Le premier élément de la suite.
 	 */
 	public Sequence(INextTerm nextTerme) {
 		this.nextTerm = nextTerme;
