@@ -2,6 +2,7 @@ package fr.univartois.butinfo.fractals.complex;
 
 import java.util.Objects;
 
+/*Classe implementant les operations de nombre complexe */
 public class Complex implements IComplex{
 	
 	private final double re;   // the real part
