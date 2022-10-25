@@ -1,5 +1,12 @@
 package fr.univartois.butinfo.fractals.figure;
 
+/**
+ * Le decorateur pour ajouter une echelle.
+ *
+ * @author Theo Journee
+ *
+ * @version 0.1.0
+ */
 public class FigureEchelleDecorator implements IFigure {
 	/**
 	 * position x.
