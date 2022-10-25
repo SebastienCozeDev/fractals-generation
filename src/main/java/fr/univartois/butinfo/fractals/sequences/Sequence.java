@@ -23,7 +23,7 @@ public class Sequence implements Iterable<IComplex> {
 	/**
 	 * Le premier terme.
 	 */
-	private final IComplex firstElement;
+	private IComplex firstTerm;
 
 	/**
 	 * Le terme courant.
@@ -36,10 +36,8 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param nextTerme    La stratégie pour obtenir le prochain terme.
 	 * @param firstElement Le premier élément de la suite.
 	 */
-	public Sequence(INextTerm nextTerme, IComplex firstElement) {
+	public Sequence(INextTerm nextTerme) {
 		this.nextTerm = nextTerme;
-		this.firstElement = firstElement;
-		presentTerm = firstElement;
 	}
 
 	/**
@@ -57,6 +55,7 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param presentTerm Le nouveau terme courant.
 	 */
 	public void setPresentTerm(IComplex presentTerm) {
+		nextTerm.setPresentTerm(presentTerm);
 		this.presentTerm = presentTerm;
 	}
 
@@ -81,6 +80,26 @@ public class Sequence implements Iterable<IComplex> {
 	 */
 	public INextTerm getNextTerm() {
 		return nextTerm;
+	}
+
+	/**
+	 * Getter pour le premier terme.
+	 * 
+	 * @return Le premier terme.
+	 */
+	public IComplex getFirstTerm() {
+		return firstTerm;
+	}
+
+	/**
+	 * Setter pour le premier terme.
+	 * 
+	 * @param firstTerm Le nouveau premier terme.
+	 */
+	public void setFirstTerm(IComplex firstTerm) {
+		nextTerm.setFirstTerm(firstTerm);
+		this.firstTerm = firstTerm;
+		this.presentTerm = this.firstTerm;
 	}
 
 }

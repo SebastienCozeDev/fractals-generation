@@ -14,6 +14,20 @@ import fr.univartois.butinfo.fractals.complex.IComplex;
 public interface INextTerm {
 
 	/**
+	 * Setter pour le premier terme.
+	 * 
+	 * @param firstTerme Le premier terme.
+	 */
+	void setFirstTerm(IComplex firstTerme);
+
+	/**
+	 * Setter pour le terme courant.
+	 * 
+	 * @param presentTerm Le nouveau courant.
+	 */
+	void setPresentTerm(IComplex presentTerm);
+
+	/**
 	 * Permet de calculer le prochain terme d'une suite.
 	 */
 	IComplex calculateNextTerm(IComplex lastTerm);
