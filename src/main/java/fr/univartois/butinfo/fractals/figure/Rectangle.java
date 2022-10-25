@@ -1,55 +1,55 @@
 package fr.univartois.butinfo.fractals.figure;
 
-
 public class Rectangle {
-	
+
 	/**
 	 * position x coté gauche du rectangle.
 	 */
 	private int x;
-	
+
 	/**
 	 * position y coté gauche du rectangle
 	 */
 	private int y;
-	
+
 	/**
 	 * Largeur du rectangle.
 	 */
 	private int width;
-	
+
 	/**
 	 * Hauteur du rectangle.
 	 */
 	private int height;
-	
+
 	/**
 	 * position x corne gauche du rectangle.
 	 */
 	private int rx;
-	
+
 	/**
 	 * position y corne gauche du rectangle.
 	 */
 	private int ry;
-	
+
 	/**
 	 * Couleur du rectangle.
 	 */
 	private String stroke;
-	
+
 	/**
 	 * le fond.
 	 */
 	private String fill;
-	
+
 	/**
 	 * largeur de couleur.
 	 */
 	private int strokeWidth;
-	
+
 	/**
-	 * Constructeur.
+	 * Cosntructeur.
+	 * 
 	 * @param x
 	 * @param y
 	 * @param width
@@ -62,19 +62,20 @@ public class Rectangle {
 	 */
 	public Rectangle(int x, int y, int width, int height, int rx, int ry, String stroke, String fill, int strokeWidth) {
 		super();
-		this.setX(x);
-		this.setY(y);
+		this.x = x;
+		this.y = y;
 		this.width = width;
 		this.height = height;
-		this.setRx(rx);
-		this.setRy(ry);
-		this.setStroke(stroke);
+		this.rx = rx;
+		this.ry = ry;
+		this.stroke = stroke;
 		this.fill = fill;
-		this.setStrokeWidth(strokeWidth);
+		this.strokeWidth = strokeWidth;
 	}
-	
+
 	/**
 	 * Getter de x postion.
+	 * 
 	 * @return
 	 */
 	public int getX() {
@@ -82,33 +83,28 @@ public class Rectangle {
 	}
 
 	/**
-	 * Setter.x postion.
-	 * @param x
-	 */
-	public void setX(int x) {
-		this.x = x;
-	}
-	
-	/**
 	 * Getter Y position.
+	 * 
 	 * @return
 	 */
 	public int getY() {
 		return y;
 	}
-	
-	/**
-	 * Setter de Y position.
-	 * @param y
-	 */
-	public void setY(int y) {
-		this.y = y;
-	}
 
+	/**
+	 * Getter pour la largeur.
+	 * 
+	 * @return
+	 */
 	public int getWidth() {
 		return width;
 	}
 
+	/**
+	 * Getter de hauteur.
+	 * 
+	 * @return
+	 */
 	public int getHeight() {
 		return height;
 	}
@@ -117,43 +113,33 @@ public class Rectangle {
 		return rx;
 	}
 
-	public void setRx(int rx) {
-		this.rx = rx;
-	}
-
 	public int getRy() {
 		return ry;
 	}
 
-	public void setRy(int ry) {
-		this.ry = ry;
-	}
-
-	public String getStroke() {
-		return stroke;
-	}
-
-	public void setStroke(String stroke) {
-		this.stroke = stroke;
-	}
-
-	public String getFill() {
-		return fill;
-	}
-
+	/**
+	 * Getter de couleur largeur.
+	 * 
+	 * @return
+	 */
 	public int getStrokeWidth() {
 		return strokeWidth;
 	}
 
+	/**
+	 * Setter de coueleur largeur.
+	 * 
+	 * @param strokeWidth
+	 */
 	public void setStrokeWidth(int strokeWidth) {
 		this.strokeWidth = strokeWidth;
 	}
-	
+
 	/**
 	 * Methode de chaine de caractere svg.
 	 */
 	public String toString() {
-		return "< rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry="
-				+ ry + ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + "/>";
+		return "< rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry=" + ry
+				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + "/>";
 	}
 }
