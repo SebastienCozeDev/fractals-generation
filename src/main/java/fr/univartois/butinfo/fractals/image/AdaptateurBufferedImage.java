@@ -16,10 +16,9 @@ public class AdaptateurBufferedImage implements IFractalImage {
 	private final BufferedImage bufferedimage;
 	private Pixel pixel;
 	
-	public AdaptateurBufferedImage(BufferedImage bufferedimage) {
-		this.bufferedimage=bufferedimage;
+	public AdaptateurBufferedImage(BufferedImage bufferedimage,IFractalImage image) {
+		this.bufferedimage=bufferedimage;	
 	}
-	
 	@Override
 	public int getHeight() {
 		return bufferedimage.getHeight();
@@ -32,11 +31,12 @@ public class AdaptateurBufferedImage implements IFractalImage {
 
 	@Override
 	public Pixel getPixel(int row, int column) {
-		return 0;
+		return ((IFractalImage) bufferedimage).getPixel(row, column); 
 	}
 
 	@Override
 	public void setColor(int row, int column, Color color) {
+		 ((IFractalImage) bufferedimage).setColor(column,row,color);
 	}
 
 	@Override
@@ -47,5 +47,4 @@ public class AdaptateurBufferedImage implements IFractalImage {
 	public BufferedImage getBufferedimage() {
 		return bufferedimage;
 	}
-
 }
