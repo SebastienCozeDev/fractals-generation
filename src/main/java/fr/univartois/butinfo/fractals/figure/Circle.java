@@ -30,6 +30,8 @@ public class Circle {
 	 * largeur de couleur.
 	 */
 	private int strokeWidth;
+	
+	private IFigure decorated;
 
 	public Circle(int r, int cx, int cy, String stroke, String fill, int strokeWidth) {
 		this.r=r;
@@ -44,6 +46,6 @@ public class Circle {
 	 */
 	public String toString() {
 		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < circle  cx=" + cx + ", cy=" + cy+",r=" + r
-				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + "/> </svg>";
+				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated+"/> </svg>";
 	}
 }
