@@ -1,5 +1,12 @@
 package fr.univartois.butinfo.fractals.figure;
 
+/**
+ * La classe du Rectangle.
+ *
+ * @author Theo journee
+ *
+ * @version 0.1.0
+ */
 public class Rectangle {
 
 	/**
