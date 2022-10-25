@@ -61,7 +61,6 @@ public class Rectangle {
 	 * @param strokeWidth
 	 */
 	public Rectangle(int x, int y, int width, int height, int rx, int ry, String stroke, String fill, int strokeWidth) {
-		super();
 		this.x = x;
 		this.y = y;
 		this.width = width;
