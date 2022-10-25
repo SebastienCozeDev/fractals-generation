@@ -39,7 +39,7 @@ public class JuliaNextTerm implements INextTerm {
 	 * @param c Le nombre complexe c de la suite de Julia.
 	 */
 	public JuliaNextTerm(IComplex z, IComplex c) {
-		firstTerm = c.add(z.multiply(z));
+		setFirstTerm(c.add(z.multiply(z)));
 	}
 
 	@Override
