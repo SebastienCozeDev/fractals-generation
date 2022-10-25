@@ -32,7 +32,9 @@ public class line {
 	 * largeur.
 	 */
 	private int strokeWidth;
-
+	
+	private IFigure decorated;
+	
 	/**
 	 * Constructeur.
 	 * @param x1
@@ -56,7 +58,7 @@ public class line {
 	 */
 	public String toString() {
 		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < line  x1=" + x1 + ", y1=" + y1 + ",x2=" + x2 + ", y2=" + y2 
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth + "/> </svg>";
+				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/> </svg>";
 	}
 }
 
