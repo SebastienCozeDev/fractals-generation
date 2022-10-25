@@ -1,4 +1,6 @@
 package fr.univartois.butinfo.fractals.complex;
+/* cette classe  propose une représentation du plan complexe permettant de faire la relation entre les pixels
+d’une image et un nombre complexe */
 
 public class ComplexImage  {
 	
@@ -24,6 +26,7 @@ public class ComplexImage  {
 	public double getIm() {
 		return im;
 	}
+	
 
 	public ComplexImage(double re, double im, int height, int width) {
 		this.re = re;
