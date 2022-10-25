@@ -46,6 +46,8 @@ public class Rectangle {
 	 * largeur de couleur.
 	 */
 	private int strokeWidth;
+	
+	private IFigure decorated;
 
 	/**
 	 * Cosntructeur.
@@ -139,6 +141,6 @@ public class Rectangle {
 	 */
 	public String toString() {
 		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry=" + ry
-				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + "/> </svg>";
+				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated + "/> </svg>";
 	}
 }
