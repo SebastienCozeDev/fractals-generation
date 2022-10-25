@@ -78,6 +78,7 @@ public class Complex implements IComplex{
 		return new Complex(a, b);
 	}
 	
+	//equals
 	public boolean equals(Object x) {
         if (x == null) return false;
         if (this.getClass() != x.getClass()) return false;
