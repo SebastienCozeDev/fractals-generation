@@ -1,5 +1,12 @@
 package fr.univartois.butinfo.fractals.figure;
 
+/**
+ * La classe Polyligne figure.
+ *
+ * @author Theo Journee
+ *
+ * @version 0.1.0
+ */
 public class Polyligne {
 
 	/**
