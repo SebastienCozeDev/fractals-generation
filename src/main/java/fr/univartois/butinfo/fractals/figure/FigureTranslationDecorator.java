@@ -1,5 +1,12 @@
 package fr.univartois.butinfo.fractals.figure;
 
+/**
+ * Le decorateur pour ajouter une translation.
+ *
+ * @author Theo Journee
+ *
+ * @version 0.1.0
+ */
 public class FigureTranslationDecorator implements IFigure {
 
 	/**
