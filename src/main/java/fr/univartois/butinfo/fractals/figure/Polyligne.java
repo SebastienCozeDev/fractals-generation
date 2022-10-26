@@ -34,7 +34,7 @@ public class Polyligne {
 	 * Methode de chaine de caractere svg.
 	 */
 	public String toString() {
-		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < points=\"50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180\""
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/> </svg>";
+		return "< points=\"50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180\""
+				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
 	}
 }
