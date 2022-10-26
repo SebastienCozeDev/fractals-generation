@@ -7,7 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Circle {
+public class Circle implements IFigure {
 	
 	/**
 	 * rayon du cercle.
@@ -43,10 +43,9 @@ public class Circle {
 
 	public Circle(int r, int cx, int cy, String stroke, String fill, int strokeWidth) {}
 	
-	/**
-	 * Methode de chaine de caractere svg.
-	 */
-	public String toString() {
+
+	@Override
+	public String ToString() {
 		return "< circle  cx=" + cx + ", cy=" + cy+",r=" + r
 				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated+"/>";
 	}
