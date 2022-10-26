@@ -2,7 +2,7 @@ package fr.univartois.butinfo.fractals.complex;
 
 /*decorateur permettant de zoomer sur l'image*/
 
-public abstract class ComplexPlanZoomDecorator implements IComplexPlan {
+public class ComplexPlanZoomDecorator implements IComplexPlan {
 
 	private final double constant;
 

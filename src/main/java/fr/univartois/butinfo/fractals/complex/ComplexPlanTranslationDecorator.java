@@ -1,8 +1,9 @@
 package fr.univartois.butinfo.fractals.complex;
 
-/*Decorateur pour faire une translation de l'image */
-
-public abstract class ComplexPlanTranslationDecorator implements IComplexPlan {
+/**
+ * Decorateur pour faire une translation de l'image.
+ */
+public class ComplexPlanTranslationDecorator implements IComplexPlan {
 
 
 	private final IComplex constant;
