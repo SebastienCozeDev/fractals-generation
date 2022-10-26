@@ -37,7 +37,7 @@ public class FractalImage {
 	 * Échelle de l'image. Elle correspond à la largeur d'un pixel dans le plan
 	 * complexe.
 	 */
-	private int scale;
+	private double scale;
 
 	/**
 	 * Point central de l'image.
@@ -82,7 +82,7 @@ public class FractalImage {
 	public void createImage(int maxIteration, IColorPaletteStrategy colorPaletteStrategy) {
 		// TODO Il faut créer une translation pour placer le point central correctement.
 		// TODO Il faut créer un zoom pour appliquer l'échelle.
-		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, scale));
+		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, 1));
 		int k = 0;
 		ColorPalette paletteColor = new ColorPalette(maxIteration, colorPaletteStrategy);
 		ComplexPlan complexPlan = new ComplexPlan(height, width);

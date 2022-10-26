@@ -215,7 +215,7 @@ public final class Fractals {
 			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new BlueColorPaletteStrategy()));
 		else
 			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GrayColorPaletteStrategy()));
-		fractalImageBuilder.withScale():
+		fractalImageBuilder.withScale(scale);
 	}
 
 	/**
