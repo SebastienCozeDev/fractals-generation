@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  *
  * @version 0.1.0
  */
-public class AdaptateurBufferedImage implements IFractalImage {
+public class BufferedImageAdaptator implements IFractalImage {
 
 	/**
 	 * Instance de la classe BifferedImage.
@@ -32,7 +32,7 @@ public class AdaptateurBufferedImage implements IFractalImage {
 	 * 
 	 * @param bufferedimage
 	 */
-	public AdaptateurBufferedImage(BufferedImage bufferedimage) {
+	public BufferedImageAdaptator(BufferedImage bufferedimage) {
 		this.bufferedimage = bufferedimage;
 	}
 

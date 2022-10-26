@@ -20,8 +20,8 @@ import java.awt.Color;
 import java.io.IOException;
 
 /**
- * L'interface IFractalImage fournit les méthodes permettant de manipuler l'image sur
- * laquelle représenter des fractales.
+ * L'interface IFractalImage fournit les méthodes permettant de manipuler
+ * l'image sur laquelle représenter des fractales.
  *
  * @author Romain Wallon
  *
@@ -29,46 +29,46 @@ import java.io.IOException;
  */
 public interface IFractalImage {
 
-    /**
-     * Donne la hauteur de cette image, mesurée en pixels.
-     *
-     * @return La hauteur de cette image.
-     */
-    int getHeight();
+	/**
+	 * Donne la hauteur de cette image, mesurée en pixels.
+	 *
+	 * @return La hauteur de cette image.
+	 */
+	int getHeight();
 
-    /**
-     * Donne la largeur de cette image, mesurée en pixels.
-     *
-     * @return La largeur de cette image.
-     */
-    int getWidth();
+	/**
+	 * Donne la largeur de cette image, mesurée en pixels.
+	 *
+	 * @return La largeur de cette image.
+	 */
+	int getWidth();
 
-    /**
-     * Donne le pixel de cette image à la position donnée.
-     *
-     * @param row La ligne où se trouve le pixel.
-     * @param column La colonne où se trouve le pixel.
-     *
-     * @return Le pixel à la position donnée.
-     */
-    Pixel getPixel(int row, int column);
+	/**
+	 * Donne le pixel de cette image à la position donnée.
+	 *
+	 * @param row    La ligne où se trouve le pixel.
+	 * @param column La colonne où se trouve le pixel.
+	 *
+	 * @return Le pixel à la position donnée.
+	 */
+	Pixel getPixel(int row, int column);
 
-    /**
-     * Met à jour la couleur du pixel à la position donnée.
-     *
-     * @param row La ligne du pixel à mettre à jour.
-     * @param column La couleur du pixel à mettre à jour.
-     * @param color La nouvelle couleur du pixel.
-     */
-    void setColor(int row, int column, Color color);
+	/**
+	 * Met à jour la couleur du pixel à la position donnée.
+	 *
+	 * @param row    La ligne du pixel à mettre à jour.
+	 * @param column La couleur du pixel à mettre à jour.
+	 * @param color  La nouvelle couleur du pixel.
+	 */
+	void setColor(int row, int column, Color color);
 
-    /**
-     * Sauvegarde cette image dans un fichier.
-     *
-     * @param path Le chemin du fichier où sauvegarder l'image.
-     *
-     * @throws IOException Si une erreur se produit lors de l'écriture.
-     */
-    void saveAs(String path) throws IOException;
+	/**
+	 * Sauvegarde cette image dans un fichier.
+	 *
+	 * @param path Le chemin du fichier où sauvegarder l'image.
+	 *
+	 * @throws IOException Si une erreur se produit lors de l'écriture.
+	 */
+	void saveAs(String path) throws IOException;
 
 }
