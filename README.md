@@ -307,14 +307,120 @@ Sequence o-- "1" IComplex
 
 ## Rapport
 
-Chaque sous-partie est ordonné par jours.
+### Les nombres complexes
 
-### Description du travail réalisé.
+__Implantation des opérations sur les nombres complexes__
+
+Shahin s'est occupé de cette partie. Il n'a pas dû faire de choix.
+
+Il a eu des difficultés pour la conception des différentes opérations.
+
+__Implantation des opérations sur le plan complexe__
+
+Shahin s'est occupé de cette partie. Il a choisi de faire la translation et le zoom à l'aide d'un *decorator* car il n'est pas obligatoire d'appliquer une translation ou un zoom. Il a aussi dû faire un adaptateur pour permettre de calculer la distance entre deux points et de convertir un point du plan en un objet de type `IComplex`.
+
+C'est grâce à la formation qu'il a su choisir les patrons de conception. Plus précisement, le *design pattern*.
+
+Enfin, il a eu des difficultés dans le conception des *decorators*.
+
+### Suites complexes et fractales
+
+__Généralités sur les suites__
+
+Sébastien s'est occupé de cette partie. Pour la représentation de la suite, il a choisi de la faire à l'aide d'une *strategy* car elle permet de rendre interchangeables des algorithmes qui ont des rôles similaires. Effectivement, les suites sont toutes pareils, sauf au niveau du calcul du prochain terme. De plus, pour le parcours de la suite, il a décidé de le faire avec un *iterator* car il faut pouvoir passer du terme courant au terme suivant.
+
+C'est grâce à la ressources de qualité de développement qu'il a pu identifier le patron de conception qu'il fallait utiliser.
+
+Enfin, il a eu des difficultés à trouver le patron de conception. En effet, il pensais, au début, qu'il fallait faire un constructeur abstrait. Il a aussi eu des difficultés dans la conception de l'*iterator*.
+
+__Ensembles de Julia__
+
+Sébastien s'est occupé de cette partie. Il n'a pas du faire de choix.
+
+__Ensemble de Mandelbrot__
+
+Sébastien s'est occupé de cette partie. Il n'a pas du faire de choix.
+
+__Ensemble de Julia et de Mandelbrot généralisés__
+
+Sébastien s'est occupé de cette partie. Il n'a pas du faire de choix.
+
+### Choix des couleurs
+
+Théo et Sébastien se sont occupés de cette partie. Pour pouvoir représenter les différentes palettes de couleurs, ils ont choisi d'implémanter une *strategy*. Effectivement, plusieurs choix de palettes doivent être possible. Pour ce qui est du masque de couleurs, ils ont choisi de mettre un place un *decorator* car il ne faut pas forcément qu'un masque soit appliqué sur la palette.
+
+C'est grâce à la ressource de qualité de développement que Théo et Sébastien ont pu faire ces choix.
+
+Enfin, ils ont eu des difficultés à trouver le dernier patron de conception. Effectivement, ils pensaient, au début, qu'il fallait faire un *composite*.
+
+### Suites chaotiques et diagrammes de bifurcation
+
+__Suites chaotiques__
+
+*Description*
+
+__Diagramme de bifurcation__
+
+*Description*
+
+### Création d'images en Java
+
+Théo s'est occupé de cette partie. Il a choisi, pour la manipulation des images, d'utiliser un *adaptator* pour permettre à des classes initialement incomptables de communiquer ensemble. Ici, on parle de l'interface `IFractalImage` et de la classe `BufferedImage`.
+
+C'est grâce à la ressource de qualité de développement que Théo a pu faire ces choix.
+
+### Génération des images
+
+Sébastien s'est occupé de cette partie. Il a décidé de l'implémenter à l'aide d'un *builder* pour éviter qu'il n'y ait trop d'arguments dans le constructeur.
+
+C'est grâce à la ressource de qualité de développement qu'il a pu faire ces choix. Plus spécifiquement, les deux diagrammes UML du cours.
+
+Enfin, il a eu des difficultés à effectué cette partie. Effectivement, c'était la première fois qu'il faisait un *builder*.
+
+### Figures et transformations géométriques
+
+__Représentation des différentes figures__
+
+Théo s'est occupé de cette partie. Il a fait un composite pour les figures car cela permet de traiter les différentes figures.
+
+C'est grâce à la ressource de qualité de développement qu'il a pu déterminé le patron de conception qu'il fallait utiliser.
+
+__Construction de fractales à partir de figures géométriques__
+
+*Description*
+
+__Quelques fractales à base de figures géométriques__
+
+*Description*
+
+__Génération des fractales__
+
+*Description*
+
+### Scripts de lancement pour votre application
+
+__La classe principale__
+
+Sébastien a réalisé cette partie. Il n'a pas dû faire de choix pour cette partie.
+
+__Exécution de l'application__
+
+*Description*
+
+__Scripts de lancement__
+
+*Description*
+
+### Diagramme UML et rapport
+
+Théo s'est occupé de mettre à jour, pour chaque jalon, le diagramme UML. De la même manière, Sébastien s'est occupé de mettre à jour le rapport.
+
+### Description du travail réalisé et justifications.
 
 *Lundi 24 octobre 2022.*
 
-- Sébastien a réalisé la partie sur la généralités des listes.
-- Théo a réalisé la partie du choix des couleurs et a mis à jour le diagramme UML.
+- Sébastien a réalisé la partie sur la généralités des suites. Il a décidé de le faire à l'aide d'une *strategy* car elle permet de rendre interchangeable des algorithmes qui ont des rôles similaires. Effectivement, les suites sont toutes pareils, sauf au niveau du calcul du prochain terme.
+- Théo a réalisé la partie du choix des couleurs et a mis à jour le diagramme UML. Il a choisi a choisi de prendre une stratégie *strategy* pour gérer le choix des palettes. Il a choisi de faire un composite pour traiter les élément de la classe `java.awt.color`.
 - Shahin a implémenter les opérations pour les nombres complexes.
 
 *Mardi 25 octobre 2022.*
@@ -325,14 +431,9 @@ Chaque sous-partie est ordonné par jours.
 
 ### Justification de nos choix.
 
-*Lundi 24 octobre 2022.*
-
-- Sébastien a choisi de prendre, pour la représentation d'une suite, une stratégie *strategy* car elle permet de rendre interchangeables des algorithmes ayant des rôles similaires. Effectivement, les suites sont toutes pareils, sauf au niveau du calcul du prochain terme.
-- Théo a choisi de prendre une stratégie *strategy* pour gérer le choix des palettes. Il a choisi de faire un composite pour traiter les élément de la classe `java.awt.color`.
-
 *Mardi 25 octobre 2022.*
 
-Pour la création d'une image, Théo a décidé d'utiliser un adaptateur car cela permet à des classes initialement incompatibles de communiquer ensemble..
+Pour la création d'une image, Théo a décidé d'utiliser un adaptateur car cela permet à des classes initialement incompatibles de communiquer ensemble.
 
 ### Comment la formation nous a aidé ?
 
