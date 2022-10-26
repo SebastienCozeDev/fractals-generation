@@ -57,7 +57,7 @@ public class Ellipse {
 	 * Methode de chaine de caractere svg.
 	 */
 	public String toString() {
-		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < ellipse  cx=" + cx + ", cy=" + cy + ",rx=" + rx + ", ry=" + ry 
-				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated +"/> </svg>";
+		return "< ellipse  cx=" + cx + ", cy=" + cy + ",rx=" + rx + ", ry=" + ry 
+				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated +"/>";
 	}
 }
