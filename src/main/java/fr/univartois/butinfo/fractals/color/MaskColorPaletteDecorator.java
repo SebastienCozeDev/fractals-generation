@@ -7,7 +7,7 @@ public abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy
 	/**
 	 * L'élément décoré.
 	 */
-	private IColorPaletteStrategy decorated;
+	protected IColorPaletteStrategy decorated;
 
 	/**
 	 * Crée une instance de {@link MaskColorPaletteDecorator}.
