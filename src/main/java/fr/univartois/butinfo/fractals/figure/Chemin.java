@@ -31,8 +31,8 @@ public class Chemin {
 	 * Methode de chaine de caractere svg.
 	 */
 	public String toString() {
-		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < path d=\"M20,230 Q40,205 50,230 T90,230\""
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/> </svg>";
+		return "< path d=\"M20,230 Q40,205 50,230 T90,230\""
+				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
 	}
 }
 
