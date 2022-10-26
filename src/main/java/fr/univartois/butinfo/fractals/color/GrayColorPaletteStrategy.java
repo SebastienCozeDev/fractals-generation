@@ -2,6 +2,15 @@ package fr.univartois.butinfo.fractals.color;
 
 import java.awt.Color;
 
+/**
+ * La classe {@link GrayColorPaletteStrategy} correspond à la stratégie
+ * (strategy) pour la palette de gris.
+ * 
+ * @author Théo Journée & Sébastien Coze
+ * 
+ * @version 0.2.0
+ *
+ */
 public class GrayColorPaletteStrategy implements IColorPaletteStrategy {
 
 	/**
