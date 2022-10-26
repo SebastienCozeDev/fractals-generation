@@ -31,7 +31,11 @@ import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.complex.Complex;
+import fr.univartois.butinfo.fractals.image.FractalImage;
 import fr.univartois.butinfo.fractals.image.FractalImageBuilder;
+import fr.univartois.butinfo.fractals.sequences.JuliaNextTerm;
+import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
  * La classe Fractals permet de générer des fractales depuis la ligne de
@@ -204,6 +208,7 @@ public final class Fractals {
 	 */
 	public void buildFractal() {
 		FractalImageBuilder fractalImageBuilder = FractalImageBuilder.newInstance();
+		fractalImageBuilder.withSequence(new Sequence(new JuliaNextTerm(new Complex(4, 8), new Complex(7, 1))));
 		fractalImageBuilder.withFile(outputFile);
 		fractalImageBuilder.withHeight(height);
 		fractalImageBuilder.withWidth(width);
@@ -216,6 +221,8 @@ public final class Fractals {
 		else
 			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GrayColorPaletteStrategy()));
 		fractalImageBuilder.withScale(scale);
+		FractalImage fractalImage = fractalImageBuilder.build();
+		fractalImage.createImage(nbIterations, new RedColorPaletteStrategy());
 	}
 
 	/**

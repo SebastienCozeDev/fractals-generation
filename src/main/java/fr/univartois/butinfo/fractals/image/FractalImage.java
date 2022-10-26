@@ -82,7 +82,7 @@ public class FractalImage {
 	public void createImage(int maxIteration, IColorPaletteStrategy colorPaletteStrategy) {
 		// TODO Il faut créer une translation pour placer le point central correctement.
 		// TODO Il faut créer un zoom pour appliquer l'échelle.
-		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, 1));
+		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, BufferedImage.TYPE_INT_RGB));
 		int k = 0;
 		ColorPalette paletteColor = new ColorPalette(maxIteration, colorPaletteStrategy);
 		ComplexPlan complexPlan = new ComplexPlan(height, width);
