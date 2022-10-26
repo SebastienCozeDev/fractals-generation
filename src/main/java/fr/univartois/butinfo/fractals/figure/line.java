@@ -64,8 +64,8 @@ public class line {
 	 * Methode de chaine de caractere svg.
 	 */
 	public String toString() {
-		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < line  x1=" + x1 + ", y1=" + y1 + ",x2=" + x2 + ", y2=" + y2 
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/> </svg>";
+		return "< line  x1=" + x1 + ", y1=" + y1 + ",x2=" + x2 + ", y2=" + y2 
+				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
 	}
 }
 
