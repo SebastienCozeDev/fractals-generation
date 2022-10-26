@@ -2,7 +2,7 @@ package fr.univartois.butinfo.fractals.image;
 
 import java.awt.image.BufferedImage;
 
-import fr.univartois.butinfo.fractals.color.IPaletteColor;
+import fr.univartois.butinfo.fractals.color.ColorPalette;
 import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
@@ -44,7 +44,7 @@ public class FractalImageBuilder {
 	/**
 	 * Palette de couleurs utilisé par l'image.
 	 */
-	private IPaletteColor colorPalette;
+	private ColorPalette colorPalette;
 
 	/**
 	 * Nom du fichier dans lequel le résultat sera sauvegardé.
@@ -171,7 +171,7 @@ public class FractalImageBuilder {
 	 * 
 	 * @return La palette de couleur.
 	 */
-	public IPaletteColor getColorPalette() {
+	public ColorPalette getColorPalette() {
 		return colorPalette;
 	}
 
@@ -181,7 +181,7 @@ public class FractalImageBuilder {
 	 * @param sequence La palette de couleur utilisée pour la génération de l'image.
 	 * @return Le builder avec ce paramètre.
 	 */
-	public FractalImageBuilder withColorPalette(IPaletteColor colorPalette) {
+	public FractalImageBuilder withColorPalette(ColorPalette colorPalette) {
 		this.colorPalette = colorPalette;
 		return this;
 	}
@@ -206,7 +206,12 @@ public class FractalImageBuilder {
 		this.file = file;
 		return this;
 	}
-	
+
+	/**
+	 * Construire une image fractale.
+	 * 
+	 * @return L'image fractale.
+	 */
 	public FractalImage build() {
 		return new FractalImage(this);
 	}
