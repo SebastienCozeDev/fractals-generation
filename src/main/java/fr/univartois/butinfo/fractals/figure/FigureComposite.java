@@ -14,10 +14,10 @@ public class FigureComposite implements IFigureComposite {
 	}
 		}
 	
-	private void add (IFigureComposite figure) {
+	public void add (IFigureComposite figure) {
 		 this.figures.add(figure);
 	}
-	private void remove (IFigureComposite figure) {
+	public void remove (IFigureComposite figure) {
 		 figures.remove(figure);
 	}
 	
