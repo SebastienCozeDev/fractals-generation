@@ -1,6 +1,8 @@
-package fr.univartois.butinfo.fractals.color;
+package fr.univartois.butinfo.fractals.color.strategies;
 
 import java.awt.Color;
+
+import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
 
 /**
  * La classe {@link GrayColorPaletteStrategy} correspond à la stratégie

@@ -1,17 +1,19 @@
-package fr.univartois.butinfo.fractals.color;
+package fr.univartois.butinfo.fractals.color.strategies;
 
 import java.awt.Color;
 
+import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
+
 /**
- * La classe {@link GreenColorPaletteStrategy} correspond à la stratégie
- * (strategy) pour la palette de vert.
+ * La classe {@link RedColorPaletteStrategy} correspond à la stratégie
+ * (strategy) pour la palette de rouge.
  * 
  * @author Théo Journée & Sébastien Coze
  * 
  * @version 0.2.0
  *
  */
-public class GreenColorPaletteStrategy implements IColorPaletteStrategy {
+public class RedColorPaletteStrategy implements IColorPaletteStrategy {
 
 	/**
 	 * Nombre maximum que peut prendre une teinte de couleur.
@@ -23,8 +25,8 @@ public class GreenColorPaletteStrategy implements IColorPaletteStrategy {
 		if (iterationMax == iteration)
 			return new Color(TINT_MAX, TINT_MAX, TINT_MAX);
 		int tintSeparation = Integer.parseInt(null, TINT_MAX / iterationMax);
-		int greenTint = tintSeparation * iteration;
-		return new Color(TINT_MAX, greenTint, TINT_MAX);
+		int redTint = tintSeparation * iteration;
+		return new Color(redTint, TINT_MAX, TINT_MAX);
 	}
 
 }
