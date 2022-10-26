@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import fr.univartois.butinfo.fractals.color.ColorPalette;
+import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlan;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanTranslationDecorator;
@@ -78,12 +79,12 @@ public class FractalImage {
 	 * 
 	 * @param maxIteration Nombre maximum d'itération.
 	 */
-	public void createImage(int maxIteration) {
+	public void createImage(int maxIteration, IColorPaletteStrategy colorPaletteStrategy) {
 		// TODO Il faut créer une translation pour placer le point central correctement.
 		// TODO Il faut créer un zoom pour appliquer l'échelle.
 		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, scale));
 		int k = 0;
-		ColorPalette paletteColor = new ColorPalette(maxIteration);
+		ColorPalette paletteColor = new ColorPalette(maxIteration, colorPaletteStrategy);
 		ComplexPlan complexPlan = new ComplexPlan(height, width);
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
