@@ -8,7 +8,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Figure implements IFigureComposite {
+public class Figure extends AbstractFigure implements IFigureComposite  {
 
 	@Override
 	public void figureString(String forme) {
