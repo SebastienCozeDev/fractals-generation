@@ -7,7 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Chemin {
+public class Chemin implements IFigure {
 
 
 	/**
@@ -27,10 +27,10 @@ public class Chemin {
 	
 	private IFigure decorated;
 	
-	/**
-	 * Methode de chaine de caractere svg.
-	 */
-	public String toString() {
+
+
+	@Override
+	public String ToString() {
 		return "< path d=\"M20,230 Q40,205 50,230 T90,230\""
 				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
 	}

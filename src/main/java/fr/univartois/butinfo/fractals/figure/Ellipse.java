@@ -7,7 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Ellipse {
+public class Ellipse implements IFigure{
 	
 	/**
 	 * rayon x.
@@ -53,10 +53,9 @@ public class Ellipse {
 		this.fill = fill;
 		this.strokeWidth = strokeWidth;
 	}
-	/**
-	 * Methode de chaine de caractere svg.
-	 */
-	public String toString() {
+	
+	@Override
+	public String ToString() {
 		return "< ellipse  cx=" + cx + ", cy=" + cy + ",rx=" + rx + ", ry=" + ry 
 				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated +"/>";
 	}

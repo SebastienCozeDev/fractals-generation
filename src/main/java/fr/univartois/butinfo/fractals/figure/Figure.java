@@ -1,14 +1,17 @@
 package fr.univartois.butinfo.fractals.figure;
 
-import java.util.Iterator;
 
+/**
+ * La classe qui englobe toute les figures.
+ *
+ * @author Theo Journee
+ *
+ * @version 0.1.0
+ */
+public class Figure implements IFigureComposite {
 
-public class Figure implements Iterable<IFigure>{
-
-	public int length;
-
-	public Iterator<IFigure> iterator() {
-		return new FigureIterator(this);
-	}
-
+	@Override
+	public void figureString(String forme) {
+		System.out.println("toutes les formes"+forme);
+}
 }

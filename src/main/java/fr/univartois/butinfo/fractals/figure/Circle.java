@@ -40,9 +40,12 @@ public class Circle implements IFigure {
 	private int strokeWidth;
 	
 	private IFigure decorated;
-
-	public Circle(int r, int cx, int cy, String stroke, String fill, int strokeWidth) {}
 	
+
+	public Circle(int r2, int cx2, int cy2, Object stroke2, Object fill2, int strokeWidth2) {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	@Override
 	public String ToString() {

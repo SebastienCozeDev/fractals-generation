@@ -7,7 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Polyligne {
+public class Polyligne implements IFigure {
 
 	/**
 	 * position.
@@ -30,10 +30,8 @@ public class Polyligne {
 		this.stroke = stroke;
 	}
 
-	/**
-	 * Methode de chaine de caractere svg.
-	 */
-	public String toString() {
+	@Override
+	public String ToString() {
 		return "< points=\"50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180\""
 				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
 	}

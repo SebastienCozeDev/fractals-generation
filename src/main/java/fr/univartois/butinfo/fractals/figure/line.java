@@ -7,7 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class line {
+public class line implements IFigure {
 
 
 	/**
@@ -60,10 +60,8 @@ public class line {
 		this.stroke = stroke;
 	}
 
-	/**
-	 * Methode de chaine de caractere svg.
-	 */
-	public String toString() {
+	@Override
+	public String ToString() {
 		return "< line  x1=" + x1 + ", y1=" + y1 + ",x2=" + x2 + ", y2=" + y2 
 				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
 	}
