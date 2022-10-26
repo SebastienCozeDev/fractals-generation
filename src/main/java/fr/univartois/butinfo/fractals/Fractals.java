@@ -26,6 +26,8 @@ import fr.cril.cli.annotations.Args;
 import fr.cril.cli.annotations.Description;
 import fr.cril.cli.annotations.LongName;
 import fr.cril.cli.annotations.ShortName;
+import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.image.FractalImageBuilder;
 
 /**
  * La classe Fractals permet de générer des fractales depuis la ligne de
@@ -197,8 +199,13 @@ public final class Fractals {
 	 * Crée la fractale demandée dans la ligne de commande.
 	 */
 	public void buildFractal() {
-		// TODO Ajoutez ici le code pour utiliser votre implantation et créer la
-		// fractale.
+		FractalImageBuilder fractalImageBuilder = FractalImageBuilder.newInstance();
+		fractalImageBuilder.withFile(outputFile);
+		fractalImageBuilder.withHeight(height);
+		fractalImageBuilder.withWidth(width);
+		if (paletteName.equals("Gray")) {
+			fractalImageBuilder.withColorPalette(new GrayColorPaletteStrategy());
+		}
 	}
 
 	/**

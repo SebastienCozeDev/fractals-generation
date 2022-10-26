@@ -24,8 +24,9 @@ public class ColorPalette {
 	 * 
 	 * @param iterationNumber Nombre d'itération maximale.
 	 */
-	public ColorPalette(int iterationNumber) {
+	public ColorPalette(int iterationNumber, IColorPaletteStrategy colorPaletteStrategy) {
 		this.ITERATION_NUMBER_MAX = iterationNumber;
+		this.colorPaletteStrategy = colorPaletteStrategy;
 	}
 
 	/**
