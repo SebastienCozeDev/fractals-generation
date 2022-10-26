@@ -7,7 +7,7 @@ import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
 
 /**
  * La classe {@link OnlyRedDecorator} correspond au masque qui ne laisse passer
- * que la couleur bleue.
+ * que la couleur rouge.
  * 
  * @author Sébastien Coze
  * 
