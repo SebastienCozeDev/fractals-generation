@@ -17,7 +17,7 @@ import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
 public class OnlyGreenDecorator extends MaskColorPaletteDecorator {
 
 	/**
-	 * Crée une instance de {@link OnlyRedDecorator}.
+	 * Crée une instance de {@link OnlyGreenDecorator}.
 	 * 
 	 * @param decorated L'objet décoré.
 	 */
