@@ -1,7 +1,5 @@
 package fr.univartois.butinfo.fractals.image;
 
-import java.awt.image.BufferedImage;
-
 import fr.univartois.butinfo.fractals.color.ColorPalette;
 import fr.univartois.butinfo.fractals.sequences.Sequence;
 
