@@ -1,9 +1,9 @@
 package fr.univartois.butinfo.fractals.image;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-import fr.univartois.butinfo.fractals.color.IPaletteColor;
-import fr.univartois.butinfo.fractals.color.PaletteColor;
+import fr.univartois.butinfo.fractals.color.ColorPalette;
 import fr.univartois.butinfo.fractals.complex.ComplexPlan;
 import fr.univartois.butinfo.fractals.complex.IComplex;
 import fr.univartois.butinfo.fractals.sequences.Sequence;
@@ -48,7 +48,7 @@ public class FractalImage {
 	/**
 	 * Palette de couleurs utilisé par l'image.
 	 */
-	private IPaletteColor colorPalette;
+	private ColorPalette colorPalette;
 
 	/**
 	 * Nom du fichier dans lequel le résultat sera sauvegardé.
@@ -68,24 +68,31 @@ public class FractalImage {
 		this.sequence = b.getSequence();
 		this.colorPalette = b.getColorPalette();
 	}
-	
+
 	/**
 	 * Crée l'image.
+	 * 
+	 * @param maxIteration Nombre maximum d'itération.
 	 */
-	public void createImage() {
+	public void createImage(int maxIteration) {
 		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, scale));
 		int k = 0;
+		ColorPalette paletteColor = new ColorPalette(maxIteration);
+		ComplexPlan complexPlan = new ComplexPlan(height, width);
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
 				k = 0;
-				PaletteColor paletteColor = new PaletteColor(new Pixel(image, i, j));
-				ComplexPlan complexPlan = new ComplexPlan(i, j);
 				sequence.setFirstTerm(complexPlan.asComplex(i, j));
 				for (IComplex complex : sequence) {
-					k++;					
+					k++;
 				}
-				paletteColor.getColor();
+				image.setColor(i, j, paletteColor.getColor(k));
 			}
+		}
+		try {
+			image.saveAs(file);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
