@@ -2,22 +2,34 @@ package fr.univartois.butinfo.fractals.complex;
 
 public class AdaptateurComplex implements IPlanPoint {
 
+	private IComplex complex;
+
+	public AdaptateurComplex(IComplex complex) {
+		
+		this.complex=complex;
+	}
+
+	
 	@Override
 	public double X() {
-		
-		return 0;
+
+		return this.complex.getRealPart();
 	}
 
 	@Override
 	public double Y() {
-		
-		return 0;
+
+		return this.complex.getImaginaryPart();
 	}
 
 	@Override
 	public double distance(IPlanPoint point) {
-		
-		return 0;
+		 return Math.sqrt(Math.pow(point.X()-X(),2)+ Math.pow(point.Y()-Y(),2));
 	}
 
+	@Override
+	public IComplex convertirEnIComplex() {			
+		return complex;
+	}
+	
 }
