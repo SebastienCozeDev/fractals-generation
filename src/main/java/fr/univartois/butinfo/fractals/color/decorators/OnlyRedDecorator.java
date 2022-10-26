@@ -16,6 +16,11 @@ import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
  */
 public class OnlyRedDecorator extends MaskColorPaletteDecorator {
 
+	/**
+	 * Crée une instance de {@link OnlyRedDecorator}.
+	 * 
+	 * @param decorated L'objet décoré.
+	 */
 	public OnlyRedDecorator(IColorPaletteStrategy decorated) {
 		super(decorated);
 	}
@@ -23,10 +28,7 @@ public class OnlyRedDecorator extends MaskColorPaletteDecorator {
 	@Override
 	public Color getColor(int iterationMax, int iteration) {
 		Color c = super.decorated.getColor(iterationMax, iteration);
-		Color colorWithMask = new Color(c.getRed(), 0, 0);
-		return colorWithMask;
+		return new Color(c.getRed(), 0, 0);
 	}
-	
-	
-	
+
 }
