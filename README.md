@@ -91,6 +91,10 @@ class Fractals {
 package fr.univartois.butinfo.fractals.complex {
     class Complex
     interface IComplex
+    class ComplexPlan
+    class ComplexPlanTranslationDecorator
+    class ComplexPlanZoomDecorator
+    interface IComplexPlan
 }
 
 class Complex implements IComplex {
@@ -124,6 +128,35 @@ interface IComplex {
     + multiply(IComplex) : IComplex
     + divide(IComplex) : IComplex
 }
+interface IComplexPlan{
+   +  asComplex(IComplex) : IComplex;
+}
+class ComplexPlanZoomDecorator implements IComplexPlan {
+    + constant : double
+
+    + ComplexPlanZoomDecorator(double)
+    + asComplex(IComplex) : IComplex;
+}
+class ComplexPlanTranslationDecorator implements IComplexPlan {
+    + constant : double
+
+    + ComplexPlanTranslationDecorator(double)
+    + asComplex(IComplex) : IComplex;
+}
+class ComplexPlan {
+     +  decorated : IComplexPlan
+     +  re : double im 
+     +  im : double
+     + height : int
+     + width : int
+   
+     + ComplexPlanTranslationDecorator(double,double,height,width)
+     + asComplex(IComplex) : IComplex
+     + getHeight() : int
+     + getWidth() : int
+     + getRe() : double
+     + getIm() : double
+}
 
 package fr.univartois.butinfo.fractals.color {
     class PaletteColor
@@ -148,6 +181,19 @@ interface IPaletteColor {
 package fr.univartois.butinfo.fractals.image {
     class Pixel
     interface IFractalImage
+    class AdaptateurBufferedImage
+}
+
+class AdaptateurBufferedImage implements IFractalImage {
+    + bufferedimage : BufferedImage
+    + pixel : Pixel
+   
+    + AdaptateurBufferedImage(BufferedImage)
+    + getHeight() : int
+    + getWidt() : int
+    + getPixel(row,column) : int
+    + saveAs(String) : void
+    + setColor(Color,row;column) : void
 }
 class Pixel {
     - image : IFractalImage
@@ -174,9 +220,58 @@ package fr.univartois.butinfo.fractals.sequences{
     interface INextTerm
     class Sequence
     class SequenceIterator
-    
+    class JuliaGeneralizationNextTerm
+    class JuliaNextTerm
+    class MandelbrotGeneralizationNextTermx
+    class MandelbrotNextTerm
 }
+class JuliaGeneralizationNextTerm implements INextTerm{
+     + firstTerm : IComplex
+     + presentTerm : IComplex
+     + z : IComplex
+     + c : IComplex
+     + binaryOperator : BinaryOperator<IComplex>
 
+     + JuliaGeneralizationNextTerm(IComplex,IComplex, BinaryOperator<IComplex>)
+     + calculateNextTerm(IComplex) : IComplex
+     + setFirstTerm(IComplex) : void
+     + setPresentTerm(IComplex) : void
+}
+class JuliaNextTerm implements INextTerm {
+       + firstTerm : IComplex
+       + presentTerm : IComplex
+       + z : IComplex
+       + c : IComplex
+    
+       + JuliaNextTerm(IComplex,IComplex)
+       + calculateNextTerm(IComplex) : IComplex
+       + setFirstTerm(IComplex) : void
+       + setPresentTerm(IComplex) : void
+}
+class MandelbrotGeneralizationNextTerm implements INextTerm {
+       + firstTerm : IComplex
+       + presentTerm : IComplex
+       + z : IComplex
+       + c : IComplex
+       + binaryOperator : BinaryOperator<IComplex>
+
+       +MandelbrotGeneralizationNextTerm(IComplex,IComplex, BinaryOperator<IComplex>)
+       + calculateNextTerm(IComplex) : IComplex
+       + setFirstTerm(IComplex) : void
+       + setPresentTerm(IComplex) : void
+}
+class MandelbrotNextTerm implements INextTerm {
+       + firstTerm : IComplex
+       + presentTerm : IComplex
+       + z : IComplex
+       + c : IComplex
+
+       + MandelbrotNextTerm (IComplex,IComplex)
+       + calculateNextTerm(IComplex) : IComplex
+       + setFirstTerm(IComplex) : void
+       + setPresentTerm(IComplex) : void
+}  
+     
 class Sequence  implements Iterable {
     + nextTerm : INextTerm
     + firstElement : IComplex
@@ -188,8 +283,12 @@ class Sequence  implements Iterable {
     + toString() : String
     + iterator() : Iterator<IComplex>
     + getNextTerm() : INextTerm
+    + getFirstTerm() : IComplex
+    + setFirstTerm(IComplex) : void
 }
 interface INextTerm {
+     + setFirstTerm(IComplex) : void
+     + setPresentTerm(IComplex) : void
      + calculateNextTerm(IComplex) : IComplex
 }
 class SequenceIterator implements Iterator {
