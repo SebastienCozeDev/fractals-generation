@@ -26,7 +26,11 @@ import fr.cril.cli.annotations.Args;
 import fr.cril.cli.annotations.Description;
 import fr.cril.cli.annotations.LongName;
 import fr.cril.cli.annotations.ShortName;
+import fr.univartois.butinfo.fractals.color.ColorPalette;
+import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.image.FractalImageBuilder;
 
 /**
@@ -203,9 +207,15 @@ public final class Fractals {
 		fractalImageBuilder.withFile(outputFile);
 		fractalImageBuilder.withHeight(height);
 		fractalImageBuilder.withWidth(width);
-		if (paletteName.equals("Gray")) {
-			fractalImageBuilder.withColorPalette(new GrayColorPaletteStrategy());
-		}
+		if (paletteName.equals("Red"))
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new RedColorPaletteStrategy()));
+		else if (paletteName.equals("Green"))
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GreenColorPaletteStrategy()));
+		else if (paletteName.equals("Blue"))
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new BlueColorPaletteStrategy()));
+		else
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GrayColorPaletteStrategy()));
+		fractalImageBuilder.withScale():
 	}
 
 	/**

@@ -26,7 +26,7 @@ public class FractalImageBuilder {
 	 * Échelle de l'image. Elle correspond à la largeur d'un pixel dans le plan
 	 * complexe.
 	 */
-	private int scale;
+	private double scale;
 
 	/**
 	 * Point central de l'image.
@@ -109,7 +109,7 @@ public class FractalImageBuilder {
 	 * 
 	 * @return L'échelle de l'image.
 	 */
-	public int getScale() {
+	public double getScale() {
 		return scale;
 	}
 
@@ -119,7 +119,7 @@ public class FractalImageBuilder {
 	 * @param scale L'échelle de l'image.
 	 * @return Le builder avec ce paramètre.
 	 */
-	public FractalImageBuilder withScale(int scale) {
+	public FractalImageBuilder withScale(double scale) {
 		this.scale = scale;
 		return this;
 	}
