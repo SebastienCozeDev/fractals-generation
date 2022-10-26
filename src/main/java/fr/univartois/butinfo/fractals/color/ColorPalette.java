@@ -1,65 +1,42 @@
 package fr.univartois.butinfo.fractals.color;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-
-import fr.univartois.butinfo.fractals.image.Pixel;
-
 
 /**
- * la classe qui donne la methode qu'on va utilis� pour notre palette de couleur.
+ * La classe {@link ColorPalette} donne la methode qu'on va utilisé pour notre
+ * palette de couleur.
  *
- * @author Theo Journee
+ * @author Théo Journée & Sébastien Coze
  *
- * @version 0.1.0
+ * @version 0.2.0
  */
-public class ColorPalette implements IColorPalette {
+public class ColorPalette {
+
 	/**
-	 * Instance de la classe de pixel.
+	 * Nombre d'itération maximale.
 	 */
-	private Pixel pixel;
+	private final int ITERATION_NUMBER_MAX;
+
+	private IColorPaletteStrategy colorPaletteStrategy;
+
 	/**
-	 * Instance de java.awt.color.
+	 * Crée une instance de {@link ColorPalette}.
+	 * 
+	 * @param iterationNumber Nombre d'itération maximale.
 	 */
-	private Color color;
-	
-	private IColorPalette decorated;
-	/**
-	 * Interfaces Palette de couleur.
-	 */
-	IColorPalette colorpalette;
-	
-	/**
-	 * Constructeur.
-	 * @param pixel
-	 */
-	public ColorPalette(Pixel pixel){
-		this.pixel=pixel;
+	public ColorPalette(int iterationNumber) {
+		this.ITERATION_NUMBER_MAX = iterationNumber;
 	}
 
-
-	public void setColorpalette(IColorPalette colorpalette) {
-		this.colorpalette = colorpalette;
-	}
-
-	@Override
-	public void paletteColor(Color color) {
-		
-	}
 	/**
-	 * Methode qui retourne la couleur.
-	 * @return
+	 * Donne la couleur pour un nombre d'itération donné.
+	 * 
+	 * @param iteration Nombre d'itération effectué.
+	 * @return La couleur a appliqué.
 	 */
-	public Color getColor() {
-		return color;
+	public Color getColor(int iteration) {
+		colorPaletteStrategy.getColor(ITERATION_NUMBER_MAX, iteration);
+		return null;
 	}
-	 /**
-     * Modifie la couleur de ce pixel.
-     *
-     * @param color 
-     */
-    public void setColor(Color color) {
-        pixel.setColor(color);;
-    }
+
 }
