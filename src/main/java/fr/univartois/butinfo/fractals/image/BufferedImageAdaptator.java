@@ -60,6 +60,6 @@ public class BufferedImageAdaptator implements IFractalImage {
 	public void saveAs(String path) throws IOException {
 		String[] splitted = path.split("\\.");
 		String formatName = splitted[splitted.length - 1];
-		ImageIO.write((RenderedImage) ((IFractalImage) bufferedImage), formatName, new File(path));
+		ImageIO.write(bufferedImage, formatName, new File(path));
 	}
 }

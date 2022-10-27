@@ -16,7 +16,14 @@
 
 package fr.univartois.butinfo.fractals;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.PrintWriter;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import fr.cril.cli.ClassParser;
 import fr.cril.cli.CliArgsParser;

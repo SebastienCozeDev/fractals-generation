@@ -74,6 +74,7 @@ public class FractalImage {
 		this.centralPoint = b.getCentralPoint();
 		this.sequence = b.getSequence();
 		this.colorPalette = b.getColorPalette();
+		this.file = b.getFile();
 	}
 
 	/**
@@ -88,9 +89,9 @@ public class FractalImage {
 		int k = 0;
 		ColorPalette paletteColor = new ColorPalette(maxIteration, colorPaletteStrategy);
 		ComplexPlanDecorated complexPlanDecorated = new ComplexPlanZoomDecorator(height, width, 1/100);
-		for (int i = 0; i <= height; i++) {
+		for (int i = 0; i < height; i++) {
 			System.out.println("Ligne " + i);
-			for (int j = 0; j <= width; j++) {
+			for (int j = 0; j < width; j++) {
 				k = 0;
 				/*
 				System.out.println(sequence.getFirstTerm());
@@ -103,11 +104,13 @@ public class FractalImage {
 				for (IComplex complex : sequence) {
 					System.out.println(complex);
 					k++;
-					if (k == maxIteration)
+					if ((k == maxIteration) || (Double.isNaN(complex.getRealPart())) || (Double.isNaN(complex.getImaginaryPart())))
 						break;
 				}
 				System.out.println(k);
 				//image.setColor(i, j, paletteColor.getColor(k));
+				System.out.println("i = " + i);
+				System.out.println("j = " + j);
 				image.setColor(i, j, new Color(0, 0, 0));
 			}
 		}
