@@ -7,7 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Rectangle {
+public class Rectangle implements IFigure {
 
 	/**
 	 * position x coté gauche du rectangle.
@@ -143,11 +143,9 @@ public class Rectangle {
 		this.strokeWidth = strokeWidth;
 	}
 
-	/**
-	 * Methode de chaine de caractere svg.
-	 */
-	public String toString() {
-		return "<svg width=\"200\" height=\"250\" version=\"1.1\"> < rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry=" + ry
-				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated + "/> </svg>";
+	@Override
+	public String ToString() {
+		return "< rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry=" + ry
+				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated + "/>";
 	}
 }
