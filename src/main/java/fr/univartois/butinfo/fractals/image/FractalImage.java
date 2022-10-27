@@ -1,5 +1,6 @@
 package fr.univartois.butinfo.fractals.image;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -7,6 +8,7 @@ import fr.univartois.butinfo.fractals.color.ColorPalette;
 import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlan;
+import fr.univartois.butinfo.fractals.complex.ComplexPlanDecorated;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanTranslationDecorator;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanZoomDecorator;
 import fr.univartois.butinfo.fractals.complex.IComplex;
@@ -85,15 +87,28 @@ public class FractalImage {
 		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, BufferedImage.TYPE_INT_RGB));
 		int k = 0;
 		ColorPalette paletteColor = new ColorPalette(maxIteration, colorPaletteStrategy);
-		//ComplexPlan complexPlan = new ComplexPlan(height, width);
+		ComplexPlanDecorated complexPlanDecorated = new ComplexPlanZoomDecorator(height, width, 1/100);
 		for (int i = 0; i <= height; i++) {
+			System.out.println("Ligne " + i);
 			for (int j = 0; j <= width; j++) {
 				k = 0;
+				/*
+				System.out.println(sequence.getFirstTerm());
+				System.out.println(sequence.getPresentTerm());
+				System.out.println(sequence.getNextTerm());
+				System.out.println(sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()));
+				sequence.setPresentTerm(sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()));
+				System.out.println(sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()));
+				System.out.println("---");*/
 				for (IComplex complex : sequence) {
 					System.out.println(complex);
 					k++;
+					if (k == maxIteration)
+						break;
 				}
-				image.setColor(i, j, paletteColor.getColor(k));
+				System.out.println(k);
+				//image.setColor(i, j, paletteColor.getColor(k));
+				image.setColor(i, j, new Color(0, 0, 0));
 			}
 		}
 		try {

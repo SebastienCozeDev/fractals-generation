@@ -59,7 +59,7 @@ public class JuliaNextTerm implements INextTerm {
 	@Override
 	public IComplex calculateNextTerm(IComplex lastTerm) {
 		if (lastTerm == null)
-			return firstTerm;
+			return c.add(sequence.getPresentTerm().multiply(z.multiply(z)));
 		else
 			return c.add(lastTerm.multiply(z.multiply(z)));
 	}
