@@ -1,7 +1,5 @@
 package fr.univartois.butinfo.fractals.sequences;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 
 import fr.univartois.butinfo.fractals.complex.IComplex;

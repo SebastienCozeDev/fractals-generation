@@ -5,11 +5,11 @@ import java.util.Objects;
 /*Classe implementant les operations de nombre complexe */
 public class Complex implements IComplex {
 
-	private final double re; // the real part
-	private final double im; // the imaginary part
+	private final double re;
+	
+	private final double im;
 
 	public Complex(double re, double im) {
-		super();
 		this.re = re;
 		this.im = im;
 	}
@@ -80,7 +80,7 @@ public class Complex implements IComplex {
 		return (this.re == that.re) && (this.im == that.im);
 	}
 
-	//hashcode
+	// hashcode
 	public int hashCode() {
 		return Objects.hash(re, im);
 	}
