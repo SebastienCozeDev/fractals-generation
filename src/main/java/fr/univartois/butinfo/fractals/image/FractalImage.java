@@ -89,7 +89,7 @@ public class FractalImage {
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
 				k = 0;
-				sequence.setFirstTerm(complexPlan.asComplex(i, j));
+				//sequence.setFirstTerm(complexPlan.asComplex(i, j));
 				for (IComplex complex : sequence) {
 					k++;
 				}

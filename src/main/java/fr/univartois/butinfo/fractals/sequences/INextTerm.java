@@ -14,11 +14,25 @@ import fr.univartois.butinfo.fractals.complex.IComplex;
 public interface INextTerm {
 
 	/**
+	 * Getter pour le premier terme.
+	 * 
+	 * @return Le premier terme.
+	 */
+	IComplex getFirstTerm();
+
+	/**
 	 * Setter pour le premier terme.
 	 * 
 	 * @param firstTerme Le premier terme.
 	 */
 	void setFirstTerm(IComplex firstTerme);
+
+	/**
+	 * Getter pour le terme courant.
+	 * 
+	 * @return Le terme courant.
+	 */
+	IComplex getPresentTerm();
 
 	/**
 	 * Setter pour le terme courant.

@@ -54,4 +54,14 @@ public class MandelbrotNextTerm implements INextTerm {
 			return z.add(lastTerm.multiply(z.multiply(z)));
 	}
 
+	@Override
+	public IComplex getFirstTerm() {
+		return firstTerm;
+	}
+
+	@Override
+	public IComplex getPresentTerm() {
+		return presentTerm;
+	}
+
 }

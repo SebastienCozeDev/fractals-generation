@@ -208,7 +208,9 @@ public final class Fractals {
 	 */
 	public void buildFractal() {
 		FractalImageBuilder fractalImageBuilder = FractalImageBuilder.newInstance();
-		fractalImageBuilder.withSequence(new Sequence(new JuliaNextTerm(new Complex(4, 8), new Complex(7, 1))));
+		Sequence juliaSequence = new Sequence();
+		juliaSequence.setNextTerm(new JuliaNextTerm(new Complex(5, 7), new Complex(8, 2), juliaSequence));
+		fractalImageBuilder.withSequence(juliaSequence);
 		fractalImageBuilder.withFile(outputFile);
 		fractalImageBuilder.withHeight(height);
 		fractalImageBuilder.withWidth(width);

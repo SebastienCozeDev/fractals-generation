@@ -10,7 +10,12 @@ public class ComplexPlan  {
 	
 	private int width;
 	
-	public ComplexPlan(int height, int width,IComplexPlan decorated) {
+	public ComplexPlan(int height, int width) {
+		this.height = height;
+		this.width = width;
+	}
+	
+	public ComplexPlan(int height, int width, IComplexPlan decorated) {
 		this.height = height;
 		this.width = width;
 		this.decorated=decorated;
