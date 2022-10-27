@@ -36,7 +36,6 @@ public class Sequence implements Iterable<IComplex> {
 	 * @return Le terme courant.
 	 */
 	public IComplex getPresentTerm() {
-		System.out.println(this.getClass().toString() + " - Dans getPresentTerm() - " + presentTerm);
 		return presentTerm;
 	}
 
@@ -46,17 +45,7 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param presentTerm Le nouveau terme courant.
 	 */
 	public void setPresentTerm(IComplex presentTerm) {
-		nextTerm.setPresentTerm(presentTerm);
 		this.presentTerm = presentTerm;
-	}
-
-	@Override
-	public String toString() {
-		String str = "";
-		for (IComplex complex : this) {
-			str += complex.toString();
-		}
-		return str;
 	}
 
 	@Override
@@ -92,7 +81,7 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param firstTerm Le nouveau premier terme.
 	 */
 	public void setFirstTerm(IComplex firstTerm) {
-		nextTerm.setFirstTerm(firstTerm);
+		//nextTerm.setFirstTerm(firstTerm);
 		this.firstTerm = firstTerm;
 		this.presentTerm = this.firstTerm;
 	}

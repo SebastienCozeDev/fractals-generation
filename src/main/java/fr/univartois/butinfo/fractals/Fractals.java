@@ -209,7 +209,9 @@ public final class Fractals {
 	public void buildFractal() {
 		FractalImageBuilder fractalImageBuilder = FractalImageBuilder.newInstance();
 		Sequence juliaSequence = new Sequence();
+		System.out.println("Dans la classe " + this.getClass() + " - juliaSequence = " + juliaSequence);
 		juliaSequence.setNextTerm(new JuliaNextTerm(new Complex(5, 7), new Complex(8, 2), juliaSequence));
+		System.out.println("Dans la classe " + this.getClass() + " - juliaSequence = " + juliaSequence);
 		fractalImageBuilder.withSequence(juliaSequence);
 		fractalImageBuilder.withFile(outputFile);
 		fractalImageBuilder.withHeight(height);
@@ -224,7 +226,7 @@ public final class Fractals {
 			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GrayColorPaletteStrategy()));
 		fractalImageBuilder.withScale(scale);
 		FractalImage fractalImage = fractalImageBuilder.build();
-		fractalImage.createImage(nbIterations, new RedColorPaletteStrategy());
+		fractalImage.createImage(nbIterations, new RedColorPaletteStrategy(), juliaSequence);
 	}
 
 	/**

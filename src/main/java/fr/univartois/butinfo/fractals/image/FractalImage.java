@@ -79,18 +79,18 @@ public class FractalImage {
 	 * 
 	 * @param maxIteration Nombre maximum d'itération.
 	 */
-	public void createImage(int maxIteration, IColorPaletteStrategy colorPaletteStrategy) {
+	public void createImage(int maxIteration, IColorPaletteStrategy colorPaletteStrategy, Sequence sequence) {
 		// TODO Il faut créer une translation pour placer le point central correctement.
 		// TODO Il faut créer un zoom pour appliquer l'échelle.
 		BufferedImageAdaptator image = new BufferedImageAdaptator(new BufferedImage(height, width, BufferedImage.TYPE_INT_RGB));
 		int k = 0;
 		ColorPalette paletteColor = new ColorPalette(maxIteration, colorPaletteStrategy);
-		ComplexPlan complexPlan = new ComplexPlan(height, width);
+		//ComplexPlan complexPlan = new ComplexPlan(height, width);
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
 				k = 0;
-				//sequence.setFirstTerm(complexPlan.asComplex(i, j));
 				for (IComplex complex : sequence) {
+					System.out.println(complex);
 					k++;
 				}
 				image.setColor(i, j, paletteColor.getColor(k));

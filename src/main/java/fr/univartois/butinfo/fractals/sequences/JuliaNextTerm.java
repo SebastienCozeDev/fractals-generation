@@ -31,7 +31,7 @@ public class JuliaNextTerm implements INextTerm {
 	 * Nombre complexe c permettant de générer la suite de Julia.
 	 */
 	private IComplex c;
-	
+
 	/**
 	 * Suite de la strategy.
 	 */
@@ -40,13 +40,20 @@ public class JuliaNextTerm implements INextTerm {
 	/**
 	 * Crée une nouvelle instance de JuliaNextTerm.
 	 * 
-	 * @param z Le nombre complexe z de la suite de Julia.
-	 * @param c Le nombre complexe c de la suite de Julia.
+	 * @param z        Le nombre complexe z de la suite de Julia.
+	 * @param c        Le nombre complexe c de la suite de Julia.
+	 * @param sequence La suite.
 	 */
 	public JuliaNextTerm(IComplex z, IComplex c, Sequence sequence) {
-		//System.out.println(sequence);
-		setFirstTerm(c.add(z.multiply(z)));
+		System.out.println("Dans le constructeur de " + this.getClass());
+		System.out.println("\t sequence = " + sequence);
+		System.out.println("\t z = " + z);
+		System.out.println("\t c = " + c);
+		this.z = z;
+		this.c = c;
 		this.sequence = sequence;
+		setFirstTerm(c.add(z.multiply(z)));
+		System.out.println("this.sequence " + sequence);
 	}
 
 	@Override
@@ -56,7 +63,8 @@ public class JuliaNextTerm implements INextTerm {
 		else
 			return c.add(lastTerm.multiply(z.multiply(z)));
 	}
-	
+
+	@Override
 	public IComplex getFirstTerm() {
 		return firstTerm;
 	}
@@ -67,7 +75,8 @@ public class JuliaNextTerm implements INextTerm {
 		sequence.setFirstTerm(firstTerme);
 		sequence.setPresentTerm(firstTerme);
 	}
-	
+
+	@Override
 	public IComplex getPresentTerm() {
 		return presentTerm;
 	}
