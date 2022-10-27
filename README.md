@@ -95,8 +95,24 @@ package fr.univartois.butinfo.fractals.complex {
     class ComplexPlanTranslationDecorator
     class ComplexPlanZoomDecorator
     interface IComplexPlan
+    class AdaptateurComplex
+    interface IPlanPoint
 }
 
+class AdaptateurComplex implements IPlanPoint {
+      - complex :IComplex   
+
+      + X() : double
+      + Y() : double
+      + distance(IPlanPoint) : double
+      + convertirEnIComplex() : IComplex
+}
+interface IPlanPoint {
+      + X() : double
+      + Y() : double
+      + distance(IPlanPoint) : double
+      + convertirEnIComplex() : IComplex
+}
 class Complex implements IComplex {
     - re : double
     - im : double 
@@ -144,51 +160,133 @@ class ComplexPlanTranslationDecorator implements IComplexPlan {
     + asComplex(IComplex) : IComplex;
 }
 class ComplexPlan {
-     +  decorated : IComplexPlan
-     +  re : double im 
-     +  im : double
+     + decorated : IComplexPlan
      + height : int
      + width : int
    
-     + ComplexPlanTranslationDecorator(double,double,height,width)
+     +ComplexPlanTranslationDecorator(double,double,height,width)
      + asComplex(IComplex) : IComplex
-     + getHeight() : int
-     + getWidth() : int
-     + getRe() : double
-     + getIm() : double
 }
 
 package fr.univartois.butinfo.fractals.color {
-    class PaletteColor
-    interface IPaletteColor
+    class ColorPalette
+    interface IColorPaletteStrategy
+  abstract class MaskColorPaletteDecorator
 }
 
-class PaletteColor implements IPaletteColor {
-    + pixel : Pixel
-    + color : Color
-    + paletteColor : IPaletteColor
+class  ColorPalette {
+    + ITERATION_NUMBER_MAX : int
+    + colorPaletteStrategy : IColorPaletteStrategy
 
-    + PaletteColor(Pixel)
-    + setPaletteColor(IPaletteColor) : void
-    + paletteColor(Color) : void 
-    + getColor() : Color
-    + setColor(Color color) : void
+    + ColorPalette(int) 
+    + getColor(int) : Color
 }
-interface IPaletteColor {
-    +  paletteColor(Color) : void 
+interface IColorPaletteStrategy {
+    + getColor(int,int) : Color
+}
+abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy{
+   + decorated : decorated
+
+   + MaskColorPaletteDecorator(IColorPaletteStrategy)
+   +  {abstract} getColor(int, int) : Color
+}
+package fr.univartois.butinfo.fractals.color.strategies {
+          class BlueColorPaletteStrategy
+          class GrayColorPaletteStrategy
+          class GreenColorPaletteStrategy
+          class RedColorPaletteStrategy
+}
+ class BlueColorPaletteStrategy implements IColorPaletteStrategy
+{
+     + {final} TINT_MAX : int
+     + getColor(int, int) : Color
+}
+class GrayColorPaletteStrategy implements IColorPaletteStrategy
+{
+     + {final} TINT_MAX : int
+     + getColor(int, int) : Color
+}
+class GreenColorPaletteStrategy implements IColorPaletteStrategy
+{
+     + {final} TINT_MAX : int
+     + getColor(int, int) : Color
+}
+class RedColorPaletteStrategy implements IColorPaletteStrategy
+{
+     + {final} TINT_MAX : int
+     + getColor(int, int) : Color
+}
+package fr.univartois.butinfo.fractals.color.decorators {
+          class OnlyBlueDecorator
+          class OnlyRedDecorator
+           class OnlyGreenDecorator
+}
+
+class OnlyBlueDecorator extends MaskColorPaletteDecorator {
+   
+    +  OnlyBlueDecorator(IColorPaletteStrategy)
+    +  getColor(int, int) : Color
+}
+class OnlyGreenDecorator extends MaskColorPaletteDecorator {
+   
+    +  OnlyGreenDecorator(IColorPaletteStrategy)
+    +  getColor(int, int) : Color
+}
+class OnlyRedDecorator extends MaskColorPaletteDecorator {
+   
+    +  OnlyRedDecorator(IColorPaletteStrategy)
+    +  getColor(int, int) : Color
 }
 
 package fr.univartois.butinfo.fractals.image {
     class Pixel
     interface IFractalImage
-    class AdaptateurBufferedImage
+    class BufferedImageAdaptor
+    class FractalImage
+    class FractalImageBuilder
 }
+class FractalImageBuilder {
+     + height : int
+     + width : int
+     + scale : int
+     + centralPoint : Pixel
+     + sequence : Sequence
+     + colorPalette : ColorPalette
+     + file : String
+     + FractalImageBuilder
 
-class AdaptateurBufferedImage implements IFractalImage {
+     + {static} FractalImageBuilder()
+     + getHeight : int
+     + FractalImageBuilder withHeight(height)
+     + getWidth() : int
+     + getScale() : int
+     + getCentralPoint() :Pixel
+     + getSequence() : Sequence
+     + withCentralPoint(Pixel) : FractalImageBuilder
+     + withSequence(Sequence) : FractalImageBuilder
+     + getColorPalette() : ColorPalette
+     + withColorPalette(ColorPalette) : FractalImageBuilder
+     + getFile() : String
+     + withFile(String) : FractalImageBuilder
+     + build() : FractalImageFractalImage
+}
+class FractalImage {
+     + height : int
+     + width : int
+     + scale : int
+     + centralPoint : Pixel
+     + sequence : Sequence
+     + colorPalette : ColorPalette
+     + file : String
+
+     + FractalImage(FractalImageBuilder)
+     + createImage(maxIteration) : void
+}
+class BufferedImageAdaptor implements IFractalImage {
     + bufferedimage : BufferedImage
     + pixel : Pixel
    
-    + AdaptateurBufferedImage(BufferedImage)
+    + BufferedImageAdaptor(BufferedImage)
     + getHeight() : int
     + getWidt() : int
     + getPixel(row,column) : int
@@ -215,6 +313,9 @@ interface IFractalImage{
     + setColor(Color,row;column) : void
 }
 Pixel o-- "1" IFractalImage
+FractalImage o-- "1" Sequence
+FractalImageBuilder o-- "1" Sequence
+BufferedImageAdaptor o-- "1" Pixel
 
 package fr.univartois.butinfo.fractals.sequences{
     interface INextTerm
