@@ -37,7 +37,7 @@ public class FractalImageBuilder {
 	 * Suite étant l'approche permettant de générer la fractale (suite complexe ou
 	 * chaotique).
 	 */
-	private Sequence sequence;
+	private String fractalName;
 
 	/**
 	 * Palette de couleurs utilisé par l'image.
@@ -149,8 +149,8 @@ public class FractalImageBuilder {
 	 * 
 	 * @return La suite de l'image.
 	 */
-	public Sequence getSequence() {
-		return sequence;
+	public String getSequence() {
+		return fractalName;
 	}
 
 	/**
@@ -159,8 +159,8 @@ public class FractalImageBuilder {
 	 * @param sequence La suite utilisée pour la génération de l'image.
 	 * @return Le builder avec ce paramètre.
 	 */
-	public FractalImageBuilder withSequence(Sequence sequence) {
-		this.sequence = sequence;
+	public FractalImageBuilder withSequence(String sequence) {
+		this.fractalName = sequence;
 		return this;
 	}
 
