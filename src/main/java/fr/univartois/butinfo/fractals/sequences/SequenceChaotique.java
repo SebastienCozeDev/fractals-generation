@@ -16,7 +16,6 @@ public abstract class SequenceChaotique implements Iterator<IPlanPoint>,ISequenc
 	        return (Iterator<IPlanPoint>) new SequenceChaotiqueIterator(this, nbMaxIteration, premier);
 	        
 	    }
-	    
 	    public abstract double getNext(IPlanPoint plan);
 }
 
