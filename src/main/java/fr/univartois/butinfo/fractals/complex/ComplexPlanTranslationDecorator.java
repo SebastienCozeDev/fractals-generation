@@ -1,18 +1,21 @@
 package fr.univartois.butinfo.fractals.complex;
 
-/*Decorateur pour faire une translation de l'image */
+/**
+ * Decorateur pour faire une translation de l'image.
+ */
+public class ComplexPlanTranslationDecorator extends ComplexPlanDecorated {
 
-public abstract class ComplexPlanTranslationDecorator implements IComplexPlan {
-
-
-	private final IComplex constant;
-
-	public ComplexPlanTranslationDecorator(IComplex constant) {
+	private IComplex constant;
+	
+	public ComplexPlanTranslationDecorator(int height, int width, IComplex constant) {
+		super(height, width);
 		this.constant = constant;
 	}
 	
-	@Override
-	public IComplex asComplex(IComplex complex) {
-		return complex.add(constant);
+	public IComplex asComplex(int row, int column) {
+		double re = (column + .5) - (super.width / 2.);
+		double im = (super.height / 2.) - (row + .5);
+		return new Complex(re,im).add(constant);
 	}
+	
 }

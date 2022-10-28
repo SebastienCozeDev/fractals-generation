@@ -69,6 +69,16 @@ public class JuliaGeneralizationNextTerm implements INextTerm {
 	public void setPresentTerm(IComplex presentTerm) {
 		this.presentTerm = presentTerm;
 	}
+
+	@Override
+	public IComplex getFirstTerm() {
+		return firstTerm;
+	}
+
+	@Override
+	public IComplex getPresentTerm() {
+		return presentTerm;
+	}
 	
 	/* Pour la création (exemple) :
 	new JuliaGeneralizationNextTerm(z, c, (z, c) -> z.add(c))

@@ -1,6 +1,7 @@
 package fr.univartois.butinfo.fractals.sequences;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 import fr.univartois.butinfo.fractals.complex.IComplex;
 
@@ -17,7 +18,7 @@ public class SequenceIterator implements Iterator<IComplex> {
 	/**
 	 * La suite de nombres complexes.
 	 */
-	private Sequence sequence;
+	private final Sequence sequence;
 
 	/**
 	 * Crée une nouvelle instance de Sequence.
@@ -25,7 +26,7 @@ public class SequenceIterator implements Iterator<IComplex> {
 	 * @param sequence La suite de nombres complexes.
 	 */
 	public SequenceIterator(Sequence sequence) {
-		this.sequence = sequence;
+		this.sequence = Objects.requireNonNull(sequence);
 	}
 
 	@Override

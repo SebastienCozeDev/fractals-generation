@@ -1,7 +1,5 @@
 package fr.univartois.butinfo.fractals.sequences;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 
 import fr.univartois.butinfo.fractals.complex.IComplex;
@@ -18,7 +16,7 @@ public class Sequence implements Iterable<IComplex> {
 	/**
 	 * La stratégie pour obtenir le prochain terme.
 	 */
-	private final INextTerm nextTerm;
+	private INextTerm nextTerm;
 
 	/**
 	 * Le premier terme.
@@ -29,15 +27,6 @@ public class Sequence implements Iterable<IComplex> {
 	 * Le terme courant.
 	 */
 	private IComplex presentTerm;
-
-	/**
-	 * Crée une nouvelle instance de Sequence.
-	 * 
-	 * @param nextTerme    La stratégie pour obtenir le prochain terme.
-	 */
-	public Sequence(INextTerm nextTerme) {
-		this.nextTerm = nextTerme;
-	}
 
 	/**
 	 * Getter pour le terme courant.
@@ -54,17 +43,7 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param presentTerm Le nouveau terme courant.
 	 */
 	public void setPresentTerm(IComplex presentTerm) {
-		nextTerm.setPresentTerm(presentTerm);
 		this.presentTerm = presentTerm;
-	}
-
-	@Override
-	public String toString() {
-		String str = "";
-		for (IComplex complex : this) {
-			str += complex.toString();
-		}
-		return str;
 	}
 
 	@Override
@@ -79,6 +58,10 @@ public class Sequence implements Iterable<IComplex> {
 	 */
 	public INextTerm getNextTerm() {
 		return nextTerm;
+	}
+	
+	public void setNextTerm(INextTerm nextTerm) {
+		this.nextTerm = nextTerm;
 	}
 
 	/**
@@ -96,7 +79,6 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param firstTerm Le nouveau premier terme.
 	 */
 	public void setFirstTerm(IComplex firstTerm) {
-		nextTerm.setFirstTerm(firstTerm);
 		this.firstTerm = firstTerm;
 		this.presentTerm = this.firstTerm;
 	}

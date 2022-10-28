@@ -20,7 +20,7 @@ public class BufferedImageAdaptator implements IFractalImage {
 	/**
 	 * Instance de la classe BifferedImage.
 	 */
-	private final BufferedImage bufferedimage;
+	private final BufferedImage bufferedImage;
 
 	/**
 	 * Instance de la la classe Pixel.
@@ -32,34 +32,34 @@ public class BufferedImageAdaptator implements IFractalImage {
 	 * 
 	 * @param bufferedimage
 	 */
-	public BufferedImageAdaptator(BufferedImage bufferedimage) {
-		this.bufferedimage = bufferedimage;
+	public BufferedImageAdaptator(BufferedImage bufferedImage) {
+		this.bufferedImage = bufferedImage;
 	}
 
 	@Override
 	public int getHeight() {
-		return bufferedimage.getHeight();
+		return bufferedImage.getHeight();
 	}
 
 	@Override
 	public int getWidth() {
-		return bufferedimage.getWidth();
+		return bufferedImage.getWidth();
 	}
 
 	@Override
 	public Pixel getPixel(int row, int column) {
-		return ((IFractalImage) bufferedimage).getPixel(row, column);
+		return ((IFractalImage) bufferedImage).getPixel(row, column);
 	}
 
 	@Override
 	public void setColor(int row, int column, Color color) {
-		((IFractalImage) bufferedimage).setColor(column, row, color);
+		bufferedImage.setRGB(row, column, color.getRGB());
 	}
 
 	@Override
 	public void saveAs(String path) throws IOException {
 		String[] splitted = path.split("\\.");
 		String formatName = splitted[splitted.length - 1];
-		ImageIO.write((RenderedImage) ((IFractalImage) bufferedimage), formatName, new File(path));
+		ImageIO.write(bufferedImage, formatName, new File(path));
 	}
 }

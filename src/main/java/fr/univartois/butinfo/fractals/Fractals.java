@@ -16,7 +16,14 @@
 
 package fr.univartois.butinfo.fractals;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.PrintWriter;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import fr.cril.cli.ClassParser;
 import fr.cril.cli.CliArgsParser;
@@ -26,6 +33,16 @@ import fr.cril.cli.annotations.Args;
 import fr.cril.cli.annotations.Description;
 import fr.cril.cli.annotations.LongName;
 import fr.cril.cli.annotations.ShortName;
+import fr.univartois.butinfo.fractals.color.ColorPalette;
+import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.complex.Complex;
+import fr.univartois.butinfo.fractals.image.FractalImage;
+import fr.univartois.butinfo.fractals.image.FractalImageBuilder;
+import fr.univartois.butinfo.fractals.sequences.JuliaNextTerm;
+import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
  * La classe Fractals permet de générer des fractales depuis la ligne de
@@ -197,8 +214,24 @@ public final class Fractals {
 	 * Crée la fractale demandée dans la ligne de commande.
 	 */
 	public void buildFractal() {
-		// TODO Ajoutez ici le code pour utiliser votre implantation et créer la
-		// fractale.
+		FractalImageBuilder fractalImageBuilder = FractalImageBuilder.newInstance();
+		Sequence juliaSequence = new Sequence();
+		juliaSequence.setNextTerm(new JuliaNextTerm(new Complex(5, 7), new Complex(8, 2), juliaSequence));
+		fractalImageBuilder.withSequence(fractaleName);
+		fractalImageBuilder.withFile(outputFile);
+		fractalImageBuilder.withHeight(height);
+		fractalImageBuilder.withWidth(width);
+		if (paletteName.equals("Red"))
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new RedColorPaletteStrategy()));
+		else if (paletteName.equals("Green"))
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GreenColorPaletteStrategy()));
+		else if (paletteName.equals("Blue"))
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new BlueColorPaletteStrategy()));
+		else
+			fractalImageBuilder.withColorPalette(new ColorPalette(nbIterations, new GrayColorPaletteStrategy()));
+		fractalImageBuilder.withScale(scale);
+		FractalImage fractalImage = fractalImageBuilder.build();
+		fractalImage.createImage(nbIterations);
 	}
 
 	/**

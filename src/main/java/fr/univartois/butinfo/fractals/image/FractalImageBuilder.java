@@ -26,7 +26,7 @@ public class FractalImageBuilder {
 	 * Échelle de l'image. Elle correspond à la largeur d'un pixel dans le plan
 	 * complexe.
 	 */
-	private int scale;
+	private double scale;
 
 	/**
 	 * Point central de l'image.
@@ -37,7 +37,7 @@ public class FractalImageBuilder {
 	 * Suite étant l'approche permettant de générer la fractale (suite complexe ou
 	 * chaotique).
 	 */
-	private Sequence sequence;
+	private String fractalName;
 
 	/**
 	 * Palette de couleurs utilisé par l'image.
@@ -109,7 +109,7 @@ public class FractalImageBuilder {
 	 * 
 	 * @return L'échelle de l'image.
 	 */
-	public int getScale() {
+	public double getScale() {
 		return scale;
 	}
 
@@ -119,7 +119,7 @@ public class FractalImageBuilder {
 	 * @param scale L'échelle de l'image.
 	 * @return Le builder avec ce paramètre.
 	 */
-	public FractalImageBuilder withScale(int scale) {
+	public FractalImageBuilder withScale(double scale) {
 		this.scale = scale;
 		return this;
 	}
@@ -149,8 +149,8 @@ public class FractalImageBuilder {
 	 * 
 	 * @return La suite de l'image.
 	 */
-	public Sequence getSequence() {
-		return sequence;
+	public String getSequence() {
+		return fractalName;
 	}
 
 	/**
@@ -159,8 +159,8 @@ public class FractalImageBuilder {
 	 * @param sequence La suite utilisée pour la génération de l'image.
 	 * @return Le builder avec ce paramètre.
 	 */
-	public FractalImageBuilder withSequence(Sequence sequence) {
-		this.sequence = sequence;
+	public FractalImageBuilder withSequence(String sequence) {
+		this.fractalName = sequence;
 		return this;
 	}
 
