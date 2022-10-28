@@ -6,13 +6,12 @@ public class Circulaire extends SequenceChaotique implements ISequenceChaotique 
 
 	public Circulaire(IPlanPoint premier, int nbMaxIteration) {
 		super(premier, nbMaxIteration);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public double getNext(IPlanPoint plan) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return plan.Y()+((plan.X()*Math.sin(2*Math.PI*plan.Y())/2*Math.PI));
 	}
 
 }
