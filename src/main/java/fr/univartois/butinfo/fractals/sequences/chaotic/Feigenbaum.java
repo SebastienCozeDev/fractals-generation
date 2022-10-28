@@ -1,19 +1,18 @@
-package fr.univartois.butinfo.fractals.sequences;
+package fr.univartois.butinfo.fractals.sequences.chaotic;
 
 import fr.univartois.butinfo.fractals.complex.IPlanPoint;
-import fr.univartois.butinfo.fractals.sequences.chaotic.ISequenceChaotique;
-import fr.univartois.butinfo.fractals.sequences.chaotic.SequenceChaotique;
 
-public abstract class Feigenbaum extends SequenceChaotique implements ISequenceChaotique{
+public class Feigenbaum extends SequenceChaotique implements ISequenceChaotique{
 	public Feigenbaum(IPlanPoint premier, int nbMaxIteration) {
         super(premier, nbMaxIteration);
  
     }
 
     @Override
-    public double getNext(IPlanPoint premier) {
-        return ((premier.X()*premier.Y())*(1-premier.Y()));
+    public double getNext(IPlanPoint plan) {
+        return ((plan.X()*plan.Y())*(1-plan.Y()));
     }
+
 
 
 }
