@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import fr.univartois.butinfo.fractals.complex.IPlanPoint;
 
-public abstract class SequenceChaotique implements Iterator<IPlanPoint>,ISequenceChaotique {
+public abstract class SequenceChaotique implements Iterable<IPlanPoint>,ISequenceChaotique {
 	 private IPlanPoint premier;
 	    private int nbMaxIteration;
 	    
@@ -13,7 +13,7 @@ public abstract class SequenceChaotique implements Iterator<IPlanPoint>,ISequenc
 	        this.nbMaxIteration = nbMaxIteration;
 	    }
 	    public Iterator<IPlanPoint> iterator(){
-	        return (Iterator<IPlanPoint>) new SequenceChaotiqueIterator(this, nbMaxIteration, premier);
+	        return new SequenceChaotiqueIterator(this, nbMaxIteration, premier);
 	        
 	    }
 	    public abstract double getNext(IPlanPoint plan);
