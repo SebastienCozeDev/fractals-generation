@@ -1,6 +1,5 @@
 package fr.univartois.butinfo.fractals.sequences;
 
-import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -24,13 +23,12 @@ public class SequencesTest {
 	 */
 	public static void main(String[] args) {
 		int nbIterationMax = 200; // nb iteration où on considère que la suite ne converge pas
-		int height = 10048;
-		int width = 10048;
+		int height = 20048;
+		int width = 20048;
 		BufferedImage bufferedImage = new BufferedImage(height+1, width+1, BufferedImage.TYPE_INT_RGB);
-		ColorPalette colorPalette = new ColorPalette(nbIterationMax, new RedColorPaletteStrategy());
+		ColorPalette colorPalette = new ColorPalette(nbIterationMax, new GrayColorPaletteStrategy());
 		//ComplexPlan complexPlan = new ComplexPlan(height, width);
-		ComplexPlanZoomDecorator complexPlan = new ComplexPlanZoomDecorator(height, width, 0.0005);
-		Complex maxComplex = new Complex(Math.pow(10, 37), Math.pow(10, 37));
+		ComplexPlanZoomDecorator complexPlan = new ComplexPlanZoomDecorator(height, width, 0.0002);
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
 				Complex complex = (Complex) complexPlan.asComplex(i, j);
