@@ -107,9 +107,8 @@ public class FractalImage {
 				}
 			}
 		}
-		// TODO Faire le choix du fichier.
 		try {
-			bufferedImageAdaptator.saveAs("example.png");
+			bufferedImageAdaptator.saveAs(file);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
