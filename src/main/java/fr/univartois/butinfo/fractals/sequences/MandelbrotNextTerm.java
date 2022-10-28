@@ -26,42 +26,53 @@ public class MandelbrotNextTerm implements INextTerm {
 	 * Nombre complexe z permettant de générer la suite de Mandelbrot.
 	 */
 	private IComplex z;
+	
+	/**
+	 * Suite de la strategy.
+	 */
+	private Sequence sequence;
 
 	/**
 	 * Crée une nouvelle instance de JuliaNextTerm.
 	 * 
 	 * @param z Le nombre complexe z.
+	 * @param s 
+	 * @param complex 
 	 */
-	public MandelbrotNextTerm(IComplex z) {
+	public MandelbrotNextTerm(IComplex z, Sequence sequence) {
+		this.z = z;
+		this.sequence = sequence;
 		setFirstTerm(z.add(z.multiply(z)));
 	}
-
-	@Override
-	public void setFirstTerm(IComplex firstTerme) {
-		this.firstTerm = firstTerme;
-	}
-
-	@Override
-	public void setPresentTerm(IComplex presentTerm) {
-		this.presentTerm = presentTerm;
-	}
-
+	
 	@Override
 	public IComplex calculateNextTerm(IComplex lastTerm) {
 		if (lastTerm == null)
-			return firstTerm;
+			return (sequence.getPresentTerm().multiply(sequence.getPresentTerm())).add(z);
 		else
-			return z.add(lastTerm.multiply(z.multiply(z)));
+			return lastTerm.multiply(lastTerm).add(z);
 	}
-
+	
 	@Override
 	public IComplex getFirstTerm() {
 		return firstTerm;
 	}
 
 	@Override
+	public void setFirstTerm(IComplex firstTerme) {
+		this.firstTerm = firstTerme;
+		sequence.setFirstTerm(firstTerme);
+		sequence.setPresentTerm(firstTerme);
+	}
+	
+	@Override
 	public IComplex getPresentTerm() {
 		return presentTerm;
+	}
+
+	@Override
+	public void setPresentTerm(IComplex presentTerm) {
+		this.presentTerm = presentTerm;
 	}
 
 }

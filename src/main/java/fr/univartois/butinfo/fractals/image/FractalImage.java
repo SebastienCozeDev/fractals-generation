@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import fr.univartois.butinfo.fractals.color.ColorPalette;
 import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
+import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
+import fr.univartois.butinfo.fractals.color.decorators.OnlyBlueDecorator;
 import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
@@ -13,6 +15,7 @@ import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanZoomDecorator;
 import fr.univartois.butinfo.fractals.complex.IComplex;
 import fr.univartois.butinfo.fractals.sequences.JuliaNextTerm;
+import fr.univartois.butinfo.fractals.sequences.MandelbrotNextTerm;
 import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
@@ -92,8 +95,10 @@ public class FractalImage {
 				if (fractalName.equals("Julia")) {
 					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.4, 0.6), s);
 					s.setNextTerm(nextTerm);
-				}
-				else {
+				} else if (fractalName.equals("Mandelbrot")) {
+					MandelbrotNextTerm nextTerm = new MandelbrotNextTerm(complex, s);
+					s.setNextTerm(nextTerm);
+				} else {
 					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.4, 0.6), s);
 					s.setNextTerm(nextTerm);
 				}
