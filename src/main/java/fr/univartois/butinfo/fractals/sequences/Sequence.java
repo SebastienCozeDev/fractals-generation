@@ -79,7 +79,6 @@ public class Sequence implements Iterable<IComplex> {
 	 * @param firstTerm Le nouveau premier terme.
 	 */
 	public void setFirstTerm(IComplex firstTerm) {
-		//nextTerm.setFirstTerm(firstTerm);
 		this.firstTerm = firstTerm;
 		this.presentTerm = this.firstTerm;
 	}

@@ -24,7 +24,7 @@ public class GrayColorPaletteStrategy implements IColorPaletteStrategy {
 	public Color getColor(int iterationMax, int iteration) {
 		if (iterationMax == iteration)
 			return new Color(TINT_MAX, TINT_MAX, TINT_MAX);
-		int tintSeparation = Integer.parseInt(null, TINT_MAX / iterationMax);
+		int tintSeparation = TINT_MAX / iterationMax;
 		int redTint = tintSeparation * iteration;
 		int greenTint = tintSeparation * iteration;
 		int blueTint = tintSeparation * iteration;

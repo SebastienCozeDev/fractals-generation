@@ -36,8 +36,7 @@ public class ColorPalette {
 	 * @return La couleur a appliqué.
 	 */
 	public Color getColor(int iteration) {
-		colorPaletteStrategy.getColor(ITERATION_NUMBER_MAX, iteration);
-		return null;
+		return colorPaletteStrategy.getColor(ITERATION_NUMBER_MAX, iteration);
 	}
 
 }
