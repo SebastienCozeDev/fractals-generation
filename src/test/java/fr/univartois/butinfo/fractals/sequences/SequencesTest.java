@@ -54,7 +54,7 @@ public class SequencesTest {
 			}
 		}
 		try {
-			File myObj = new File("2048-5-0.32-0.043-zoom0.001-black-49.png");
+			File myObj = new File("example.png");
 			System.out.println("File created or edited: " + myObj.getName());
 			ImageIO.write(bufferedImage, "png", myObj);
 		} catch (IOException e) {
