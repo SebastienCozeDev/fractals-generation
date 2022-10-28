@@ -1,4 +1,4 @@
-package fr.univartois.butinfo.fractals.sequences;
+package fr.univartois.butinfo.fractals.sequences.chaotic;
 
 import fr.univartois.butinfo.fractals.complex.IPlanPoint;
 
