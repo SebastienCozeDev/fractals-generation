@@ -1,5 +1,6 @@
 package fr.univartois.butinfo.fractals.sequences;
 
+import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.IComplex;
 
 /**
@@ -59,9 +60,9 @@ public class JuliaNextTerm implements INextTerm {
 	@Override
 	public IComplex calculateNextTerm(IComplex lastTerm) {
 		if (lastTerm == null)
-			return c.add(sequence.getPresentTerm().multiply(z.multiply(z)));
+			return (sequence.getPresentTerm().multiply(sequence.getPresentTerm())).add(c);
 		else
-			return c.add(lastTerm.multiply(z.multiply(z)));
+			return lastTerm.multiply(lastTerm).add(c);
 	}
 
 	@Override

@@ -12,6 +12,7 @@ import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlan;
+import fr.univartois.butinfo.fractals.complex.ComplexPlanTranslationDecorator;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanZoomDecorator;
 import fr.univartois.butinfo.fractals.complex.IComplex;
 
@@ -22,37 +23,40 @@ public class SequencesTest {
 	 * Qd ca boucle, on met en noir et l'inverse blanc
 	 */
 	public static void main(String[] args) {
-		int nbIterationMax = 5; // nb iteration où on considère que la suite ne converge pas
-		int height = 2048;
-		int width = 2048;
+		int nbIterationMax = 200; // nb iteration où on considère que la suite ne converge pas
+		int height = 10048;
+		int width = 10048;
 		BufferedImage bufferedImage = new BufferedImage(height+1, width+1, BufferedImage.TYPE_INT_RGB);
 		ColorPalette colorPalette = new ColorPalette(nbIterationMax, new RedColorPaletteStrategy());
 		//ComplexPlan complexPlan = new ComplexPlan(height, width);
-		ComplexPlanZoomDecorator complexPlan = new ComplexPlanZoomDecorator(height, width, 0.001);
+		ComplexPlanZoomDecorator complexPlan = new ComplexPlanZoomDecorator(height, width, 0.0005);
 		Complex maxComplex = new Complex(Math.pow(10, 37), Math.pow(10, 37));
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
 				Complex complex = (Complex) complexPlan.asComplex(i, j);
 				Sequence s = new Sequence();
-				JuliaNextTerm juliaNextTerm = new JuliaNextTerm(complex, new Complex(0.32, 0.043), s);
+				JuliaNextTerm juliaNextTerm = new JuliaNextTerm(complex, new Complex(-0.4, 0.6), s);
+				//JuliaNextTerm juliaNextTerm = new JuliaNextTerm(complex, new Complex(0.32, 0.043), s);
 				s.setNextTerm(juliaNextTerm);
 				//System.out.println(s.getFirstTerm());
 				int nbIteration = 0;
 				for (IComplex c : s) {
 					// elle diverge
-					
+					/*
 					if ((c.getRealPart() > maxComplex.getRealPart()) && (c.getImaginaryPart() > maxComplex.getImaginaryPart())) {
 						//System.out.println("WHITE");
 						bufferedImage.setRGB(i, j, colorPalette.getColor(nbIteration).getRGB());
 						break;						
-					}
+					}*/
 					if (c.abs() > 2) {
-						bufferedImage.setRGB(i, j, colorPalette.getColor(nbIteration).getRGB());
+						//System.out.println("WHITE");
+						bufferedImage.setRGB(j, i, colorPalette.getColor(nbIteration).getRGB());
+						//System.out.println(nbIteration);
 						break;
 					}
 					else if (nbIteration == nbIterationMax) {
 						//System.out.println("BLACK");
-						bufferedImage.setRGB(i, j, new Color(0, 0, 0).getRGB());
+						bufferedImage.setRGB(j, i, colorPalette.getColor(nbIteration).getRGB());
 						break;
 					}
 					//System.out.println(c);
@@ -61,8 +65,8 @@ public class SequencesTest {
 			}
 		}
 	    try {
-	        File myObj = new File("2048-5-0.32-0.043-zoom0.001-black.png");
-	        if (myObj.createNewFile()) {
+	        File myObj = new File("2048-5-0.32-0.043-zoom0.001-black-49.png");
+	        if (true) {
 	          System.out.println("File created: " + myObj.getName());
 	          ImageIO.write(bufferedImage, "png", myObj);
 	        } else {

@@ -23,10 +23,10 @@ public class RedColorPaletteStrategy implements IColorPaletteStrategy {
 	@Override
 	public Color getColor(int iterationMax, int iteration) {
 		if (iterationMax == iteration)
-			return new Color(TINT_MAX, TINT_MAX, TINT_MAX);
+			return new Color(0, 0, 0);
 		int tintSeparation = TINT_MAX / iterationMax;
 		int redTint = tintSeparation * iteration;
-		return new Color(redTint, TINT_MAX, TINT_MAX);
+		return new Color(redTint, 0, 0);
 	}
 
 }

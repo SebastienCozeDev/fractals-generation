@@ -26,7 +26,7 @@ public class Complex implements IComplex {
 
 	@Override
 	public double abs() {
-		return Math.hypot(re, im);
+		return Math.sqrt(re * re + im * im);
 	}
 
 	@Override
