@@ -109,8 +109,8 @@ public class FractalImage {
 				} else if (fractalName.equals("Julia4")) {
 					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.772691322542185, 0.124281466072787), s);
 					s.setNextTerm(nextTerm);
-				} else if (fractalName.equals("General")) {
-					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, (z, c) -> z.add(c));
+				} else if (fractalName.equals("GeneralJulia")) {
+					JuliaGeneralizationNextTerm nextTerm = new JuliaGeneralizationNextTerm(complex, new Complex(0.32, 0.043), s, (z, c) -> z.multiply(z).add(c));
 					s.setNextTerm(nextTerm);
 				}
 				else {
