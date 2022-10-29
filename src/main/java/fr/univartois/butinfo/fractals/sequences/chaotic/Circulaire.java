@@ -2,6 +2,8 @@ package fr.univartois.butinfo.fractals.sequences.chaotic;
 
 import fr.univartois.butinfo.fractals.complex.IPlanPoint;
 
+/*La classe representant la suite circulaire*/
+
 public class Circulaire extends SequenceChaotique implements ISequenceChaotique {
 
 	public Circulaire(IPlanPoint premier, int nbMaxIteration) {
