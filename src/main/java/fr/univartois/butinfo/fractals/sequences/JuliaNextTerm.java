@@ -1,6 +1,5 @@
 package fr.univartois.butinfo.fractals.sequences;
 
-import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.IComplex;
 
 /**
@@ -46,15 +45,10 @@ public class JuliaNextTerm implements INextTerm {
 	 * @param sequence La suite.
 	 */
 	public JuliaNextTerm(IComplex z, IComplex c, Sequence sequence) {
-		//System.out.println("Dans le constructeur de " + this.getClass());
-		//System.out.println("\t sequence = " + sequence);
-		//System.out.println("\t z = " + z);
-		//System.out.println("\t c = " + c);
 		this.z = z;
 		this.c = c;
 		this.sequence = sequence;
 		setFirstTerm((z.multiply(z).add(c)));
-		//System.out.println("this.sequence " + sequence);
 	}
 
 	@Override

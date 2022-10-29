@@ -34,6 +34,7 @@ import fr.cril.cli.annotations.Description;
 import fr.cril.cli.annotations.LongName;
 import fr.cril.cli.annotations.ShortName;
 import fr.univartois.butinfo.fractals.color.ColorPalette;
+import fr.univartois.butinfo.fractals.color.decorators.OnlyBlueDecorator;
 import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;

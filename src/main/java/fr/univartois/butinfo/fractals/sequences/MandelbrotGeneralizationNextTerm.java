@@ -37,18 +37,22 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	/**
 	 * Crée une nouvelle instance de JuliaNextTerm.
 	 * 
-	 * @param z Le nombre complexe z de la suite de Julia.
-	 * @param c Le nombre complexe c de la suite de Julia.
+	 * @param z Le nombre complexe z de la suite de Mandelbrot.
+	 * @param c Le nombre complexe c de la suite de Mandelbrot.
 	 */
 	public MandelbrotGeneralizationNextTerm(IComplex z, BinaryOperator<IComplex> binaryOperator) {
-		setFirstTerm(binaryOperator.apply(z, z));
+		this.z = z;
 		this.binaryOperator = binaryOperator;
+		setFirstTerm(binaryOperator.apply(z, z));
 	}
 
 	@Override
 	public IComplex calculateNextTerm(IComplex lastTerm) {
-		if (lastTerm == null)
-			return firstTerm;
+		if (lastTerm == null) {
+			//System.out.println("On est ici.");
+			setPresentTerm(binaryOperator.apply(getPresentTerm(), z));
+			return presentTerm;	
+		}
 		else {
 			setPresentTerm(binaryOperator.apply(lastTerm, z));
 			return presentTerm;
