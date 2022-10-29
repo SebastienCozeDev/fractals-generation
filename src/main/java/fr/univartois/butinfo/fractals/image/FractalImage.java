@@ -14,7 +14,9 @@ import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanZoomDecorator;
 import fr.univartois.butinfo.fractals.complex.IComplex;
+import fr.univartois.butinfo.fractals.sequences.JuliaGeneralizationNextTerm;
 import fr.univartois.butinfo.fractals.sequences.JuliaNextTerm;
+import fr.univartois.butinfo.fractals.sequences.MandelbrotGeneralizationNextTerm;
 import fr.univartois.butinfo.fractals.sequences.MandelbrotNextTerm;
 import fr.univartois.butinfo.fractals.sequences.Sequence;
 
@@ -98,7 +100,20 @@ public class FractalImage {
 				} else if (fractalName.equals("Mandelbrot")) {
 					MandelbrotNextTerm nextTerm = new MandelbrotNextTerm(complex, s);
 					s.setNextTerm(nextTerm);
-				} else {
+				} else if (fractalName.equals("Julia2")) {
+					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(0.32, 0.043), s);
+					s.setNextTerm(nextTerm);
+				} else if (fractalName.equals("Julia3")) {
+					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.0986, -0.65186), s);
+					s.setNextTerm(nextTerm);
+				} else if (fractalName.equals("Julia4")) {
+					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.772691322542185, 0.124281466072787), s);
+					s.setNextTerm(nextTerm);
+				} else if (fractalName.equals("General")) {
+					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, (z, c) -> z.add(c));
+					s.setNextTerm(nextTerm);
+				}
+				else {
 					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.4, 0.6), s);
 					s.setNextTerm(nextTerm);
 				}

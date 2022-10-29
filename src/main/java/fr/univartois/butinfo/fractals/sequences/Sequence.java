@@ -35,7 +35,7 @@ public class Sequence implements Iterable<IComplex> {
 	 */
 	public IComplex getPresentTerm() {
 		return presentTerm;
-	}
+	}	
 
 	/**
 	 * Setter pour le terme courant.

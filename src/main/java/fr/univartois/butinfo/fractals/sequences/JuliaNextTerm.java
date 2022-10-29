@@ -1,6 +1,5 @@
 package fr.univartois.butinfo.fractals.sequences;
 
-import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.IComplex;
 
 /**

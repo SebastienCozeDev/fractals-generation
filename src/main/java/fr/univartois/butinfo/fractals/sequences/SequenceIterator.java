@@ -31,6 +31,7 @@ public class SequenceIterator implements Iterator<IComplex> {
 
 	@Override
 	public boolean hasNext() {
+		//System.out.println("hasNext()");
 		return (sequence.getPresentTerm().abs() >= 2)
 				|| (sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()) != null);
 	}

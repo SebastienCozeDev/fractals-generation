@@ -46,6 +46,8 @@ public class JuliaGeneralizationNextTerm implements INextTerm {
 	 * @param c Le nombre complexe c de la suite de Julia.
 	 */
 	public JuliaGeneralizationNextTerm(IComplex z, IComplex c, BinaryOperator<IComplex> binaryOperator) {
+		this.z = z;
+		this.c = c;
 		setFirstTerm(binaryOperator.apply(z, c));
 		this.binaryOperator = binaryOperator;
 	}
