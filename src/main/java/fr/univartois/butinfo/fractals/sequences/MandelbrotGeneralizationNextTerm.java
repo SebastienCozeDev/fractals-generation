@@ -30,6 +30,11 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	private IComplex z;
 	
 	/**
+	 * Suite de la strategy.
+	 */
+	private Sequence sequence;
+	
+	/**
 	 * Opérateur binaire.
 	 */
 	private BinaryOperator<IComplex> binaryOperator;
@@ -40,8 +45,9 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	 * @param z Le nombre complexe z de la suite de Mandelbrot.
 	 * @param c Le nombre complexe c de la suite de Mandelbrot.
 	 */
-	public MandelbrotGeneralizationNextTerm(IComplex z, BinaryOperator<IComplex> binaryOperator) {
+	public MandelbrotGeneralizationNextTerm(IComplex z, Sequence sequence, BinaryOperator<IComplex> binaryOperator) {
 		this.z = z;
+		this.sequence = sequence;
 		this.binaryOperator = binaryOperator;
 		setFirstTerm(binaryOperator.apply(z, z));
 	}
@@ -49,7 +55,6 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	@Override
 	public IComplex calculateNextTerm(IComplex lastTerm) {
 		if (lastTerm == null) {
-			//System.out.println("On est ici.");
 			setPresentTerm(binaryOperator.apply(getPresentTerm(), z));
 			return presentTerm;	
 		}
@@ -61,11 +66,13 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 
 	@Override
 	public void setFirstTerm(IComplex firstTerme) {
+		sequence.setFirstTerm(firstTerme);
 		this.firstTerm = firstTerme;
 	}
 
 	@Override
 	public void setPresentTerm(IComplex presentTerm) {
+		sequence.setPresentTerm(presentTerm);
 		this.presentTerm = presentTerm;
 	}
 

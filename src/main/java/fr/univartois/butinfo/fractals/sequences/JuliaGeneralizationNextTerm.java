@@ -35,6 +35,11 @@ public class JuliaGeneralizationNextTerm implements INextTerm {
 	private IComplex c;
 	
 	/**
+	 * Suite de la strategy.
+	 */
+	private Sequence sequence;
+	
+	/**
 	 * Opérateur binaire.
 	 */
 	private BinaryOperator<IComplex> binaryOperator;
@@ -45,9 +50,10 @@ public class JuliaGeneralizationNextTerm implements INextTerm {
 	 * @param z Le nombre complexe z de la suite de Julia.
 	 * @param c Le nombre complexe c de la suite de Julia.
 	 */
-	public JuliaGeneralizationNextTerm(IComplex z, IComplex c, BinaryOperator<IComplex> binaryOperator) {
+	public JuliaGeneralizationNextTerm(IComplex z, IComplex c, Sequence sequence, BinaryOperator<IComplex> binaryOperator) {
 		this.z = z;
 		this.c = c;
+		this.sequence = sequence;
 		setFirstTerm(binaryOperator.apply(z, c));
 		this.binaryOperator = binaryOperator;
 	}
@@ -64,11 +70,13 @@ public class JuliaGeneralizationNextTerm implements INextTerm {
 
 	@Override
 	public void setFirstTerm(IComplex firstTerme) {
+		sequence.setFirstTerm(firstTerme);
 		this.firstTerm = firstTerme;
 	}
 
 	@Override
 	public void setPresentTerm(IComplex presentTerm) {
+		sequence.setPresentTerm(presentTerm);
 		this.presentTerm = presentTerm;
 	}
 

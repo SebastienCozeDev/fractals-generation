@@ -4,13 +4,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import fr.univartois.butinfo.fractals.color.ColorPalette;
-import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
-import fr.univartois.butinfo.fractals.color.decorators.OnlyBlueDecorator;
-import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanZoomDecorator;
 import fr.univartois.butinfo.fractals.complex.IComplex;
@@ -109,12 +102,12 @@ public class FractalImage {
 				} else if (fractalName.equals("Julia4")) {
 					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.772691322542185, 0.124281466072787), s);
 					s.setNextTerm(nextTerm);
-				} else if (fractalName.equals("General")) {
-					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, (z, c) -> z.add(c));
+				} else if (fractalName.equals("GeneralJulia")) {
+					JuliaGeneralizationNextTerm nextTerm = new JuliaGeneralizationNextTerm(complex, new Complex(0.32, 0.043), s, (z, c) -> z.multiply(z).add(c));
 					s.setNextTerm(nextTerm);
 				}
 				else {
-					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.4, 0.6), s);
+					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, s, (z, c) -> (z.multiply(z).add(z)).divide(z.multiply(z.multiply(z)).add(c)));
 					s.setNextTerm(nextTerm);
 				}
 				int nbIteration = 0;
