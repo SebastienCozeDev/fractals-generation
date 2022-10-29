@@ -4,13 +4,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import fr.univartois.butinfo.fractals.color.ColorPalette;
-import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
-import fr.univartois.butinfo.fractals.color.decorators.OnlyBlueDecorator;
-import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
-import fr.univartois.butinfo.fractals.color.strategies.RedColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.complex.Complex;
 import fr.univartois.butinfo.fractals.complex.ComplexPlanZoomDecorator;
 import fr.univartois.butinfo.fractals.complex.IComplex;
@@ -114,7 +107,7 @@ public class FractalImage {
 					s.setNextTerm(nextTerm);
 				}
 				else {
-					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.4, 0.6), s);
+					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, s, (z, c) -> (z.multiply(z).add(z)).divide(z.multiply(z.multiply(z)).add(c)));
 					s.setNextTerm(nextTerm);
 				}
 				int nbIteration = 0;
