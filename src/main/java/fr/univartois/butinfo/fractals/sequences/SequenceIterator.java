@@ -44,5 +44,4 @@ public class SequenceIterator implements Iterator<IComplex> {
 		}
 		return null;
 	}
-
 }
