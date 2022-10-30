@@ -1,7 +1,6 @@
 package fr.univartois.butinfo.fractals.image;
 
 import fr.univartois.butinfo.fractals.color.ColorPalette;
-import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
  * Builder de l'image de la fractale.

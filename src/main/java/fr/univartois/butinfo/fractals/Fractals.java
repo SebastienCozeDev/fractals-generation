@@ -16,15 +16,7 @@
 
 package fr.univartois.butinfo.fractals;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.PrintWriter;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import fr.cril.cli.ClassParser;
 import fr.cril.cli.CliArgsParser;
 import fr.cril.cli.CliOptionDefinitionException;
@@ -34,7 +26,6 @@ import fr.cril.cli.annotations.Description;
 import fr.cril.cli.annotations.LongName;
 import fr.cril.cli.annotations.ShortName;
 import fr.univartois.butinfo.fractals.color.ColorPalette;
-import fr.univartois.butinfo.fractals.color.decorators.OnlyBlueDecorator;
 import fr.univartois.butinfo.fractals.color.strategies.BlueColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GrayColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.strategies.GreenColorPaletteStrategy;
@@ -49,7 +40,7 @@ import fr.univartois.butinfo.fractals.sequences.Sequence;
  * La classe Fractals permet de générer des fractales depuis la ligne de
  * commande.
  *
- * @author Romain Wallon
+ * @author Romain Wallon & Sébastien Coze
  *
  * @version 0.2.0
  */

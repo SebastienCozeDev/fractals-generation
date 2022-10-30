@@ -9,12 +9,6 @@ package fr.univartois.butinfo.fractals.figure;
  */
 public class Chemin implements IFigure {
 
-
-	/**
-	 * position.
-	 */
-	private int x;
-
 	/**
 	 * Couleur du chemin.
 	 */
@@ -27,8 +21,6 @@ public class Chemin implements IFigure {
 	
 	private IFigure decorated;
 	
-
-
 	@Override
 	public String ToString() {
 		return "< path d=\"M20,230 Q40,205 50,230 T90,230\""

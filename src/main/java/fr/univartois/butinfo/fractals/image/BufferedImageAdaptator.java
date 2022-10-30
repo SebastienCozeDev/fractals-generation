@@ -2,7 +2,6 @@ package fr.univartois.butinfo.fractals.image;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -21,11 +20,6 @@ public class BufferedImageAdaptator implements IFractalImage {
 	 * Instance de la classe BifferedImage.
 	 */
 	private final BufferedImage bufferedImage;
-
-	/**
-	 * Instance de la la classe Pixel.
-	 */
-	private Pixel pixel;
 
 	/**
 	 * Constructeur de la classe

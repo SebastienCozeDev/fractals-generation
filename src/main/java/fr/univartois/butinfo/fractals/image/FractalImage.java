@@ -40,11 +40,6 @@ public class FractalImage {
 	private double scale;
 
 	/**
-	 * Point central de l'image.
-	 */
-	private Pixel centralPoint;
-
-	/**
 	 * Suite étant l'approche permettant de générer la fractale (suite complexe ou
 	 * chaotique).
 	 */
@@ -69,7 +64,6 @@ public class FractalImage {
 		this.height = b.getHeight();
 		this.width = b.getWidth();
 		this.scale = b.getScale();
-		this.centralPoint = b.getCentralPoint();
 		this.fractalName = b.getSequence();
 		this.colorPalette = b.getColorPalette();
 		this.file = b.getFile();

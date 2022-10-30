@@ -1,7 +1,5 @@
 package fr.univartois.butinfo.fractals.complex;
 
-/*L'interface qui permet d'implementer des methodes pour l'adaptateur */
-
 /**
  * L'interface {@link IPlanPoint} correspond au contrat que doit respecter
  * l'adapteur permettant de calculer des suites de points dans le plan réel.

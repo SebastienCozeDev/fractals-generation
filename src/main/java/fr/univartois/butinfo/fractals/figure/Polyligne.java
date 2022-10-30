@@ -10,11 +10,6 @@ package fr.univartois.butinfo.fractals.figure;
 public class Polyligne implements IFigure {
 
 	/**
-	 * position.
-	 */
-	private int x;
-
-	/**
 	 * Couleur du polyligne.
 	 */
 	private String stroke;

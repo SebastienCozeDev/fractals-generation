@@ -3,52 +3,44 @@ package fr.univartois.butinfo.fractals.figure;
 import java.io.PrintWriter;
 
 public abstract class AbstractFigure implements IFigureComposite {
-	
+
 	private Rectangle rectangle;
 	private Circle circle;
 	private Ellipse ellipse;
 	private Chemin chemin;
 	private Polyligne polyligne;
-	private static  String nom;
-	private static Figure figure;
-	
-	public static void main(String[] args) throws Exception {
+	private static String nom;
+
+	public static void main(String[] args) {
 
 		PrintWriter writer1 = new PrintWriter(System.out);
-		writer1.write("<svg width=\"100\" height=\"100\">" + create(5) + "</svg>");
+		writer1.write("<svg width=\"100\" height=\"100\">" + create() + "</svg>");
 		writer1.flush();
 		writer1.close();
 	}
 
-	protected static String create(int nbiterations) {
-		for (int i = 0;i > nbiterations;i++) {
-			String rectangles =figure.Rectangle();
-			String circles =figure.Circle();
-			String ellipse=figure.Ellipse();
-			String chemins=figure.Chemin();
-			}
-		return ""+nom+"" ;
-		}
-	
-	protected String Rectangle() {
+	protected static String create() {
+		return "" + nom + "";
+	}
+
+	protected String rectangle() {
 		return rectangle.ToString();
 	}
 
-	protected String Circle() {
+	protected String circle() {
 		return circle.ToString();
 	}
 
-	protected String Ellipse() {
+	protected String ellipse() {
 		return ellipse.ToString();
 	}
 
-	protected String Polyligne() {
+	protected String polyligne() {
 		return polyligne.ToString();
 	}
 
-	protected String Chemin() {
+	protected String chemin() {
 		return chemin.ToString();
 	}
-
 
 }
