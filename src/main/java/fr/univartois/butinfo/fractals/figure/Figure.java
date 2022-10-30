@@ -1,43 +1,67 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La classe qui englobe toute les figures.
+ * La classe {@link Figure} englobe toutes les {@link IFigure}.
  *
- * @author Theo Journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
 public class Figure extends AbstractFigure implements IFigureComposite {
 
+	/**
+	 * Instance de la classe {@link Rectangle}.
+	 */
 	private Rectangle rectangle;
+	
+	/**
+	 * Instance de la classe {@link Circle}.
+	 */
 	private Circle circle;
+	
+	/**
+	 * Instance de la classe {@link Ellipse}.
+	 */
 	private Ellipse ellipse;
+	
+	/**
+	 * Instance de la classe {@link Chemin}.
+	 */
 	private Chemin chemin;
+	
+	/**
+	 * Instance de la classe {@link Polyligne}.
+	 */
 	private Polyligne polyligne;
 
 	@Override
-	public void figureString(String forme) {
-		System.out.println("toutes les formes" + forme);
+	public String figureString(String forme) {
+		return "Toutes les formes " + forme;
 	}
 
-	public String Rectangle() {
-		return rectangle.ToString();
+	@Override
+	public String rectangle() {
+		return rectangle.toString();
 	}
 
-	protected String Circle() {
-		return circle.ToString();
+	@Override
+	protected String circle() {
+		return circle.toString();
 	}
 
-	protected String Ellipse() {
-		return ellipse.ToString();
+	@Override
+	protected String ellipse() {
+		return ellipse.toString();
 	}
 
-	protected String Polyligne() {
-		return polyligne.ToString();
+	@Override
+	protected String polyligne() {
+		return polyligne.toString();
 	}
 
-	protected String Chemin() {
-		return chemin.ToString();
+	@Override
+	protected String chemin() {
+		return chemin.toString();
 	}
 
 }

@@ -1,12 +1,12 @@
 package fr.univartois.butinfo.fractals.image;
 
 import fr.univartois.butinfo.fractals.color.ColorPalette;
-import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
  * Builder de l'image de la fractale.
  * 
  * @author Sébastien Coze
+ * 
  * @version 0.1.0
  *
  */
@@ -77,6 +77,7 @@ public class FractalImageBuilder {
 	 * Ajoute une hauteur au {@link FractalImageBuilder}.
 	 * 
 	 * @param height L'hauteur de l'image.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withHeight(int height) {
@@ -97,6 +98,7 @@ public class FractalImageBuilder {
 	 * Ajoute une largeur au {@link FractalImageBuilder}.
 	 * 
 	 * @param width L'hauteur de l'image.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withWidth(int width) {
@@ -117,6 +119,7 @@ public class FractalImageBuilder {
 	 * Ajoute une échelle au {@link FractalImageBuilder}.
 	 * 
 	 * @param scale L'échelle de l'image.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withScale(double scale) {
@@ -137,6 +140,7 @@ public class FractalImageBuilder {
 	 * Ajoute un point central au {@link FractalImageBuilder}.
 	 * 
 	 * @param centralPoint Le point central de l'image.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withCentralPoint(Pixel centralPoint) {
@@ -157,6 +161,7 @@ public class FractalImageBuilder {
 	 * Ajoute une suite au {@link FractalImageBuilder}.
 	 * 
 	 * @param sequence La suite utilisée pour la génération de l'image.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withSequence(String sequence) {
@@ -177,6 +182,7 @@ public class FractalImageBuilder {
 	 * Ajoute une palette de couleurs au {@link FractalImageBuilder}.
 	 * 
 	 * @param sequence La palette de couleur utilisée pour la génération de l'image.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withColorPalette(ColorPalette colorPalette) {
@@ -198,6 +204,7 @@ public class FractalImageBuilder {
 	 * s'il existe, est supprimé.
 	 * 
 	 * @param file Le fichier de sauverge.
+	 * 
 	 * @return Le builder avec ce paramètre.
 	 */
 	public FractalImageBuilder withFile(String file) {

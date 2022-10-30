@@ -40,11 +40,6 @@ public class FractalImage {
 	private double scale;
 
 	/**
-	 * Point central de l'image.
-	 */
-	private Pixel centralPoint;
-
-	/**
 	 * Suite étant l'approche permettant de générer la fractale (suite complexe ou
 	 * chaotique).
 	 */
@@ -69,7 +64,6 @@ public class FractalImage {
 		this.height = b.getHeight();
 		this.width = b.getWidth();
 		this.scale = b.getScale();
-		this.centralPoint = b.getCentralPoint();
 		this.fractalName = b.getSequence();
 		this.colorPalette = b.getColorPalette();
 		this.file = b.getFile();
@@ -81,7 +75,8 @@ public class FractalImage {
 	 * @param maxIteration Nombre maximum d'itération.
 	 */
 	public void createImage(int maxIteration) {
-		BufferedImageAdaptator bufferedImageAdaptator = new BufferedImageAdaptator(new BufferedImage(height + 1, width + 1, BufferedImage.TYPE_INT_RGB));
+		BufferedImageAdaptator bufferedImageAdaptator = new BufferedImageAdaptator(
+				new BufferedImage(height + 1, width + 1, BufferedImage.TYPE_INT_RGB));
 		ComplexPlanZoomDecorator complexPlan = new ComplexPlanZoomDecorator(height, width, scale);
 		for (int i = 0; i <= height; i++) {
 			for (int j = 0; j <= width; j++) {
@@ -100,14 +95,16 @@ public class FractalImage {
 					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.0986, -0.65186), s);
 					s.setNextTerm(nextTerm);
 				} else if (fractalName.equals("Julia4")) {
-					JuliaNextTerm nextTerm = new JuliaNextTerm(complex, new Complex(-0.772691322542185, 0.124281466072787), s);
+					JuliaNextTerm nextTerm = new JuliaNextTerm(complex,
+							new Complex(-0.772691322542185, 0.124281466072787), s);
 					s.setNextTerm(nextTerm);
 				} else if (fractalName.equals("GeneralJulia")) {
-					JuliaGeneralizationNextTerm nextTerm = new JuliaGeneralizationNextTerm(complex, new Complex(0.32, 0.043), s, (z, c) -> z.multiply(z).add(c));
+					JuliaGeneralizationNextTerm nextTerm = new JuliaGeneralizationNextTerm(complex,
+							new Complex(0.32, 0.043), s, (z, c) -> z.multiply(z).add(c));
 					s.setNextTerm(nextTerm);
-				}
-				else {
-					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, s, (z, c) -> (z.multiply(z).add(z)).divide(z.multiply(z.multiply(z)).add(c)));
+				} else {
+					MandelbrotGeneralizationNextTerm nextTerm = new MandelbrotGeneralizationNextTerm(complex, s,
+							(z, c) -> (z.multiply(z).add(z)).divide(z.multiply(z.multiply(z)).add(c)));
 					s.setNextTerm(nextTerm);
 				}
 				int nbIteration = 0;

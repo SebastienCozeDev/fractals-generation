@@ -1,6 +1,6 @@
 /**
- * Le paquetage {@code fr.univartois.butinfo.fractals.complex} fournit les classes
- * permettant de réaliser des opérations sur le plan complexe.
+ * Le paquetage {@code fr.univartois.butinfo.fractals.complex} fournit les
+ * classes permettant de réaliser des opérations sur le plan complexe.
  *
  * @author Romain Wallon
  *

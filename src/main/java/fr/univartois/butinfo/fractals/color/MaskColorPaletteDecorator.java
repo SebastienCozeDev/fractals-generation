@@ -1,7 +1,14 @@
 package fr.univartois.butinfo.fractals.color;
 
-import java.awt.Color;
-
+/**
+ * La classe {@link MaskColorPaletteDecorator} est le décorateur de
+ * {@link IColorPaletteStrategy} permettant d'appliquer un masque sur une
+ * palette de couleurs.
+ * 
+ * @author Sébastien Coze
+ * 
+ * @version 0.1.0
+ */
 public abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy {
 
 	/**
@@ -14,11 +21,8 @@ public abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy
 	 * 
 	 * @param decorated L'élément qu'il faut décorer.
 	 */
-	public MaskColorPaletteDecorator(IColorPaletteStrategy decorated) {
+	protected MaskColorPaletteDecorator(IColorPaletteStrategy decorated) {
 		this.decorated = decorated;
 	}
-
-	@Override
-	public abstract Color getColor(int iterationMax, int iteration);
 
 }

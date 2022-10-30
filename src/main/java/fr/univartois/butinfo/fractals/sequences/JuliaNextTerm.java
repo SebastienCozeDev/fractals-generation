@@ -23,11 +23,6 @@ public class JuliaNextTerm implements INextTerm {
 	private IComplex presentTerm;
 
 	/**
-	 * Nombre complexe z permettant de générer la suite de Julia.
-	 */
-	private IComplex z;
-
-	/**
 	 * Nombre complexe c permettant de générer la suite de Julia.
 	 */
 	private IComplex c;
@@ -45,7 +40,6 @@ public class JuliaNextTerm implements INextTerm {
 	 * @param sequence La suite.
 	 */
 	public JuliaNextTerm(IComplex z, IComplex c, Sequence sequence) {
-		this.z = z;
 		this.c = c;
 		this.sequence = sequence;
 		setFirstTerm((z.multiply(z).add(c)));

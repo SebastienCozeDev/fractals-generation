@@ -1,21 +1,21 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La classe du Rectangle.
+ * La classe {@link Rectangle} correspond à un {@link IFigure} de rectangle.
  *
- * @author Theo journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
 public class Rectangle implements IFigure {
 
 	/**
-	 * position x cot� gauche du rectangle.
+	 * Position x coté gauche du rectangle.
 	 */
 	private int x;
 
 	/**
-	 * position y cot� gauche du rectangle
+	 * Position y coté gauche du rectangle.
 	 */
 	private int y;
 
@@ -30,12 +30,12 @@ public class Rectangle implements IFigure {
 	private int height;
 
 	/**
-	 * position x corne gauche du rectangle.
+	 * Position x corne gauche du rectangle.
 	 */
 	private int rx;
 
 	/**
-	 * position y corne gauche du rectangle.
+	 * Position y corne gauche du rectangle.
 	 */
 	private int ry;
 
@@ -45,29 +45,40 @@ public class Rectangle implements IFigure {
 	private String stroke;
 
 	/**
-	 * le fond.
+	 * Le fond.
 	 */
 	private String fill;
 
 	/**
-	 * largeur de couleur.
+	 * Largeur de couleur.
 	 */
 	private int strokeWidth;
 	
+	/**
+	 * {@link IFigure} décorée.
+	 */
 	private IFigure decorated;
 
 	/**
-	 * Cosntructeur.
+	 * Crée une isntance de {@link Rectangle}.
 	 * 
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param height
-	 * @param rx
-	 * @param ry
-	 * @param stroke
-	 * @param fill
-	 * @param strokeWidth
+	 * @param x           Position x coté gauche du rectangle.
+	 * 
+	 * @param y           Position y coté gauche du rectangle.
+	 * 
+	 * @param width       Largeur du rectangle.
+	 * 
+	 * @param height      Hauteur du rectangle.
+	 * 
+	 * @param rx          Position x corne gauche du rectangle.
+	 * 
+	 * @param ry          Position y corne gauche du rectangle.
+	 * 
+	 * @param stroke      Couleur du rectangle.
+	 * 
+	 * @param fill        Le fond.
+	 * 
+	 * @param strokeWidth Largeur de couleur.
 	 */
 	public Rectangle(int x, int y, int width, int height, int rx, int ry, String stroke, String fill, int strokeWidth) {
 		this.x = x;
@@ -82,9 +93,9 @@ public class Rectangle implements IFigure {
 	}
 
 	/**
-	 * Getter de x postion.
+	 * Getter de X postion.
 	 * 
-	 * @return
+	 * @return La position X.
 	 */
 	public int getX() {
 		return x;
@@ -93,7 +104,7 @@ public class Rectangle implements IFigure {
 	/**
 	 * Getter Y position.
 	 * 
-	 * @return
+	 * @return La position Y.
 	 */
 	public int getY() {
 		return y;
@@ -102,7 +113,7 @@ public class Rectangle implements IFigure {
 	/**
 	 * Getter pour la largeur.
 	 * 
-	 * @return
+	 * @return La largeur.
 	 */
 	public int getWidth() {
 		return width;
@@ -111,24 +122,34 @@ public class Rectangle implements IFigure {
 	/**
 	 * Getter de hauteur.
 	 * 
-	 * @return
+	 * @return La hauteur.
 	 */
 	public int getHeight() {
 		return height;
 	}
 
+	/**
+	 * Getter pour rx.
+	 * 
+	 * @return rx.
+	 */
 	public int getRx() {
 		return rx;
 	}
 
+	/**
+	 * Getter pour ry.
+	 * 
+	 * @return ry.
+	 */
 	public int getRy() {
 		return ry;
 	}
 
 	/**
-	 * Getter de couleur largeur.
+	 * Getter de couleur.
 	 * 
-	 * @return
+	 * @return La couleur.
 	 */
 	public int getStrokeWidth() {
 		return strokeWidth;
@@ -144,7 +165,7 @@ public class Rectangle implements IFigure {
 	}
 
 	@Override
-	public String ToString() {
+	public String toString() {
 		return "< rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry=" + ry
 				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated + "/>";
 	}

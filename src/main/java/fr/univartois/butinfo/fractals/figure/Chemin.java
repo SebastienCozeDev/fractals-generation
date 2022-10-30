@@ -1,38 +1,32 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La figure Chemin.
+ * La classe {@link Chemin} corrospond à une {@link IFigure} de chemin.
  *
- * @author Theo Journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
 public class Chemin implements IFigure {
 
-
 	/**
-	 * position.
-	 */
-	private int x;
-
-	/**
-	 * Couleur du chemin.
+	 * Couleur du {@link Chemin}.
 	 */
 	private String stroke;
 
 	/**
-	 * largeur.
+	 * Largeur du {@link Chemin}.
 	 */
 	private int strokeWidth;
-	
-	private IFigure decorated;
-	
 
+	/**
+	 * {@link IFigure} décoré.
+	 */
+	private IFigure decorated;
 
 	@Override
-	public String ToString() {
-		return "< path d=\"M20,230 Q40,205 50,230 T90,230\""
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
+	public String toString() {
+		return "< path d=\"M20,230 Q40,205 50,230 T90,230\"" + ", stroke=" + stroke + ", strokeWidth=" + strokeWidth
+				+ decorated + "/>";
 	}
 }
-

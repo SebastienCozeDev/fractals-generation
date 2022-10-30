@@ -2,53 +2,109 @@ package fr.univartois.butinfo.fractals.figure;
 
 import java.io.PrintWriter;
 
+/**
+ * La classe {@link AbstractFigure} est le composite pour les figures.
+ * 
+ * @author Théo Journée
+ *
+ * @version 0.1.0
+ */
 public abstract class AbstractFigure implements IFigureComposite {
-	
-	private Rectangle rectangle;
-	private Circle circle;
-	private Ellipse ellipse;
-	private Chemin chemin;
-	private Polyligne polyligne;
-	private static  String nom;
-	private static Figure figure;
-	
-	public static void main(String[] args) throws Exception {
 
+	/**
+	 * Rectangle.
+	 */
+	private Rectangle rectangle;
+
+	/**
+	 * Cercle.
+	 */
+	private Circle circle;
+
+	/**
+	 * Ellipse.
+	 */
+	private Ellipse ellipse;
+
+	/**
+	 * Chemin.
+	 */
+	private Chemin chemin;
+
+	/**
+	 * Polyligne.
+	 */
+	private Polyligne polyligne;
+
+	/**
+	 * Nom de la figure.
+	 */
+	private static String nom;
+
+	/**
+	 * Classe principale de la figure.
+	 * 
+	 * @param args Arguments.
+	 */
+	public static void main(String[] args) {
 		PrintWriter writer1 = new PrintWriter(System.out);
-		writer1.write("<svg width=\"100\" height=\"100\">" + create(5) + "</svg>");
+		writer1.write("<svg width=\"100\" height=\"100\">" + create() + "</svg>");
 		writer1.flush();
 		writer1.close();
 	}
 
-	protected static String create(int nbiterations) {
-		for (int i = 0;i > nbiterations;i++) {
-			String rectangles =figure.Rectangle();
-			String circles =figure.Circle();
-			String ellipse=figure.Ellipse();
-			String chemins=figure.Chemin();
-			}
-		return ""+nom+"" ;
-		}
-	
-	protected String Rectangle() {
-		return rectangle.ToString();
+	/**
+	 * Crée une figure.
+	 * 
+	 * @return Le nom de la figure.
+	 */
+	protected static String create() {
+		return "" + nom + "";
 	}
 
-	protected String Circle() {
-		return circle.ToString();
+	/**
+	 * Crée un {@link Rectangle}.
+	 * 
+	 * @return Le {@link Rectangle} en chaîne de caractères.
+	 */
+	protected String rectangle() {
+		return rectangle.toString();
 	}
 
-	protected String Ellipse() {
-		return ellipse.ToString();
+	/**
+	 * Crée un {@link Circle}.
+	 * 
+	 * @return Le {@link Circle} en chaîne de caractères.
+	 */
+	protected String circle() {
+		return circle.toString();
 	}
 
-	protected String Polyligne() {
-		return polyligne.ToString();
+	/**
+	 * Crée une {@link Ellipse}.
+	 * 
+	 * @return L'{@link Ellipse} en chaîne de caractères.
+	 */
+	protected String ellipse() {
+		return ellipse.toString();
 	}
 
-	protected String Chemin() {
-		return chemin.ToString();
+	/**
+	 * Crée un {@link Polyligne}.
+	 * 
+	 * @return Le {@link Polyligne} en chaîne de caractères.
+	 */
+	protected String polyligne() {
+		return polyligne.toString();
 	}
 
+	/**
+	 * Crée un {@link Chemin}.
+	 * 
+	 * @return Le {@link Chemin} en chaîne de caractères.
+	 */
+	protected String chemin() {
+		return chemin.toString();
+	}
 
 }

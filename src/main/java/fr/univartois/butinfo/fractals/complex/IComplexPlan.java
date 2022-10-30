@@ -1,7 +1,5 @@
 package fr.univartois.butinfo.fractals.complex;
 
-/*L'interface IcomplexImage correspond au contrat de commplexImage */
-
 /**
  * L'interface {@link IComplexPlan} correspond au contrat que doit respecter un
  * plan complex tel que {@link ComplexPlan} par exemple.

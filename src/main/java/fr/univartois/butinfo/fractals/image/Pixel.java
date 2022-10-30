@@ -19,8 +19,8 @@ package fr.univartois.butinfo.fractals.image;
 import java.awt.Color;
 
 /**
- * La classe Pixel permet d'accéder facilment à un pixel d'une image afin de pouvoir en
- * calculer la couleur.
+ * La classe Pixel permet d'accéder facilment à un pixel d'une image afin de
+ * pouvoir en calculer la couleur.
  *
  * @author Romain Wallon
  *
@@ -28,68 +28,70 @@ import java.awt.Color;
  */
 public final class Pixel {
 
-    /**
-     * L'image dont ce pixel est extrait.
-     */
-    private final IFractalImage image;
+	/**
+	 * L'image dont ce pixel est extrait.
+	 */
+	private final IFractalImage image;
 
-    /**
-     * La ligne de l'image où se trouve ce pixel.
-     */
-    private final int row;
+	/**
+	 * La ligne de l'image où se trouve ce pixel.
+	 */
+	private final int row;
 
-    /**
-     * La colonne de l'image où se trouve ce pixel.
-     */
-    private final int column;
+	/**
+	 * La colonne de l'image où se trouve ce pixel.
+	 */
+	private final int column;
 
-    /**
-     * Crée une nouvelle instance de Pixel.
-     *
-     * @param image L'image dont le pixel est extrait.
-     * @param row La ligne de l'image où se trouve le pixel.
-     * @param column La colonne de l'image où se trouve le pixel.
-     */
-    public Pixel(IFractalImage image, int row, int column) {
-        this.image = image;
-        this.row = row;
-        this.column = column;
-    }
+	/**
+	 * Crée une nouvelle instance de Pixel.
+	 *
+	 * @param image  L'image dont le pixel est extrait.
+	 * 
+	 * @param row    La ligne de l'image où se trouve le pixel.
+	 * 
+	 * @param column La colonne de l'image où se trouve le pixel.
+	 */
+	public Pixel(IFractalImage image, int row, int column) {
+		this.image = image;
+		this.row = row;
+		this.column = column;
+	}
 
-    /**
-     * Donne la ligne de l'image où se trouve ce pixel.
-     *
-     * @return La ligne de l'image où se trouve ce pixel.
-     */
-    public int getRow() {
-        return row;
-    }
+	/**
+	 * Donne la ligne de l'image où se trouve ce pixel.
+	 *
+	 * @return La ligne de l'image où se trouve ce pixel.
+	 */
+	public int getRow() {
+		return row;
+	}
 
-    /**
-     * Donne la colonne de l'image où se trouve ce pixel.
-     *
-     * @return La colonne de l'image où se trouve ce pixel.
-     */
-    public int getColumn() {
-        return column;
-    }
+	/**
+	 * Donne la colonne de l'image où se trouve ce pixel.
+	 *
+	 * @return La colonne de l'image où se trouve ce pixel.
+	 */
+	public int getColumn() {
+		return column;
+	}
 
-    /**
-     * Donne l'image à laquelle appartient ce pixel.
-     *
-     * @return L'image à laquelle appartient ce pixel.
-     */
-    public IFractalImage getImage() {
-        return image;
-    }
+	/**
+	 * Donne l'image à laquelle appartient ce pixel.
+	 *
+	 * @return L'image à laquelle appartient ce pixel.
+	 */
+	public IFractalImage getImage() {
+		return image;
+	}
 
-    /**
-     * Modifie la couleur de ce pixel.
-     *
-     * @param color La nouvelle couleur pour ce pixel.
-     */
-    public void setColor(Color color) {
-        image.setColor(column, row, color);
-    }
+	/**
+	 * Modifie la couleur de ce pixel.
+	 *
+	 * @param color La nouvelle couleur pour ce pixel.
+	 */
+	public void setColor(Color color) {
+		image.setColor(column, row, color);
+	}
 
 }

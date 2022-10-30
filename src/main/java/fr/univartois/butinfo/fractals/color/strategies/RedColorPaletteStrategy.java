@@ -18,7 +18,7 @@ public class RedColorPaletteStrategy implements IColorPaletteStrategy {
 	/**
 	 * Nombre maximum que peut prendre une teinte de couleur.
 	 */
-	private final int TINT_MAX = 255;
+	private static final int TINT_MAX = 255;
 
 	@Override
 	public Color getColor(int iterationMax, int iteration) {

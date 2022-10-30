@@ -1,55 +1,52 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La figure Circle.
+ * La classe {@link Circle} correspondant à une {@link IFigure} de cercle.
  *
  * @author Theo Journee
  *
  * @version 0.1.0
  */
 public class Circle implements IFigure {
-	
+
 	/**
-	 * rayon du cercle.
+	 * Rayon du {@link Circle}.
 	 */
 	private int r;
-	
+
 	/**
-	 * position x corne gauche du rectangle.
+	 * Position x corne gauche du {@link Circle}.
 	 */
 	private int cx;
 
 	/**
-	 * position y corne gauche du rectangle.
+	 * Position y corne gauche du {@link Circle}.
 	 */
 	private int cy;
 
 	/**
-	 * Couleur du rectangle.
+	 * Couleur du {@link Circle}.
 	 */
 	private String stroke;
 
 	/**
-	 * le fond.
+	 * Fond du {@link Circle}.
 	 */
 	private String fill;
 
 	/**
-	 * largeur de couleur.
+	 * Largeur du {@link Circle}.
 	 */
 	private int strokeWidth;
-	
+
+	/**
+	 * {@link IFigure} décoré.
+	 */
 	private IFigure decorated;
-	
-
-	public Circle(int r2, int cx2, int cy2, Object stroke2, Object fill2, int strokeWidth2) {
-		// TODO Auto-generated constructor stub
-	}
-
 
 	@Override
-	public String ToString() {
-		return "< circle  cx=" + cx + ", cy=" + cy+",r=" + r
-				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated+"/>";
+	public String toString() {
+		return "< circle  cx=" + cx + ", cy=" + cy + ",r=" + r + ", stroke=" + stroke + ", fill=" + fill
+				+ ", strokeWidth=" + strokeWidth + decorated + "/>";
 	}
 }
