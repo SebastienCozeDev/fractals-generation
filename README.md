@@ -458,11 +458,15 @@ Enfin, ils ont eu des difficultés à trouver le dernier patron de conception. E
 
 __Suites chaotiques__
 
-*Description*
+Shahin s'est occupé de cette partie. Il a implémenté la suite pour représenter l'attracteur *Feigenbaum* et la suite circulaire. Il a aussi implémenté un itérateur pour parcourir successivement les suites chaotiques.
+
+Il a choisi de faire un itérateur car il faut parcourir les termes comme cela a été fait pour les suites complexes.
+
+C'est grâce à la ressource de qualité de développement qu'il a pu faire ces choix.
 
 __Diagramme de bifurcation__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 ### Création d'images en Java
 
@@ -488,70 +492,30 @@ C'est grâce à la ressource de qualité de développement qu'il a pu détermin�
 
 __Construction de fractales à partir de figures géométriques__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 __Quelques fractales à base de figures géométriques__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 __Génération des fractales__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 ### Scripts de lancement pour votre application
 
 __La classe principale__
 
-Sébastien a réalisé cette partie. Il n'a pas dû faire de choix pour cette partie.
+Sébastien s'est occupé de cette partie. Il n'a eu aucune difficulté à la faire et n'a pas dû faire de choix.
 
 __Exécution de l'application__
 
-*Description*
+Sébastien s'est occupé de cette partie. Il n'a eu aucune difficulté à la faire et n'a pas dû faire de choix.
 
 __Scripts de lancement__
 
-*Description*
+Sébastien s'est occupé de cette partie. Il n'a eu aucune difficulté à la faire et n'a pas dû faire de choix.
 
 ### Diagramme UML et rapport
 
 Théo s'est occupé de mettre à jour, pour chaque jalon, le diagramme UML. De la même manière, Sébastien s'est occupé de mettre à jour le rapport.
-
-### Description du travail réalisé et justifications.
-
-*Lundi 24 octobre 2022.*
-
-- Sébastien a réalisé la partie sur la généralités des suites. Il a décidé de le faire à l'aide d'une *strategy* car elle permet de rendre interchangeable des algorithmes qui ont des rôles similaires. Effectivement, les suites sont toutes pareils, sauf au niveau du calcul du prochain terme.
-- Théo a réalisé la partie du choix des couleurs et a mis à jour le diagramme UML. Il a choisi a choisi de prendre une stratégie *strategy* pour gérer le choix des palettes. Il a choisi de faire un composite pour traiter les élément de la classe `java.awt.color`.
-- Shahin a implémenter les opérations pour les nombres complexes.
-
-*Mardi 25 octobre 2022.*
-
-- Sébastien a implémenté l'ensemble de Julia et de Mandelbrot. Il a aussi implémenté les généralités pour ces deux ensembles. Il a tenté de faire la génération de l'image mais n'a pas réussi. Effectivement, la palette de couleur ne permet pas de récupérer une couleur pour un nombre réel.
-- Théo a implémenté la création des images et a mis à jour le diagramme UML.
-- Shahin a implémenté le code pour faire une relation entre l'image en pixel et les nombres complexe. Il a ensuite dû faire une translation à chacun des nombres complexes obtenus et aussi implémenté le code pour pouvoir zoomer.
-
-### Justification de nos choix.
-
-*Mardi 25 octobre 2022.*
-
-Pour la création d'une image, Théo a décidé d'utiliser un adaptateur car cela permet à des classes initialement incompatibles de communiquer ensemble.
-
-### Comment la formation nous a aidé ?
-
-*Lundi 24 octobre 2022.*
-
-Sébastien et Théo ont su faire le choix du patron de conception grâce à la ressource de qualité de développement
-
-*Mardi 25 octobre 2022*
-
-Nous avons su faire les différents choix des patrons de conception grâcé à la ressource de qualité de développement.
-
-### Difficultés rencontrées
-
-*Lundi 24 octobre 2022.**
-
-- Sébastien a eu des difficultés à trouver le patron de conception. En effet, il pensait, au début, qu'il fallait faire un constructeur abstrait. Il a aussi eu des difficultés pour la création de l'Itérateur *Iterator*..- Théo a eu des difficultés à trouver les patron de conception. Effectivement, il ne pensait pas du tout à faire une stratégie *strategy* mais à faire un singleton ou un proxy.
-
-*Mardi 25 octobre 2022.*
-
-- Shahin a eu des difficultés dans l'implémentation des codes en utilisant le décorateur..
