@@ -2,13 +2,32 @@ package fr.univartois.butinfo.fractals.complex;
 
 import java.util.Objects;
 
-/*Classe implementant les operations de nombre complexe */
+/**
+ * La classe {@link Complex} implémente les opérations des nombres complexes.
+ * 
+ * @author Shahin Shakuri
+ * 
+ * @version 0.1.0
+ */
 public class Complex implements IComplex {
 
+	/**
+	 * Partie réel du nombre complexe.
+	 */
 	private final double re;
-	
+
+	/**
+	 * Partie imaginaire du nombre complexe.
+	 */
 	private final double im;
 
+	/**
+	 * Crée une instance de {@link Complex}.
+	 * 
+	 * @param re Partie réel du nombre complexe.
+	 * 
+	 * @param im Partie imaginaire du nombre complexe.
+	 */
 	public Complex(double re, double im) {
 		this.re = re;
 		this.im = im;
@@ -70,7 +89,7 @@ public class Complex implements IComplex {
 		return new Complex(a, b);
 	}
 
-	// equals
+	@Override
 	public boolean equals(Object x) {
 		if (x == null)
 			return false;
@@ -80,7 +99,7 @@ public class Complex implements IComplex {
 		return (this.re == that.re) && (this.im == that.im);
 	}
 
-	// hashcode
+	@Override
 	public int hashCode() {
 		return Objects.hash(re, im);
 	}
