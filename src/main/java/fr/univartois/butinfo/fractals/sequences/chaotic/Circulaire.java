@@ -13,7 +13,7 @@ public class Circulaire extends SequenceChaotique implements ISequenceChaotique 
 	@Override
 	public double getNext(IPlanPoint plan) {
 	
-		return plan.Y()+((plan.X()*Math.sin(2*Math.PI*plan.Y())/2*Math.PI));
+		return plan.y()+((plan.x()*Math.sin(2*Math.PI*plan.y())/2*Math.PI));
 	}
 
 }
