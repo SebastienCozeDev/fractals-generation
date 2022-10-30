@@ -47,6 +47,7 @@ public interface IFractalImage {
 	 * Donne le pixel de cette image à la position donnée.
 	 *
 	 * @param row    La ligne où se trouve le pixel.
+	 * 
 	 * @param column La colonne où se trouve le pixel.
 	 *
 	 * @return Le pixel à la position donnée.
@@ -57,7 +58,9 @@ public interface IFractalImage {
 	 * Met à jour la couleur du pixel à la position donnée.
 	 *
 	 * @param row    La ligne du pixel à mettre à jour.
+	 * 
 	 * @param column La couleur du pixel à mettre à jour.
+	 * 
 	 * @param color  La nouvelle couleur du pixel.
 	 */
 	void setColor(int row, int column, Color color);

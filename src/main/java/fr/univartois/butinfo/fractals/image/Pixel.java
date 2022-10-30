@@ -47,7 +47,9 @@ public final class Pixel {
 	 * Crée une nouvelle instance de Pixel.
 	 *
 	 * @param image  L'image dont le pixel est extrait.
+	 * 
 	 * @param row    La ligne de l'image où se trouve le pixel.
+	 * 
 	 * @param column La colonne de l'image où se trouve le pixel.
 	 */
 	public Pixel(IFractalImage image, int row, int column) {

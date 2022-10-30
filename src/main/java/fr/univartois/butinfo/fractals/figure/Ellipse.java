@@ -1,31 +1,31 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La figure Ellipse.
+ * La classe {@link Ellipse} correspond à une {@link IFigure} d'ellipse.
  *
- * @author Theo Journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
 public class Ellipse implements IFigure {
 
 	/**
-	 * rayon x.
+	 * Rayon x.
 	 */
 	private int rx;
 
 	/**
-	 * rayon y.
+	 * Rayon y.
 	 */
 	private int ry;
 
 	/**
-	 * position x corne gauche du rectangle.
+	 * Position x corne gauche du rectangle.
 	 */
 	private int cx;
 
 	/**
-	 * position y corne gauche du rectangle.
+	 * Position y corne gauche du rectangle.
 	 */
 	private int cy;
 
@@ -35,17 +35,33 @@ public class Ellipse implements IFigure {
 	private String stroke;
 
 	/**
-	 * le fond.
+	 * Le fond.
 	 */
 	private String fill;
 
 	/**
-	 * largeur de couleur.
+	 * Largeur.
 	 */
 	private int strokeWidth;
 
+	/**
+	 * {@link IFigure} décoré.
+	 */
 	private IFigure decorated;
 
+	/**
+	 * Crée une instance de la classe {@link Ellipse}.
+	 * 
+	 * @param cx          Position x corne gauche du rectangle.
+	 * 
+	 * @param cy          Position y corne gauche du rectangle.
+	 * 
+	 * @param stroke      Couleur du rectangle.
+	 * 
+	 * @param fill        Le fond.
+	 * 
+	 * @param strokeWidth Largeur.
+	 */
 	public Ellipse(int cx, int cy, String stroke, String fill, int strokeWidth) {
 		this.cx = cx;
 		this.cy = cy;

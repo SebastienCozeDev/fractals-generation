@@ -1,21 +1,24 @@
-package fr.univartois.butinfo.fractals.figure;
+package fr.univartois.butinfo.fractals.figure.decorators;
+
+import fr.univartois.butinfo.fractals.figure.IFigure;
 
 /**
- * Le decorateur pour ajouter une translation.
+ * La classe {@link FigureTranslationDecorator} correspond au décorateur
+ * permettant d'ajouter une translation.
  *
- * @author Theo Journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
 public class FigureTranslationDecorator implements IFigure {
 
 	/**
-	 * position x.
+	 * Position x.
 	 */
 	private int x;
 
 	/**
-	 * position y.
+	 * Position y.
 	 */
 	private int y;
 

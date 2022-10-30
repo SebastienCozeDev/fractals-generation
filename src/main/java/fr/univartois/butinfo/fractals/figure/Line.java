@@ -1,31 +1,31 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La classe line figure.
+ * La classe {@link Line} correspond à une {@link IFigure} de ligne.
  *
- * @author Theo Journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
 public class Line implements IFigure {
 
 	/**
-	 * position x du point 1.
+	 * Position x du point 1.
 	 */
 	private int x1;
 
 	/**
-	 * position y du point 1.
+	 * Position y du point 1.
 	 */
 	private int y1;
 
 	/**
-	 * position x du point 2.
+	 * Position x du point 2.
 	 */
 	private int x2;
 
 	/**
-	 * position y du point 2.
+	 * Position y du point 2.
 	 */
 	private int y2;
 
@@ -35,21 +35,29 @@ public class Line implements IFigure {
 	private String stroke;
 
 	/**
-	 * largeur.
+	 * Largeur.
 	 */
 	private int strokeWidth;
 
+	/**
+	 * Instance de {@link IFigure} décorée.
+	 */
 	private IFigure decorated;
 
 	/**
-	 * Constructeur.
+	 * Crée une instance de {@link Line}.
 	 * 
-	 * @param x1
-	 * @param y1
-	 * @param x2
-	 * @param cy
-	 * @param stroke
-	 * @param width
+	 * @param x1     Position x du point 1.
+	 * 
+	 * @param y1     Position y du point 1.
+	 * 
+	 * @param x2     Position x du point 2.
+	 * 
+	 * @param y2     Position y du point 2.
+	 * 
+	 * @param stroke Couleur du rectangle.
+	 * 
+	 * @param width  Largeur.
 	 */
 	public Line(int x1, int y1, int x2, int y2, String stroke) {
 		super();

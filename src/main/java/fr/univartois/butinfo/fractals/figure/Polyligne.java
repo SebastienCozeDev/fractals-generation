@@ -1,9 +1,9 @@
 package fr.univartois.butinfo.fractals.figure;
 
 /**
- * La classe Polyligne figure.
+ * La classe {@link Polyligne} correspond à une {@link IFigure} d'un polyligne.
  *
- * @author Theo Journee
+ * @author Théo Journée
  *
  * @version 0.1.0
  */
@@ -15,12 +15,20 @@ public class Polyligne implements IFigure {
 	private String stroke;
 
 	/**
-	 * largeur.
+	 * Largeur.
 	 */
 	private int strokeWidth;
 
+	/**
+	 * {@link IFigure} décoré.
+	 */
 	private IFigure decorated;
 
+	/**
+	 * Crée une instance de {@link Polyligne}.
+	 * 
+	 * @param stroke Couleur du polyligne.
+	 */
 	public Polyligne(String stroke) {
 		this.stroke = stroke;
 	}

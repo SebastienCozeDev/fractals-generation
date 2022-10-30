@@ -37,7 +37,7 @@ import fr.univartois.butinfo.fractals.sequences.JuliaNextTerm;
 import fr.univartois.butinfo.fractals.sequences.Sequence;
 
 /**
- * La classe Fractals permet de générer des fractales depuis la ligne de
+ * La classe {@link Fractals} permet de générer des fractales depuis la ligne de
  * commande.
  *
  * @author Romain Wallon & Sébastien Coze
