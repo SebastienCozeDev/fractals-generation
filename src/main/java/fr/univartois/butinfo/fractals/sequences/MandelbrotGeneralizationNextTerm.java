@@ -28,12 +28,12 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	 * Nombre complexe z permettant de générer la suite de Julia.
 	 */
 	private IComplex z;
-	
+
 	/**
 	 * Suite de la strategy.
 	 */
 	private Sequence sequence;
-	
+
 	/**
 	 * Opérateur binaire.
 	 */
@@ -56,9 +56,8 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	public IComplex calculateNextTerm(IComplex lastTerm) {
 		if (lastTerm == null) {
 			setPresentTerm(binaryOperator.apply(getPresentTerm(), z));
-			return presentTerm;	
-		}
-		else {
+			return presentTerm;
+		} else {
 			setPresentTerm(binaryOperator.apply(lastTerm, z));
 			return presentTerm;
 		}
@@ -85,9 +84,10 @@ public class MandelbrotGeneralizationNextTerm implements INextTerm {
 	public IComplex getPresentTerm() {
 		return presentTerm;
 	}
-	
-	/* Pour la création (exemple) :
-	new JuliaGeneralizationNextTerm(z, c, (z, c) -> z.add(c))
-	*/
+
+	/*
+	 * Pour la création (exemple) : new JuliaGeneralizationNextTerm(z, c, (z, c) ->
+	 * z.add(c))
+	 */
 
 }

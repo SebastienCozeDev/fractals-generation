@@ -1,7 +1,5 @@
 package fr.univartois.butinfo.fractals.color;
 
-import java.awt.Color;
-
 public abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy {
 
 	/**
@@ -14,11 +12,8 @@ public abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy
 	 * 
 	 * @param decorated L'élément qu'il faut décorer.
 	 */
-	public MaskColorPaletteDecorator(IColorPaletteStrategy decorated) {
+	protected MaskColorPaletteDecorator(IColorPaletteStrategy decorated) {
 		this.decorated = decorated;
 	}
-
-	@Override
-	public abstract Color getColor(int iterationMax, int iteration);
 
 }

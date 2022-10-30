@@ -4,17 +4,15 @@ import fr.univartois.butinfo.fractals.complex.IPlanPoint;
 
 /*La classe representant la suite Feigenbaum*/
 
-public class Feigenbaum extends SequenceChaotique implements ISequenceChaotique{
+public class Feigenbaum extends SequenceChaotique implements ISequenceChaotique {
 	public Feigenbaum(IPlanPoint premier, int nbMaxIteration) {
-        super(premier, nbMaxIteration);
- 
-    }
+		super(premier, nbMaxIteration);
 
-    @Override
-    public double getNext(IPlanPoint plan) {
-        return ((plan.x()*plan.y())*(1-plan.y()));
-    }
+	}
 
-
+	@Override
+	public double getNext(IPlanPoint plan) {
+		return ((plan.x() * plan.y()) * (1 - plan.y()));
+	}
 
 }

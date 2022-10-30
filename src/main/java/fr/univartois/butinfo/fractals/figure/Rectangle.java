@@ -10,12 +10,12 @@ package fr.univartois.butinfo.fractals.figure;
 public class Rectangle implements IFigure {
 
 	/**
-	 * position x coté gauche du rectangle.
+	 * position x cotï¿½ gauche du rectangle.
 	 */
 	private int x;
 
 	/**
-	 * position y coté gauche du rectangle
+	 * position y cotï¿½ gauche du rectangle
 	 */
 	private int y;
 
@@ -53,7 +53,7 @@ public class Rectangle implements IFigure {
 	 * largeur de couleur.
 	 */
 	private int strokeWidth;
-	
+
 	private IFigure decorated;
 
 	/**
@@ -144,7 +144,7 @@ public class Rectangle implements IFigure {
 	}
 
 	@Override
-	public String ToString() {
+	public String toString() {
 		return "< rect x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", rx=" + rx + ", ry=" + ry
 				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated + "/>";
 	}

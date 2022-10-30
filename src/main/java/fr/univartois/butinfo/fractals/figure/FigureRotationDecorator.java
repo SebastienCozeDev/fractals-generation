@@ -13,8 +13,10 @@ public class FigureRotationDecorator implements IFigure {
 	 * Valeur de la rotation.
 	 */
 	private int x;
+
 	/**
 	 * Constructeur.
+	 * 
 	 * @param x
 	 */
 	public FigureRotationDecorator(int x) {
@@ -23,7 +25,7 @@ public class FigureRotationDecorator implements IFigure {
 	}
 
 	@Override
-	public String ToString() {
+	public String toString() {
 		return "transform= rotate(" + x + ")";
 	}
 

@@ -35,7 +35,7 @@ public class Sequence implements Iterable<IComplex> {
 	 */
 	public IComplex getPresentTerm() {
 		return presentTerm;
-	}	
+	}
 
 	/**
 	 * Setter pour le terme courant.
@@ -59,7 +59,7 @@ public class Sequence implements Iterable<IComplex> {
 	public INextTerm getNextTerm() {
 		return nextTerm;
 	}
-	
+
 	public void setNextTerm(INextTerm nextTerm) {
 		this.nextTerm = nextTerm;
 	}

@@ -1,6 +1,6 @@
 /**
- * Le paquetage {@code fr.univartois.butinfo.fractals.sequences} fournit les classes
- * permettant de manipuler les suites.
+ * Le paquetage {@code fr.univartois.butinfo.fractals.sequences} fournit les
+ * classes permettant de manipuler les suites.
  *
  * @author Sébastien Coze
  *

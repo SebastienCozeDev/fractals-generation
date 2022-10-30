@@ -1,6 +1,7 @@
 package fr.univartois.butinfo.fractals.sequences;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 import fr.univartois.butinfo.fractals.complex.IComplex;
@@ -31,17 +32,16 @@ public class SequenceIterator implements Iterator<IComplex> {
 
 	@Override
 	public boolean hasNext() {
-		//System.out.println("hasNext()");
 		return (sequence.getPresentTerm().abs() >= 2)
 				|| (sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()) != null);
 	}
 
 	@Override
 	public IComplex next() {
-		if (hasNext()) {
-			sequence.setPresentTerm(sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()));
-			return sequence.getPresentTerm();
+		if (!hasNext()) {
+		      throw new NoSuchElementException();
 		}
-		return null;
+		sequence.setPresentTerm(sequence.getNextTerm().calculateNextTerm(sequence.getPresentTerm()));
+		return sequence.getPresentTerm();
 	}
 }

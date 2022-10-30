@@ -7,8 +7,8 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class Ellipse implements IFigure{
-	
+public class Ellipse implements IFigure {
+
 	/**
 	 * rayon x.
 	 */
@@ -43,20 +43,20 @@ public class Ellipse implements IFigure{
 	 * largeur de couleur.
 	 */
 	private int strokeWidth;
-	
+
 	private IFigure decorated;
 
-	public Ellipse( int cx, int cy, String stroke, String fill, int strokeWidth) {
+	public Ellipse(int cx, int cy, String stroke, String fill, int strokeWidth) {
 		this.cx = cx;
 		this.cy = cy;
 		this.stroke = stroke;
 		this.fill = fill;
 		this.strokeWidth = strokeWidth;
 	}
-	
+
 	@Override
-	public String ToString() {
-		return "< ellipse  cx=" + cx + ", cy=" + cy + ",rx=" + rx + ", ry=" + ry 
-				+ ", stroke=" + stroke + ", fill=" + fill + ", strokeWidth=" + strokeWidth + decorated +"/>";
+	public String toString() {
+		return "< ellipse  cx=" + cx + ", cy=" + cy + ",rx=" + rx + ", ry=" + ry + ", stroke=" + stroke + ", fill="
+				+ fill + ", strokeWidth=" + strokeWidth + decorated + "/>";
 	}
 }

@@ -24,23 +24,23 @@ public abstract class AbstractFigure implements IFigureComposite {
 	}
 
 	protected String rectangle() {
-		return rectangle.ToString();
+		return rectangle.toString();
 	}
 
 	protected String circle() {
-		return circle.ToString();
+		return circle.toString();
 	}
 
 	protected String ellipse() {
-		return ellipse.ToString();
+		return ellipse.toString();
 	}
 
 	protected String polyligne() {
-		return polyligne.ToString();
+		return polyligne.toString();
 	}
 
 	protected String chemin() {
-		return chemin.ToString();
+		return chemin.toString();
 	}
 
 }

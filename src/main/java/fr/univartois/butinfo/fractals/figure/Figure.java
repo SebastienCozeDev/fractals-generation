@@ -16,28 +16,33 @@ public class Figure extends AbstractFigure implements IFigureComposite {
 	private Polyligne polyligne;
 
 	@Override
-	public void figureString(String forme) {
-		System.out.println("toutes les formes" + forme);
+	public String figureString(String forme) {
+		return "Toutes les formes " + forme;
 	}
 
-	public String Rectangle() {
-		return rectangle.ToString();
+	@Override
+	public String rectangle() {
+		return rectangle.toString();
 	}
 
-	protected String Circle() {
-		return circle.ToString();
+	@Override
+	protected String circle() {
+		return circle.toString();
 	}
 
-	protected String Ellipse() {
-		return ellipse.ToString();
+	@Override
+	protected String ellipse() {
+		return ellipse.toString();
 	}
 
-	protected String Polyligne() {
-		return polyligne.ToString();
+	@Override
+	protected String polyligne() {
+		return polyligne.toString();
 	}
 
-	protected String Chemin() {
-		return chemin.ToString();
+	@Override
+	protected String chemin() {
+		return chemin.toString();
 	}
 
 }

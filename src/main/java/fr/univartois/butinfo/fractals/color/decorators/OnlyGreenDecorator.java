@@ -6,8 +6,8 @@ import fr.univartois.butinfo.fractals.color.IColorPaletteStrategy;
 import fr.univartois.butinfo.fractals.color.MaskColorPaletteDecorator;
 
 /**
- * La classe {@link OnlyGreenDecorator} correspond au masque qui ne laisse passer
- * que la couleur verte.
+ * La classe {@link OnlyGreenDecorator} correspond au masque qui ne laisse
+ * passer que la couleur verte.
  * 
  * @author Sébastien Coze
  * 

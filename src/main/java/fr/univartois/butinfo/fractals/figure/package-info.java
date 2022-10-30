@@ -1,6 +1,6 @@
 /**
- * Le paquetage {@code fr.univartois.butinfo.fractals.figure} fournit les classes
- * permettant de manipuler les figures.
+ * Le paquetage {@code fr.univartois.butinfo.fractals.figure} fournit les
+ * classes permettant de manipuler les figures.
  *
  * @author Theo Journee
  *

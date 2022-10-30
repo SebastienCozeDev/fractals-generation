@@ -18,13 +18,12 @@ public class Chemin implements IFigure {
 	 * largeur.
 	 */
 	private int strokeWidth;
-	
+
 	private IFigure decorated;
-	
+
 	@Override
-	public String ToString() {
-		return "< path d=\"M20,230 Q40,205 50,230 T90,230\""
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
+	public String toString() {
+		return "< path d=\"M20,230 Q40,205 50,230 T90,230\"" + ", stroke=" + stroke + ", strokeWidth=" + strokeWidth
+				+ decorated + "/>";
 	}
 }
-

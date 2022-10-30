@@ -8,17 +8,20 @@ public class FigureComposite implements IFigureComposite {
 	private List<IFigureComposite> figures = new ArrayList<>();
 
 	@Override
-	public void figureString(String forme) {
+	public String figureString(String forme) {
+		StringBuilder bld = new StringBuilder();
 		for (IFigureComposite figure : figures) {
-		      figure.figureString(forme);
-	}
+			bld.append(figure.figureString(forme));
 		}
-	
-	public void add (IFigureComposite figure) {
-		 this.figures.add(figure);
+		return bld.toString();
 	}
-	public void remove (IFigureComposite figure) {
-		 figures.remove(figure);
+
+	public void add(IFigureComposite figure) {
+		this.figures.add(figure);
 	}
-	
+
+	public void remove(IFigureComposite figure) {
+		figures.remove(figure);
+	}
+
 }

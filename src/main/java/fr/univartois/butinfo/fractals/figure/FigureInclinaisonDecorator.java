@@ -10,13 +10,13 @@ package fr.univartois.butinfo.fractals.figure;
 public class FigureInclinaisonDecorator implements IFigure {
 
 	/**
-	 * Angle x qui détermine dans quelle mesure l'élément sera incliné.
+	 * Angle x qui dï¿½termine dans quelle mesure l'ï¿½lï¿½ment sera inclinï¿½.
 	 */
 	private int x;
-	
+
 	@Override
-	public String ToString() {
-		return "transform= skewX("+x+")";
+	public String toString() {
+		return "transform= skewX(" + x + ")";
 	}
 
 }

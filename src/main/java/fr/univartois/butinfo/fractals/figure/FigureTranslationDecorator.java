@@ -31,8 +31,8 @@ public class FigureTranslationDecorator implements IFigure {
 	}
 
 	@Override
-	public String ToString() {
-		return "transform= translate("+x+","+y+")";
+	public String toString() {
+		return "transform= translate(" + x + "," + y + ")";
 	}
 
 }

@@ -25,84 +25,84 @@ package fr.univartois.butinfo.fractals.complex;
  */
 public interface IComplex {
 
-    /**
-     * Donne la partie réelle de ce nombre complexe.
-     *
-     * @return La partie réelle de ce nombre complexe.
-     */
-    double getRealPart();
+	/**
+	 * Donne la partie réelle de ce nombre complexe.
+	 *
+	 * @return La partie réelle de ce nombre complexe.
+	 */
+	double getRealPart();
 
-    /**
-     * Donne la partie imaginaire de ce nombre complexe.
-     *
-     * @return La partie imaginaire de ce nombre complexe.
-     */
-    double getImaginaryPart();
+	/**
+	 * Donne la partie imaginaire de ce nombre complexe.
+	 *
+	 * @return La partie imaginaire de ce nombre complexe.
+	 */
+	double getImaginaryPart();
 
-    /**
-     * Donne le module de ce nombre complexe.
-     *
-     * @return Le module de ce nombre complexe.
-     */
-    double abs();
+	/**
+	 * Donne le module de ce nombre complexe.
+	 *
+	 * @return Le module de ce nombre complexe.
+	 */
+	double abs();
 
-    /**
-     * Donne l'opposé de ce nombre complexe.
-     *
-     * @return L'opposé de ce nombre complexe.
-     */
-    IComplex negate();
+	/**
+	 * Donne l'opposé de ce nombre complexe.
+	 *
+	 * @return L'opposé de ce nombre complexe.
+	 */
+	IComplex negate();
 
-    /**
-     * Donne le conjugué de ce nombre complexe.
-     *
-     * @return Le conjugué de ce nombre complexe.
-     */
-    IComplex conjugate();
+	/**
+	 * Donne le conjugué de ce nombre complexe.
+	 *
+	 * @return Le conjugué de ce nombre complexe.
+	 */
+	IComplex conjugate();
 
-    /**
-     * Ajoute ce nombre complexe à un autre nombre complexe.
-     *
-     * @param other Le nombre complexe à ajouter à ce nombre.
-     *
-     * @return Le résultat de {@code this + other}.
-     */
-    IComplex add(IComplex other);
+	/**
+	 * Ajoute ce nombre complexe à un autre nombre complexe.
+	 *
+	 * @param other Le nombre complexe à ajouter à ce nombre.
+	 *
+	 * @return Le résultat de {@code this + other}.
+	 */
+	IComplex add(IComplex other);
 
-    /**
-     * Soustrait un nombre complexe de ce nombre complexe.
-     *
-     * @param other Le nombre complexe à soustraire de ce nombre.
-     *
-     * @return Le résultat de {@code this - other}.
-     */
-    IComplex subtract(IComplex other);
+	/**
+	 * Soustrait un nombre complexe de ce nombre complexe.
+	 *
+	 * @param other Le nombre complexe à soustraire de ce nombre.
+	 *
+	 * @return Le résultat de {@code this - other}.
+	 */
+	IComplex subtract(IComplex other);
 
-    /**
-     * Multiplie ce nombre complexe par une valeur réelle.
-     *
-     * @param value La valeur par laquelle multiplier ce nombre.
-     *
-     * @return Le résultat de {@code this * value}.
-     */
-    IComplex multiply(double value);
+	/**
+	 * Multiplie ce nombre complexe par une valeur réelle.
+	 *
+	 * @param value La valeur par laquelle multiplier ce nombre.
+	 *
+	 * @return Le résultat de {@code this * value}.
+	 */
+	IComplex multiply(double value);
 
-    /**
-     * Multiplie ce nombre complexe par un autre nombre complexe.
-     *
-     * @param other Le nombre complexe à mulitplier par ce nombre.
-     *
-     * @return Le résultat de {@code this * other}.
-     */
-    IComplex multiply(IComplex other);
+	/**
+	 * Multiplie ce nombre complexe par un autre nombre complexe.
+	 *
+	 * @param other Le nombre complexe à mulitplier par ce nombre.
+	 *
+	 * @return Le résultat de {@code this * other}.
+	 */
+	IComplex multiply(IComplex other);
 
-    /**
-     * Divise ce nombre complexe par un autre nombre complexe.
-     *
-     * @param other Le nombre complexe qui divise ce nombre.
-     *
-     * @return Le résultat de {@code this / other}.
-     */
-    IComplex divide(IComplex other);
+	/**
+	 * Divise ce nombre complexe par un autre nombre complexe.
+	 *
+	 * @param other Le nombre complexe qui divise ce nombre.
+	 *
+	 * @return Le résultat de {@code this / other}.
+	 */
+	IComplex divide(IComplex other);
 
 }

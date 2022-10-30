@@ -18,9 +18,9 @@ public class FigureEchelleDecorator implements IFigure {
 	 */
 	private int y;
 
-	
 	/**
 	 * Constructeur.
+	 * 
 	 * @param x
 	 * @param y
 	 */
@@ -30,8 +30,8 @@ public class FigureEchelleDecorator implements IFigure {
 	}
 
 	@Override
-	public String ToString() {
-		return "transform= scale("+x+","+y+")";
+	public String toString() {
+		return "transform= scale(" + x + "," + y + ")";
 	}
 
 }

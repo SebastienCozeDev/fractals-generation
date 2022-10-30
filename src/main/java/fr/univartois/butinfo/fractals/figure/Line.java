@@ -7,8 +7,7 @@ package fr.univartois.butinfo.fractals.figure;
  *
  * @version 0.1.0
  */
-public class line implements IFigure {
-
+public class Line implements IFigure {
 
 	/**
 	 * position x du point 1.
@@ -39,11 +38,12 @@ public class line implements IFigure {
 	 * largeur.
 	 */
 	private int strokeWidth;
-	
+
 	private IFigure decorated;
-	
+
 	/**
 	 * Constructeur.
+	 * 
 	 * @param x1
 	 * @param y1
 	 * @param x2
@@ -51,7 +51,7 @@ public class line implements IFigure {
 	 * @param stroke
 	 * @param width
 	 */
-	public line(int x1, int y1, int x2, int y2, String stroke) {
+	public Line(int x1, int y1, int x2, int y2, String stroke) {
 		super();
 		this.x1 = x1;
 		this.y1 = y1;
@@ -61,9 +61,8 @@ public class line implements IFigure {
 	}
 
 	@Override
-	public String ToString() {
-		return "< line  x1=" + x1 + ", y1=" + y1 + ",x2=" + x2 + ", y2=" + y2 
-				+ ", stroke=" + stroke + ", strokeWidth=" + strokeWidth +  decorated + "/>";
+	public String toString() {
+		return "< line  x1=" + x1 + ", y1=" + y1 + ",x2=" + x2 + ", y2=" + y2 + ", stroke=" + stroke + ", strokeWidth="
+				+ strokeWidth + decorated + "/>";
 	}
 }
-
