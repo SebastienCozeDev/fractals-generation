@@ -22,14 +22,10 @@ if [ "$#" -ge 1 ]; then
                 echo "Création du dossier $_FOLDER_..."
                 mkdir $_FOLDER_
             fi
-            if [ "$2" = "Red" ]; then
-                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_.png -p $2 -s 0.002048 -w $_SIZE_ -x 0 -y 0
-            elif [ "$2" = "Green" ]; then
-                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_.png -p $2 -s 0.002048 -w $_SIZE_ -x 0 -y 0
-            elif [ "$2" = "Blue" ]; then
-                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_.png -p $2 -s 0.002048 -w $_SIZE_ -x 0 -y 0
-            elif [ "$2" = "Gray" ]; then
-                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_.png -p $2 -s 0.002048 -w $_SIZE_ -x 0 -y 0
+            if [ "$2" = "Red" -o "$2" = "Green" -o "$2" = "Blue" -o "$2" = "Gray" ]; then
+                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_-0.png -p $2 -s 0.02048 -w $_SIZE_ -x 0 -y 0
+                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_-1.png -p $2 -s 0.002048 -w $_SIZE_ -x 0 -y 0
+                java -jar fractales-base.jar -f $_FRACTAL_NAME_ -h $_SIZE_ -n $_ITERATION_ -o $_FOLDER_/$_FOLDER_-2.png -p $2 -s 0.0002048 -w $_SIZE_ -x 0 -y 0
             else
                 echo "[EREUR] Ce nom de palette n'existe pas."
             fi
