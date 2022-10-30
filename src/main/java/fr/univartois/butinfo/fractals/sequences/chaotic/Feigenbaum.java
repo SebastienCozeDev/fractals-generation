@@ -12,7 +12,7 @@ public class Feigenbaum extends SequenceChaotique implements ISequenceChaotique{
 
     @Override
     public double getNext(IPlanPoint plan) {
-        return ((plan.X()*plan.Y())*(1-plan.Y()));
+        return ((plan.x()*plan.y())*(1-plan.y()));
     }
 
 

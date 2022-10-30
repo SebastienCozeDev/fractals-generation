@@ -23,6 +23,7 @@ private int nbIteration = 0;
     }
     
     
+    @Override
     public boolean hasNext() {
         if(nbIteration==nbMaxIteration) {
             return false;
@@ -30,11 +31,12 @@ private int nbIteration = 0;
         return true;
     }
     
+    @Override
     public IPlanPoint next() {
         if (!hasNext())
             return null;
         nbIteration++;
-        return new AdaptateurComplex(new Complex(precedent.X(),suiteChaotique.getNext(precedent)));
+        return new AdaptateurComplex(new Complex(precedent.y(),suiteChaotique.getNext(precedent)));
     }
 
 }
