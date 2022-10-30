@@ -458,11 +458,15 @@ Enfin, ils ont eu des difficultés à trouver le dernier patron de conception. E
 
 __Suites chaotiques__
 
-*Description*
+Shahin s'est occupé de cette partie. Il a implémenté la suite pour représenter l'attracteur *Feigenbaum* et la suite circulaire. Il a aussi implémenté un itérateur pour parcourir successivement les suites chaotiques.
+
+Il a choisi de faire un itérateur car il faut parcourir les termes comme cela a été fait pour les suites complexes.
+
+C'est grâce à la ressource de qualité de développement qu'il a pu faire ces choix.
 
 __Diagramme de bifurcation__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 ### Création d'images en Java
 
@@ -488,29 +492,29 @@ C'est grâce à la ressource de qualité de développement qu'il a pu détermin�
 
 __Construction de fractales à partir de figures géométriques__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 __Quelques fractales à base de figures géométriques__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 __Génération des fractales__
 
-*Description*
+*Cette partie n'est pas finie.*
 
 ### Scripts de lancement pour votre application
 
 __La classe principale__
 
-Sébastien a réalisé cette partie. Il n'a pas dû faire de choix pour cette partie.
+Sébastien s'est occupé de cette partie. Il n'a eu aucune difficulté à la faire et n'a pas dû faire de choix.
 
 __Exécution de l'application__
 
-*Description*
+Sébastien s'est occupé de cette partie. Il n'a eu aucune difficulté à la faire et n'a pas dû faire de choix.
 
 __Scripts de lancement__
 
-*Description*
+Sébastien s'est occupé de cette partie. Il n'a eu aucune difficulté à la faire et n'a pas dû faire de choix.
 
 ### Diagramme UML et rapport
 
