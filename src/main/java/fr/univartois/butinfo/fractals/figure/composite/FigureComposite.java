@@ -1,7 +1,8 @@
-package fr.univartois.butinfo.fractals.figure;
+package fr.univartois.butinfo.fractals.figure.composite;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * La classe {@link FigureComposite} correspond au composite de la classe

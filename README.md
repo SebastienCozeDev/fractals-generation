@@ -75,7 +75,11 @@ class Fractals {
     - width : int
     - height : int
     - foxusX : double
+    - focusXString : String
     - foxusY : double
+    - focusYString : String
+    - scale : double
+    - scaleString : String
     - fractaleName : String
     - nbIterations : int
     - paletteName : String
@@ -86,33 +90,47 @@ class Fractals {
     + parseCliArguments(String[]) 
     + usage() : void 
     + buildFractals() : void 
-    + main(String[])
+    + {static} main(String[]) : void
 }
+
 package fr.univartois.butinfo.fractals.complex {
     class Complex
-    interface IComplex
     class ComplexPlan
+    class AdaptateurComplex
     class ComplexPlanTranslationDecorator
     class ComplexPlanZoomDecorator
-    interface IComplexPlan
-    class AdaptateurComplex
+    abstract class ComplexPlanDecorated
     interface IPlanPoint
+    interface IComplex
+    interface IComplexPlan
+}
+
+abstract class ComplexPlanDecorated {
+      + decorated : IComplex
+      # height : int
+      # width : int
+
+      # ComplexPlanDecorated(height,width)
+      + asComplex(int,int) : IComplex;
 }
 
 class AdaptateurComplex implements IPlanPoint {
       - complex :IComplex   
-
+    
+      + AdaptateurComplex(IComplex)
       + X() : double
       + Y() : double
       + distance(IPlanPoint) : double
       + convertirEnIComplex() : IComplex
 }
+
 interface IPlanPoint {
       + X() : double
       + Y() : double
       + distance(IPlanPoint) : double
       + convertirEnIComplex() : IComplex
 }
+
 class Complex implements IComplex {
     - re : double
     - im : double 
@@ -144,82 +162,91 @@ interface IComplex {
     + multiply(IComplex) : IComplex
     + divide(IComplex) : IComplex
 }
+
 interface IComplexPlan{
-   +  asComplex(IComplex) : IComplex;
+   +  asComplex(int,int) : IComplex;
 }
-class ComplexPlanZoomDecorator implements IComplexPlan {
-    + constant : double
+
+class ComplexPlanZoomDecorator extends ComplexPlanDecorated {
+    -  constant : double
 
     + ComplexPlanZoomDecorator(double)
-    + asComplex(IComplex) : IComplex;
+    + asComplex(int,int) : IComplex
 }
-class ComplexPlanTranslationDecorator implements IComplexPlan {
-    + constant : double
+
+class ComplexPlanTranslationDecorator extends ComplexPlanDecorated {
+    - constant : IComplex
 
     + ComplexPlanTranslationDecorator(double)
-    + asComplex(IComplex) : IComplex;
+    + asComplex(int,int) : IComplex
 }
+
 class ComplexPlan {
-     + decorated : IComplexPlan
-     + height : int
-     + width : int
-   
+     - height : int
+     - width : int 
      +ComplexPlanTranslationDecorator(double,double,height,width)
-     + asComplex(IComplex) : IComplex
+     + asComplex(int,int) : IComplex
 }
 
 package fr.univartois.butinfo.fractals.color {
     class ColorPalette
     interface IColorPaletteStrategy
-  abstract class MaskColorPaletteDecorator
+    abstract class MaskColorPaletteDecorator
 }
 
 class  ColorPalette {
-    + ITERATION_NUMBER_MAX : int
-    + colorPaletteStrategy : IColorPaletteStrategy
+    - ITERATION_NUMBER_MAX : int
+    - colorPaletteStrategy : IColorPaletteStrategy
 
     + ColorPalette(int) 
     + getColor(int) : Color
 }
+
 interface IColorPaletteStrategy {
     + getColor(int,int) : Color
 }
-abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy{
-   + decorated : decorated
 
-   + MaskColorPaletteDecorator(IColorPaletteStrategy)
-   +  {abstract} getColor(int, int) : Color
+abstract class MaskColorPaletteDecorator implements IColorPaletteStrategy{
+   # decorated : IColorPaletteStrategy 
+
+   # MaskColorPaletteDecorator(IColorPaletteStrategy)
 }
+
 package fr.univartois.butinfo.fractals.color.strategies {
           class BlueColorPaletteStrategy
           class GrayColorPaletteStrategy
           class GreenColorPaletteStrategy
           class RedColorPaletteStrategy
 }
- class BlueColorPaletteStrategy implements IColorPaletteStrategy
+
+class BlueColorPaletteStrategy implements IColorPaletteStrategy
 {
-     + {final} TINT_MAX : int
+     - {static} TINT_MAX : int
      + getColor(int, int) : Color
 }
+
 class GrayColorPaletteStrategy implements IColorPaletteStrategy
 {
-     + {final} TINT_MAX : int
+     - {static final} TINT_MAX : int
      + getColor(int, int) : Color
 }
+
 class GreenColorPaletteStrategy implements IColorPaletteStrategy
 {
-     + {final} TINT_MAX : int
+     - {static final} TINT_MAX : int
      + getColor(int, int) : Color
 }
+
 class RedColorPaletteStrategy implements IColorPaletteStrategy
 {
-     + {final} TINT_MAX : int
+     - {static final} TINT_MAX : int
      + getColor(int, int) : Color
 }
+
 package fr.univartois.butinfo.fractals.color.decorators {
           class OnlyBlueDecorator
+          class OnlyGreenDecorator
           class OnlyRedDecorator
-           class OnlyGreenDecorator
 }
 
 class OnlyBlueDecorator extends MaskColorPaletteDecorator {
@@ -227,11 +254,13 @@ class OnlyBlueDecorator extends MaskColorPaletteDecorator {
     +  OnlyBlueDecorator(IColorPaletteStrategy)
     +  getColor(int, int) : Color
 }
+
 class OnlyGreenDecorator extends MaskColorPaletteDecorator {
    
     +  OnlyGreenDecorator(IColorPaletteStrategy)
     +  getColor(int, int) : Color
 }
+
 class OnlyRedDecorator extends MaskColorPaletteDecorator {
    
     +  OnlyRedDecorator(IColorPaletteStrategy)
@@ -245,60 +274,67 @@ package fr.univartois.butinfo.fractals.image {
     class FractalImage
     class FractalImageBuilder
 }
+
 class FractalImageBuilder {
-     + height : int
-     + width : int
-     + scale : int
-     + centralPoint : Pixel
-     + sequence : Sequence
-     + colorPalette : ColorPalette
-     + file : String
-     + FractalImageBuilder
+     - height : int
+     - width : int
+     - scale : double
+     - centralPoint : Pixel
+     - sequence : Sequence
+     - fractalName : String
+     - colorPalette : ColorPalette
+     - file : String
+     - FractalImageBuilder()
 
      + {static} FractalImageBuilder()
      + getHeight : int
-     + FractalImageBuilder withHeight(height)
+     + withHeight(int) : FractalImageBuilder
      + getWidth() : int
-     + getScale() : int
-     + getCentralPoint() :Pixel
-     + getSequence() : Sequence
+     + withWidth(int) : FractalImageBuilder
+     + getScale() : double
+     + withScale(double) : FractalImageBuilder
+     + getCentralPoint() : Pixel
      + withCentralPoint(Pixel) : FractalImageBuilder
-     + withSequence(Sequence) : FractalImageBuilder
+     + getSequence() : String
+     + withSequence(String) : FractalImageBuilder
      + getColorPalette() : ColorPalette
      + withColorPalette(ColorPalette) : FractalImageBuilder
      + getFile() : String
      + withFile(String) : FractalImageBuilder
-     + build() : FractalImageFractalImage
+     + build() : FractalImage
 }
+
 class FractalImage {
-     + height : int
-     + width : int
-     + scale : int
-     + centralPoint : Pixel
-     + sequence : Sequence
-     + colorPalette : ColorPalette
-     + file : String
+     - height : int
+     - width : int
+     - scale : double
+     - centralPoint : Pixel
+     - sequence : Sequence
+     - colorPalette : ColorPalette
+     - file : String
 
      + FractalImage(FractalImageBuilder)
-     + createImage(maxIteration) : void
+     + createImage(int) : void
 }
+
 class BufferedImageAdaptor implements IFractalImage {
-    + bufferedimage : BufferedImage
+    - bufferedimage : BufferedImage
     + pixel : Pixel
    
     + BufferedImageAdaptor(BufferedImage)
     + getHeight() : int
     + getWidt() : int
-    + getPixel(row,column) : int
+    + getPixel(row,column) : Pixel
     + saveAs(String) : void
     + setColor(Color,row;column) : void
 }
+
 class Pixel {
     - image : IFractalImage
     - row : int
     - column : int
 
-    + Pixel(IFractalImage,row,column)
+    + Pixel(IFractalImage,row,int)
     + getRow() : int
     + getColumn() : int
     + getImage() : IFractalImage
@@ -312,6 +348,7 @@ interface IFractalImage{
     + saveAs(String) : void
     + setColor(Color,row;column) : void
 }
+
 Pixel o-- "1" IFractalImage
 FractalImage o-- "1" Sequence
 FractalImageBuilder o-- "1" Sequence
@@ -323,21 +360,22 @@ package fr.univartois.butinfo.fractals.sequences{
     class SequenceIterator
     class JuliaGeneralizationNextTerm
     class JuliaNextTerm
-    class MandelbrotGeneralizationNextTermx
+    class MandelbrotGeneralizationNextTerm
     class MandelbrotNextTerm
 }
-class JuliaGeneralizationNextTerm implements INextTerm{
-     + firstTerm : IComplex
-     + presentTerm : IComplex
-     + z : IComplex
-     + c : IComplex
-     + binaryOperator : BinaryOperator<IComplex>
 
+class JuliaGeneralizationNextTerm implements INextTerm{
+     - firstTerm : IComplex
+     - presentTerm : IComplex
+     - c : IComplex
+     - binaryOperator : BinaryOperator<IComplex>
+     - sequence : Sequence
      + JuliaGeneralizationNextTerm(IComplex,IComplex, BinaryOperator<IComplex>)
      + calculateNextTerm(IComplex) : IComplex
      + setFirstTerm(IComplex) : void
      + setPresentTerm(IComplex) : void
 }
+
 class JuliaNextTerm implements INextTerm {
        + firstTerm : IComplex
        + presentTerm : IComplex
@@ -348,60 +386,276 @@ class JuliaNextTerm implements INextTerm {
        + calculateNextTerm(IComplex) : IComplex
        + setFirstTerm(IComplex) : void
        + setPresentTerm(IComplex) : void
+       + getPresentTerm() : IComplex      
+       + getFirstTerm() : IComplex
 }
-class MandelbrotGeneralizationNextTerm implements INextTerm {
-       + firstTerm : IComplex
-       + presentTerm : IComplex
-       + z : IComplex
-       + c : IComplex
-       + binaryOperator : BinaryOperator<IComplex>
 
-       +MandelbrotGeneralizationNextTerm(IComplex,IComplex, BinaryOperator<IComplex>)
+class MandelbrotGeneralizationNextTerm implements INextTerm {
+       - firstTerm : IComplex
+       - presentTerm : IComplex
+       - z : IComplex
+       - sequence : Sequence
+       - binaryOperator : BinaryOperator<IComplex>
+
+       + MandelbrotGeneralizationNextTerm(IComplex,IComplex, BinaryOperator<IComplex>)
        + calculateNextTerm(IComplex) : IComplex
        + setFirstTerm(IComplex) : void
        + setPresentTerm(IComplex) : void
+       + getPresentTerm() : IComplex      
+       + getFirstTerm() : IComplex
 }
+
 class MandelbrotNextTerm implements INextTerm {
-       + firstTerm : IComplex
-       + presentTerm : IComplex
-       + z : IComplex
-       + c : IComplex
+       - firstTerm : IComplex
+       - presentTerm : IComplex
+       - z : IComplex
+       - sequence : Sequence 
 
        + MandelbrotNextTerm (IComplex,IComplex)
        + calculateNextTerm(IComplex) : IComplex
        + setFirstTerm(IComplex) : void
        + setPresentTerm(IComplex) : void
+       + getPresentTerm() : IComplex      
+       + getFirstTerm() : IComplex
 }  
      
 class Sequence  implements Iterable {
-    + nextTerm : INextTerm
-    + firstElement : IComplex
-    + presentTerm : IComplex
+    - nextTerm : INextTerm
+    - firstElement : IComplex
+    - presentTerm : IComplex
 
-    + Sequence(INextTerm,IComplex)
     + getPresentTerm() : IComplex
-    + setPresnetTerm(IComplex) : void
-    + toString() : String
+    + setPresentTerm(IComplex) : void
     + iterator() : Iterator<IComplex>
     + getNextTerm() : INextTerm
+    + setNextTerm : void
     + getFirstTerm() : IComplex
     + setFirstTerm(IComplex) : void
 }
+
 interface INextTerm {
      + setFirstTerm(IComplex) : void
      + setPresentTerm(IComplex) : void
      + calculateNextTerm(IComplex) : IComplex
+     + getPresentTerm() : IComplex
+     + getFirstTerm() : IComplex
 }
+
 class SequenceIterator implements Iterator {
-    + sequence : Sequence
+    - {final} sequence : Sequence
    
     + SequenceIterator(Sequence)
     + hasNext() : boolean
     + next() : IComplex
 }
+
 SequenceIterator o-- "1" Sequence
+JuliaGeneralizationNextTerm  o-- "1" Sequence
+MandelbrotGeneralizationNextTerm o-- "1" Sequence
+JuliaNextTerm  o-- "1" Sequence
+MandelbrotNextTerm  o-- "1" Sequence
 SequenceIterator o-- "1" IComplex
 Sequence o-- "1" IComplex
+
+package fr.univartois.butinfo.fractals.sequences.chaotic{
+    interface ISequenceChaotique
+    class SequenceChaotique
+    class SequenceChaotiqueIterator
+    class Feigenbaum
+    class Circulaire
+}
+
+interface ISequenceChaotique {
+     + getNext(IPlanPoint) : double
+}
+
+abstract class SequenceChaotique implements ISequenceChaotique
+abstract class SequenceChaotique implements Iterable {
+   - premier : IPlanPoint
+   - nbMaxIteration : int
+    
+   + SequenceChaotique(IPlanPoint, int)
+   + iterator() : Iterator<IPlanPoint>
+}
+
+class SequenceChaotiqueIterator implements Iterator {
+      - precedent: IPlanPoint
+      - nbMaxIteration : int
+      - nbIteration : int
+      - suiteChaotique : ISequenceChaotique
+      
+      + SequenceChaotiqueIterator(ISequenceChaotique , int, IPlanPoint)
+      + hasNext() : boolean
+      + next() : boolean 
+}
+
+class Feigenbaum extends SequenceChaotique 
+class Feigenbaum implements ISequenceChaotique {
+     + Feigenbaum(IPlanPoint, int)
+     + getNext(IPlanPoint) : double
+}
+
+class Circulaire extends SequenceChaotique 
+class Circulaire implements ISequenceChaotique {
+     + Circualire(IPlanPoint, int)
+     + getNext(IPlanPoint) : double
+}
+
+package fr.univartois.butinfo.fractals.figure{
+    interface IFigure
+    class Rectangle
+    class Circle
+    class Ellipse
+    class Polyligne
+    class Line
+}
+
+interface IFigure {
+   + toString() : String
+}
+
+class Rectangle implements IFigure{
+   - x : int 
+   - y : int
+   - width : int
+   - height : int 
+   - rx : int 
+   - ry : int
+   - fill : String
+   - stroke : String
+   - strokeWidth : int
+   - decorated : IFigure
+   
+   + Rectangle(int, int, int, int, int, int, String, String, int) 
+   + ToString : String
+}
+
+class Circle implements IFigure{
+   - r : int 
+   - cx : int
+   - cy : int
+   - fill : String
+   - stroke : String
+   - strokeWidth : int
+   - decorated : IFigure
+   
+   + Circle(int, int, int, String, String, int) 
+   + ToString : String
+}
+
+class Ellipse implements IFigure{
+   - rx : int 
+   - ry : int
+   - cx : int
+   - cy : int
+   - fill : String
+   - stroke : String
+   - strokeWidth : int
+   - decorated : IFigure
+   
+   + Ellipse(int,int, int, int, String, String, int) 
+   + ToString : String
+}
+
+class Line implements IFigure{
+   - x1 : int 
+   - x2 : int
+   - y1 : int
+   - y2 : int
+   - fill : String
+   - stroke : String
+   - strokeWidth : int
+   - decorated : IFigure
+   
+   + Line(int, int, int, String, String, int) 
+   + ToString : String
+}
+
+class Polyligne implements IFigure {
+   - stroke : String
+   - strokeWidth : int
+   - decorated : IFigure 
+
+   - Polyligne(String)
+   - ToString() : String
+}
+
+package fr.univartois.butinfo.fractals.figure.composite {   
+    interface IFigureComposite
+    class FigureComposite
+    abstract class AbstractFigure 
+}
+
+interface IFigureComposite {
+     + figureString(String) : String
+}
+
+class  FigureComposite implements IFigureComposite {
+   +  figures : List
+   
+   + figureString(String) : String
+   + add(IFigureComposite) : void
+   + remove(IFigureComposite) : void
+}
+
+abstract class AbstractFigure implements IFigureComposite {
+   - rectangle : Rectangle
+   - circle : Circle 
+   - ellipse : Ellipse
+   - polyligne : Polyligne
+   - nom : String 
+   - {static} main(String[]) : void
+   # {static} create() : String
+   #  rectangle() : String
+   #  circle() : String
+   #  ellipse() : String
+   #  polyligne() : String
+}
+
+AbstractFigure o-- "1" Rectangle
+AbstractFigure o-- "1" Circle
+AbstractFigure o-- "1" Ellipse
+AbstractFigure o-- "1" Polyligne
+
+package fr.univartois.butinfo.fractals.figure.composite {   
+    class FigureEchelleDecorator
+    class FigureInclinaisonDecorator
+    class FigureTranslationDecorator
+    class FigureRotationDecorator
+}
+
+class FigureEchelleDecorator implements IFigure
+{
+   - x : int
+   - y : int
+ 
+   + FigureEchelleDecorator(int, int) 
+   + ToString() : String
+}
+
+class FigureInclinaisonDecorator implements IFigure
+{
+   - x : int
+
+   + ToString() : String
+}
+
+class FigureRotationDecorator implements IFigure
+{
+   - x : int
+ 
+   + FigureRotationDecorator(int) 
+   + ToString() : String
+}
+
+class FigureTranslationDecorator implements IFigure
+{
+   - x : int
+   - y : int
+ 
+   + FigureTranslationDecorator(int, int) 
+   + ToString() : String
+}
 
 @enduml
 ```
