@@ -1,4 +1,4 @@
-package fr.univartois.butinfo.fractals.figure;
+package fr.univartois.butinfo.fractals.figure.composite;
 
 /**
  * L'interface {@link IFigureComposite} correspond au contrat que doit respecté

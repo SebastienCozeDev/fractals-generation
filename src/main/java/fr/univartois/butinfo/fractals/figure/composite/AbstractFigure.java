@@ -1,6 +1,11 @@
-package fr.univartois.butinfo.fractals.figure;
+package fr.univartois.butinfo.fractals.figure.composite;
 
 import java.io.PrintWriter;
+
+import fr.univartois.butinfo.fractals.figure.Circle;
+import fr.univartois.butinfo.fractals.figure.Ellipse;
+import fr.univartois.butinfo.fractals.figure.Polyligne;
+import fr.univartois.butinfo.fractals.figure.Rectangle;
 
 /**
  * La classe {@link AbstractFigure} est le composite pour les figures.
@@ -26,10 +31,6 @@ public abstract class AbstractFigure implements IFigureComposite {
 	 */
 	private Ellipse ellipse;
 
-	/**
-	 * Chemin.
-	 */
-	private Chemin chemin;
 
 	/**
 	 * Polyligne.
@@ -96,15 +97,6 @@ public abstract class AbstractFigure implements IFigureComposite {
 	 */
 	protected String polyligne() {
 		return polyligne.toString();
-	}
-
-	/**
-	 * Crée un {@link Chemin}.
-	 * 
-	 * @return Le {@link Chemin} en chaîne de caractères.
-	 */
-	protected String chemin() {
-		return chemin.toString();
 	}
 
 }
