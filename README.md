@@ -507,7 +507,7 @@ package fr.univartois.butinfo.fractals.figure{
     class Circle
     class Ellipse
     class Polyligne
-    class line
+    class Line
 }
 
 interface IFigure {
