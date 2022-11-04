@@ -4,7 +4,14 @@
 
 Ce projet consiste en la création d'un programme en Java permettant de générer quelques fractales. 
 
+- Version de Java : `17.0.4`
+- Version de Gradle : `7.3.3`
+
 ## Exécution
+
+### A partir des scripts bash
+
+Vous pouvez générer des fractales à l'aide des différents scripts bash présent à la racine du projet.
 
 Pour exécuter l'application, vous pouvez exécuter la tâche `run` de *Gradle*.
 Afin de vous permettre de facilement contrôler la création des fractales depuis
