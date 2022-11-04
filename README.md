@@ -48,11 +48,11 @@ __Exemple d'exécution :__
 
 On aura, dans le dossier `julia3` les images suivantes :
 
-IMG
+![Julia-3-0](/readme-img/julia-3-0.png)
 
-IMG
+![Julia-3-1](/readme-img/julia-3-1.png)
 
-IMG
+![Julia-3-2](/readme-img/julia-3-2.png)
 
 Pour exécuter l'application, vous pouvez exécuter la tâche `run` de *Gradle*.
 Afin de vous permettre de facilement contrôler la création des fractales depuis
