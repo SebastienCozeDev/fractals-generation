@@ -90,4 +90,4 @@ On aura cette image :
 
 ## Diagramme UML
 
-![Diagramme-UML](/readme-img/UML-diagram.png)
+![Diagramme-UML](/readme-img/UML_diagram.png)
