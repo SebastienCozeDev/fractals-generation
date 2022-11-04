@@ -24,13 +24,12 @@ Les différents palettes possibles sont les suivantes :
 - `Gray` pour une palette de gris.
 
 Les différents scripts possibles sont les suivants :
-- `julia.sh`
-- `julia2.sh`
-- `julia3.sh`
-- `julia4.sh`
-- `julia5.sh`
-- `general-julia.sh`
-- `mandelbrot.sh`
+- `julia.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = -0,4 + 0,6i*.
+- `julia2.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = 0,32 + 0,043i*.
+- `julia3.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = -0,0986 - 0,65186i*.
+- `julia4.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = -0,772691322542185 + 0.124281466072787*.
+- `general-julia.sh`qui génére la fractale généralisée de Mandelbrot.
+- `mandelbrot.sh` qui génére la fractale de Mandelbrot.
 
 
 Pour exécuter l'application, vous pouvez exécuter la tâche `run` de *Gradle*.
