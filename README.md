@@ -24,11 +24,19 @@ Les différents palettes possibles sont les suivantes :
 - `Gray` pour une palette de gris.
 
 Les différents scripts possibles sont les suivants :
-- `julia.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = -0,4 + 0,6i*.
-- `julia2.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = 0,32 + 0,043i*.
-- `julia3.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = -0,0986 - 0,65186i*.
-- `julia4.sh` qui génére la fractale issue de la suite imaginaire SUITE avec *z = -0,772691322542185 + 0.124281466072787*.
-- `general-julia.sh`qui génére la fractale généralisée de Mandelbrot.
+- `julia.sh` qui génére la fractale issue de la suite imaginaire avec :
+    - `z(0) = z**2 + c` où *z = -0,4 + 0,6i*
+    - `z(n+1) = (z(n))**2 + c`
+- `julia2.sh` qui génére la fractale issue de la suite imaginaire SUITE avec :
+    - `z(0) = z**2 + c` où *z = 0,32 + 0,043i*
+    - `z(n+1) = (z(n))**2 + c`
+- `julia3.sh` qui génére la fractale issue de la suite imaginaire SUITE avec :
+    - `z(0) = z**2 + c` où *z = -0,0986 - 0,65186i*
+    - `z(n+1) = (z(n))**2 + c`
+- `julia4.sh` qui génére la fractale issue de la suite imaginaire SUITE avec :
+    - `z(0) = z**2 + c` où *z = -0,772691322542185 + 0.124281466072787*
+    - `z(n+1) = (z(n))**2 + c`
+- `general-julia.sh` qui génére la fractale généralisée de Mandelbrot.
 - `mandelbrot.sh` qui génére la fractale de Mandelbrot.
 
 
