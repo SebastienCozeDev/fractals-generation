@@ -11,7 +11,27 @@ Ce projet consiste en la création d'un programme en Java permettant de génére
 
 ### A partir des scripts bash
 
-Vous pouvez générer des fractales à l'aide des différents scripts bash présent à la racine du projet.
+Vous pouvez générer des fractales à l'aide des différents scripts bash présent à la racine du projet. Chaque scripts créé un dossier au nom de la fractale comporte trois images au format `.PNG`. Ces trois images sont trois représentations de la fractale avec différents zooms. La syntaxe pour lancer le script est la suivante :
+
+```sh
+./script.sh -p <palette-name>
+```
+
+Les différents palettes possibles sont les suivantes :
+- `Red` pour une palette de rouge.
+- `Green` pour une palette de vert.
+- `Blue` pour une palette de bleu.
+- `Gray` pour une palette de gris.
+
+Les différents scripts possibles sont les suivants :
+- `julia.sh`
+- `julia2.sh`
+- `julia3.sh`
+- `julia4.sh`
+- `julia5.sh`
+- `general-julia.sh`
+- `mandelbrot.sh`
+
 
 Pour exécuter l'application, vous pouvez exécuter la tâche `run` de *Gradle*.
 Afin de vous permettre de facilement contrôler la création des fractales depuis
