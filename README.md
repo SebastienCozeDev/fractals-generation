@@ -54,13 +54,9 @@ On aura, dans le dossier `julia3` les images suivantes :
 
 ![Julia3-2](/readme-img/julia3-2.png)
 
-Pour exécuter l'application, vous pouvez exécuter la tâche `run` de *Gradle*.
-Afin de vous permettre de facilement contrôler la création des fractales depuis
-la ligne de commande, la classe `fr.univartois.butinfo.fractals.Fractals` (qui
-définit la méthode `main`) gère déjà pour vous les arguments de cette ligne
-de commande (les options données sont stockées dans les attributs de cette
-classe).
-Vous pouvez en particulier l'exécuter à l'aide des options suivantes :
+### A partir du JAR exécutable
+
+Vous pouvez aussi générer des fractales à l'aide du JAR exécutable présent à la racine du projet. Vous pouvez en particulier l'exécuter à l'aide des paramètres suivantes :
 
 ```
 -f,--fractal-name  <name>      Spécifie le nom de la fractale à générer.
@@ -74,22 +70,26 @@ Vous pouvez en particulier l'exécuter à l'aide des options suivantes :
 -y,--focus-y       <real>      Spécifie le point central de l'image sur l'axe des ordonnées.
 ```
 
-Évidemment, vous devrez compléter la classe `Fractals` pour qu'il se passe
-quelque chose lors de l'exécution !
+Vous pouvez aussi exécuter `java -jar fractales-base.jar --help` pour obtenir l'ensemble de ces paramètres.
 
-## JAR exécutable
-
-Vous avez également la possibilité de générer un JAR à l'aide de *Gradle*, en
-exécutant la tâche `jar`.
-Ce JAR constitue un exécutable que vous pouvez facilement distribuer, et que
-vous pouvez exécuter de la manière suivante :
+__Exemples d'utilisation :__
 
 ```bash
-java -jar build/libs/sae-2022-2023.jar --help
+java -jar fractales-base.jar -f Mandelbrot -h 2048 -n 200 -o mandelbrot-it-200.png -p Blue -s 0.002048 -w 2048 -x 0 -y 0
 ```
+On aura cette image :
 
-Les options acceptées par ce JAR sont les mêmes que celles décrites dans la
-section précédente.
+![Mandelbrot-it-200](/readme-img/mandelbrot-it-200.png)
+
+```bash
+java -jar fractales-base.jar -f Mandelbrot -h 2048 -n 50 -o mandelbrot-it-50.png -p Green -s 0.002048 -w 2048 -x 0 -y 0
+```
+On aura cette image :
+
+![Mandelbrot-it-200](/readme-img/mandelbrot-it-50.png)
+
+
+
 
 ## To do 
 - Le code source de votre bibliothèque sur GitLab, dont vous déposerez le lien sur Moodle.
