@@ -40,6 +40,19 @@ Les différents scripts possibles sont les suivants :
     - `z(x) = (x**2 + z)/(x**2 + c)`
 - `mandelbrot.sh` qui génére la fractale de Mandelbrot.
 
+__Exemple d'exécution :__
+
+```sh
+./julia3.sh -p Green
+```
+
+On aura, dans le dossier `julia3` les images suivantes :
+
+IMG
+
+IMG
+
+IMG
 
 Pour exécuter l'application, vous pouvez exécuter la tâche `run` de *Gradle*.
 Afin de vous permettre de facilement contrôler la création des fractales depuis
