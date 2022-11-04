@@ -1,14 +1,8 @@
-# Autour des Fractales
+# Génération de fractales
 
 ## Description
 
-Ce projet fournit une implantation de base pour votre projet de SAÉ S3.A.01.
-Pour pouvoir développer votre propre implantation de ce projet, vous devez
-en créer une **divergence** en cliquant sur le bouton `Fork` en haut à droite
-de cette page.
-
-Lorsque ce sera fait, vous pourrez inviter les membres de votre groupe en tant
-que *Developer* pour vous permettre de travailler ensemble sur ce projet.
+Ce projet consiste en la création d'un programme en Java permettant de générer quelques fractales. 
 
 ## Exécution
 
