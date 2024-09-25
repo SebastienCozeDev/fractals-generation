@@ -7,6 +7,11 @@ Ce projet consiste en la création d'un programme en Java permettant de génére
 - Version de Java : `17.0.4`
 - Version de Gradle : `7.3.3`
 
+## Liens utiles
+
+- [Code source](https://github.com/SebastienCozeDev/fractals-generator/)
+- [Documentation technique](https://fractals-generator.cozedev.com/doc/)
+
 ## Exécution
 
 ### A partir des scripts bash
